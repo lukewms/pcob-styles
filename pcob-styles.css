@@ -524,17 +524,6 @@ var(--black) 40px
   line-height: 1.2;
 }
 
-.pcob-feature:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -1.5rem;
-  top: 20%;
-  height: 60%;
-  width: 2px;
-  background-color: currentColor;
-  opacity: 0.4;
-}
-
 /* === Responsive Tweaks === */
 @media screen and (min-width: 768px) {
   .pcob-feature-title {
