@@ -1,5 +1,3 @@
-<style>
-
 :root {
   /* =========    PRIMARY BRAND COLORS    ========= */
 
@@ -1588,10 +1586,6 @@
   margin: 30px 0 0 0 !important;
 }
 
-.vt-vid-call {
-  /* Empty for now */
-}
-
 .vt-vid-header-year {
   color: #fff;
   font-size: 14vw;
@@ -1981,98 +1975,3 @@
     .vt-dots button.active {
       background: #CA4F00;
     }
-</style>
-
-  <script>
-    const track = document.querySelector('.vt-testimonial-track');
-    const slides = document.querySelectorAll('.vt-testimonial');
-    const dotsContainer = document.querySelector('.vt-dots');
-    const leftBtn = document.querySelector('.vt-arrow.left');
-    const rightBtn = document.querySelector('.vt-arrow.right');
-    let current = 0;
-    let scrollTimer = null;
-    let autoScroll = true;
-
-    function updateSlider() {
-      track.style.transform = translateX(-${current * 100}%);
-      [...dotsContainer.children].forEach(dot => dot.classList.remove('active'));
-      if (dotsContainer.children[current]) {
-        dotsContainer.children[current].classList.add('active');
-      }
-      resetTimer();
-    }
-
-    function resetTimer() {
-      if (scrollTimer) clearInterval(scrollTimer);
-      scrollTimer = setInterval(() => {
-        if (autoScroll) {
-          current = (current + 1) % slides.length;
-          updateSlider();
-        }
-      }, 10000);
-    }
-
-    function initDots() {
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.addEventListener('click', () => {
-          current = i;
-          updateSlider();
-        });
-        dotsContainer.appendChild(dot);
-      });
-    }
-
-    leftBtn.addEventListener('click', () => {
-      current = (current - 1 + slides.length) % slides.length;
-      updateSlider();
-    });
-
-    rightBtn.addEventListener('click', () => {
-      current = (current + 1) % slides.length;
-      updateSlider();
-    });
-
-    const slider = document.querySelector('.vt-testimonial-slider');
-    slider.addEventListener('mouseenter', () => {
-      autoScroll = false;
-      resetTimer();
-    });
-    slider.addEventListener('mouseleave', () => {
-      autoScroll = true;
-      resetTimer();
-    });
-
-    let startX = 0;
-    let isDragging = false;
-
-    slider.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      startX = e.touches[0].clientX;
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      const moveX = e.touches[0].clientX;
-      const diff = moveX - startX;
-
-      if (Math.abs(diff) > 50) {
-        if (diff < 0) {
-          current = (current + 1) % slides.length;
-        } else {
-          current = (current - 1 + slides.length) % slides.length;
-        }
-        updateSlider();
-        isDragging = false;
-      }
-    });
-
-    slider.addEventListener('touchend', () => {
-      isDragging = false;
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      initDots();
-      updateSlider();
-    });
-  </script>
