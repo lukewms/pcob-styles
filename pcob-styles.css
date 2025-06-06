@@ -352,7 +352,7 @@ var(--black) 40px
 .pcob-maroon {
   background-color: var(--pcob-maroon);
   color: var(--white);
-  border-color: var(--pcob-maroon);
+  border-color: var(--pcob-maroon-darker);
 }
 
 .pcob-dark-maroon {
@@ -363,7 +363,7 @@ var(--black) 40px
 
 .pcob-light-maroon {
   background-color: var(--pcob-maroon-light);
-  color: var(--pcob-maroon-darker);
+  color: var(--pcob-maroon-dark);
   border-color: var(--pcob-maroon-darker);
 }
 
@@ -374,9 +374,9 @@ var(--black) 40px
 }
 
 .pcob-dark-orange {
-  background-color: var(--pcob-orange);
+  background-color: var(--pcob-orange-darker);
   color: var(--white);
-  border-color: var(--pcob-orange-dark);
+  border-color: var(--pcob-orange-darker);
 }
 
 .pcob-light-orange {
