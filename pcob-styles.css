@@ -460,7 +460,7 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
-/* #region ======= Pamplin Band Horizontal Sections ======= */
+/* #region ======= Pamplin 3-1 Image Band ======= */
 
 .pcob-3-1-image-band {
   display: flex;
@@ -544,7 +544,112 @@
   }
 }
 
-/* #endregion ======= End Pamplin Band Horizontal Sections ======= */
+/* #endregion ======= End Pamplin 3-1 Image Band ======= */
+
+/* #region ======= Pamplin 1-3 Image Band ======= */
+
+.pcob-1-3-image-band {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  min-height: 400px;
+  box-sizing: border-box;
+  width: 100%;
+  flex-direction: row-reverse; /* Flips image to left, text to right */
+}
+
+@media screen and (max-width: 768px) {
+  .pcob-1-3-image-band {
+    padding: 2rem 1.5rem;
+    flex-direction: column; /* Stack for mobile */
+  }
+}
+
+/* #region ======= End Pamplin 1-3 Image Band ======= */
+
+.pcob-3-1-image-band {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  min-height: 400px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pcob-band-text {
+  flex: 3;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.pcob-band-text > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.pcob-band-text a.pcob-button {
+  margin: 0;
+}
+
+.pcob-band-image-bg {
+  flex: 1.5;
+  min-width: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+}
+
+.pcob-band-heading {
+  font-family: "Gineso", "Gineso LT", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: inherit;
+}
+
+.pcob-band-body {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: inherit;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .pcob-3-1-image-band {
+    padding: 2rem 1.5rem;
+  }
+
+  .pcob-band-text {
+    padding: 0;
+    text-align: center;
+  }
+
+  .pcob-band-text > div {
+    justify-content: center;
+  }
+
+    .pcob-band-image-bg {
+    display: none;
+  }
+
+  .pcob-band-text a.pcob-button {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+/* #endregion ======= End Pamplin 3-1 Image Band ======= */
 
 /* #endregion =========    END IN PROGRESS    ========= */
 
