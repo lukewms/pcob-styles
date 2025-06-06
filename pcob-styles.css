@@ -473,7 +473,7 @@
 
 .pcob-band-text {
   flex: 3;
-  padding: 4rem 3rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
