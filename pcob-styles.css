@@ -1,5 +1,5 @@
 :root {
-  /* =========    PRIMARY BRAND COLOR VARIABLES    ========= */
+/* ========= #region   PRIMARY BRAND COLOR VARIABLES    ========= */
 
   --pcob-maroon: var(--pcob-maroon-0);
   --pcob-maroon-dark: var(--pcob-maroon--2);
@@ -307,27 +307,8 @@
 --pcob-smoke--1: #CECBCF;
 --pcob-smoke-0:  #E5E1E6; /* VT Skipper Smoke (PMS 663C) */
 
-/* =========    END BRAND COLOR VARIABLES    ========= */
-
+/* ========= #endregion  END BRAND COLOR VARIABLES    ========= */
 }
-
-/* #region =========    TESTED    ========= */
-
-.pcob-warning-stripes {
-  background: repeating-linear-gradient(
-    45deg,
-var(--pcob-yellow-0),       
-var(--pcob-yellow-0) 20px,
-var(--black) 20px,
-var(--black) 40px
-  );
-  height: 40px;
-  width: 100%;
-}
-
-/* #endregion =========    END TESTED    ========= */
-
-/* #region =========    IN PROGRESS    ========= */
 
 /* #region =========    BRAND COLOR CLASSES    ========= */
 
@@ -477,7 +458,304 @@ var(--black) 40px
 
 /* #endregion =========    END BRAND COLOR CLASSES    ========= */
 
-/* #endregion =========    IN PROGRESS    ========= */
+/* #region =========    IN PROGRESS    ========= */
+
+/* #region ======= Pamplin Band Horizontal Sections ======= */
+
+.pcob-3-1-image-band {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+  min-height: 400px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pcob-band-text {
+  flex: 3;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.pcob-band-text > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.pcob-band-text a.pcob-button {
+  margin: 0;
+}
+
+.pcob-band-image-bg {
+  flex: 1.5;
+  min-width: 0;
+  background-image: url('/content/dam/cba_pamplin_vt_edu/img/mba/20250505_MBA_InnovationCampus_JordiShelton_LWR69528_websize_Slate.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+}
+
+.pcob-band-heading {
+  font-family: "Gineso", "Gineso LT", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: inherit;
+}
+
+.pcob-band-body {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: inherit;
+}
+
+.pcob-band-image {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.pcob-band-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0;
+  border: none;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .pcob-3-1-image-band {
+    flex-direction: column-reverse;
+    padding: 2rem 1.5rem;
+  }
+
+  .pcob-band-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .pcob-band-text > div {
+    justify-content: center;
+  }
+
+  .pcob-band-image {
+    height: 300px;
+    width: 100%;
+  }
+
+  .pcob-band-text a.pcob-button {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+/* === Image Band Color Variants === */
+
+.pcob-3-1--maroon {
+  background-color: #431021;
+  color: white;
+}
+
+.pcob-3-1--maroon .pcob-band-body,
+.pcob-3-1--maroon .pcob-band-heading {
+  color: white;
+}
+
+.pcob-3-1--light-maroon {
+  background-color: #F3E8EC;
+  color: #861F41;
+}
+
+.pcob-3-1--light-maroon .pcob-band-body,
+.pcob-3-1--light-maroon .pcob-band-heading {
+  color: #861F41;
+}
+
+.pcob-3-1--orange {
+  background-color: #CA4F00;
+  color: white;
+}
+
+.pcob-3-1--orange .pcob-band-body,
+.pcob-3-1--orange .pcob-band-heading {
+  color: white;
+}
+
+.pcob-3-1--light-orange {
+  background-color: #FDF1E9;
+  color: var(--pcob-orange--1);
+}
+
+.pcob-3-1--light-orange .pcob-band-body,
+.pcob-3-1--light-orange .pcob-band-heading {
+  color: var(--pcob-orange--1);
+}
+
+.pcob-3-1--gray {
+  background-color: var(--pcob-smoke);
+  color: #000;
+}
+
+.pcob-3-1--gray .pcob-band-body,
+.pcob-3-1--gray .pcob-band-heading {
+  color: #000;
+}
+
+.pcob-3-1--black {
+  background-color: #000;
+  color: white;
+}
+
+.pcob-3-1--black .pcob-band-body,
+.pcob-3-1--black .pcob-band-heading {
+  color: white;
+}
+
+.pcob-3-1--teal {
+  background-color: var(--pcob-teal-dark);
+  color: white;
+}
+
+.pcob-3-1--teal .pcob-band-body,
+.pcob-3-1--teal .pcob-band-heading {
+  color: white;
+}
+
+.pcob-3-1--light-teal {
+  background-color: var(--pcob-teal-lighter);
+  color: var(--pcob-teal-darker);
+}
+
+.pcob-3-1--light-teal .pcob-band-body,
+.pcob-3-1--light-teal .pcob-band-heading {
+  color: var(--pcob-teal-darker);
+}
+
+.pcob-3-1--purple {
+  background-color: var(--pcob-purple);
+  color: white;
+}
+
+.pcob-3-1--purple .pcob-band-body,
+.pcob-3-1--purple .pcob-band-heading {
+  color: white;
+}
+
+.pcob-3-1--light-purple {
+  background-color: var(--pcob-purple-lightest);
+  color: white;
+}
+
+.pcob-3-1--light-purple .pcob-band-body,
+.pcob-3-1--light-purple .pcob-band-heading {
+  color: 642667;
+}
+
+.pcob-3-1--turquoise {
+  background-color: var(--pcob-turquoise);
+  color: #000;
+}
+
+.pcob-3-1--turquoise .pcob-band-body,
+.pcob-3-1--turquoise .pcob-band-heading {
+  color: #000;
+}
+
+.pcob-3-1--light-turquoise {
+  background-color: var(--pcob-turquoise-lightest);
+  color: var(--pcob-turquoise-darker);
+}
+
+.pcob-3-1--light-turquoise .pcob-band-body,
+.pcob-3-1--light-turquoise .pcob-band-heading {
+  color: var(--pcob-turquoise-darker);
+}
+
+.pcob-3-1--light-yellow {
+  background-color: var(--pcob-yellow-lightest);
+  color: var(--pcob-yellow-darker);
+}
+
+.pcob-3-1--light-yellow .pcob-band-body,
+.pcob-3-1--light-yellow .pcob-band-heading {
+  color: var(--pcob-yellow-darker);
+}
+
+.pcob-3-1--yellow {
+  background-color: var(--pcob-yellow);
+  color: #000;
+}
+.pcob-3-1--yellow .pcob-band-body,
+.pcob-3-1--yellow .pcob-band-heading {
+  color: #000;
+}
+
+.pcob-3-1--light-purple {
+  background-color: var(--pcob-purple-lightest);
+  color: var(--pcob-purple);
+}
+.pcob-3-1--light-purple .pcob-band-body,
+.pcob-3-1--light-purple .pcob-band-heading {
+  color: var(--pcob-purple);
+}
+
+.pcob-3-1--light-pink {
+  background-color: var(--pcob-pink-lightest);
+  color: var(--pcob-pink);
+}
+.pcob-3-1--light-pink .pcob-band-body,
+.pcob-3-1--light-pink .pcob-band-heading {
+  color: var(--pcob-pink);
+}
+
+.pcob-3-1--pink {
+  background-color: var(--pcob-pink);
+  color: white;
+}
+.pcob-3-1--pink .pcob-band-body,
+.pcob-3-1--pink .pcob-band-heading {
+  color: white;
+}
+
+/* #endregion ======= End Pamplin Band Horizontal Sections ======= */
+
+/* #endregion =========    END IN PROGRESS    ========= */
+
+/* #region =========    TESTED    ========= */
+
+/* #region === Warning Stripes === */
+
+.pcob-warning-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+var(--pcob-yellow-0),       
+var(--pcob-yellow-0) 20px,
+var(--black) 20px,
+var(--black) 40px
+  );
+  height: 40px;
+  width: 100%;
+}
+
+/* #endregion === End Warning Strips === */
 
 /* #region === Feature Bar === */
 .pcob-feature-bar {
@@ -570,6 +848,10 @@ var(--black) 40px
 }
 
 /* #endregion === End Feature Bar === */
+
+/* #endregion =========    END TESTED    ========= */
+
+
 
 
 
@@ -739,7 +1021,7 @@ var(--black) 40px
 
 
 
-/* ============================== NEW CLEANED CODE ======================= */
+/* ============================== OLD CODE ======================= */
 
 /* ====== Pamplin Buttons ====== */
 
@@ -1087,279 +1369,7 @@ var(--black) 40px
   }
 }
 
-/* ======= Pamplin Band Horizontal Sections ======= */
 
-.pcob-3-1-image-band {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: #431021;
-  color: white;
-  padding: 0;
-  min-height: 400px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.pcob-band-text {
-  flex: 3;
-  padding: 4rem 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 100%;
-}
-
-.pcob-band-text > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: flex-start;
-}
-
-.pcob-band-text a.pcob-button {
-  margin: 0;
-}
-
-.pcob-band-image-bg {
-  flex: 1.5;
-  min-width: 0;
-  background-image: url('/content/dam/cba_pamplin_vt_edu/img/mba/20250505_MBA_InnovationCampus_JordiShelton_LWR69528_websize_Slate.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: auto;
-}
-
-.pcob-band-heading {
-  font-family: "Gineso", "Gineso LT", sans-serif;
-  font-style: italic;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
-}
-
-.pcob-band-body {
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: #ffffff;
-}
-
-.pcob-band-image {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
-}
-
-.pcob-band-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0;
-  border: none;
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-  .pcob-3-1-image-band {
-    flex-direction: column-reverse;
-    padding: 2rem 1.5rem;
-  }
-
-  .pcob-band-text {
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .pcob-band-text > div {
-    justify-content: center;
-  }
-
-  .pcob-band-image {
-    height: 300px;
-    width: 100%;
-  }
-
-  .pcob-band-text a.pcob-button {
-    width: auto;
-    display: inline-block;
-  }
-}
-
-/* === Image Band Color Variants === */
-
-.pcob-3-1--maroon {
-  background-color: #431021;
-  color: white;
-}
-
-.pcob-3-1--maroon .pcob-band-body,
-.pcob-3-1--maroon .pcob-band-heading {
-  color: white;
-}
-
-.pcob-3-1--light-maroon {
-  background-color: #F3E8EC;
-  color: #861F41;
-}
-
-.pcob-3-1--light-maroon .pcob-band-body,
-.pcob-3-1--light-maroon .pcob-band-heading {
-  color: #861F41;
-}
-
-.pcob-3-1--orange {
-  background-color: #CA4F00;
-  color: white;
-}
-
-.pcob-3-1--orange .pcob-band-body,
-.pcob-3-1--orange .pcob-band-heading {
-  color: white;
-}
-
-.pcob-3-1--light-orange {
-  background-color: #FDF1E9;
-  color: var(--pcob-orange--1);
-}
-
-.pcob-3-1--light-orange .pcob-band-body,
-.pcob-3-1--light-orange .pcob-band-heading {
-  color: var(--pcob-orange--1);
-}
-
-.pcob-3-1--gray {
-  background-color: var(--pcob-smoke);
-  color: #000;
-}
-
-.pcob-3-1--gray .pcob-band-body,
-.pcob-3-1--gray .pcob-band-heading {
-  color: #000;
-}
-
-.pcob-3-1--black {
-  background-color: #000;
-  color: white;
-}
-
-.pcob-3-1--black .pcob-band-body,
-.pcob-3-1--black .pcob-band-heading {
-  color: white;
-}
-
-.pcob-3-1--teal {
-  background-color: var(--pcob-teal-dark);
-  color: white;
-}
-
-.pcob-3-1--teal .pcob-band-body,
-.pcob-3-1--teal .pcob-band-heading {
-  color: white;
-}
-
-.pcob-3-1--light-teal {
-  background-color: var(--pcob-teal-lighter);
-  color: var(--pcob-teal-darker);
-}
-
-.pcob-3-1--light-teal .pcob-band-body,
-.pcob-3-1--light-teal .pcob-band-heading {
-  color: var(--pcob-teal-darker);
-}
-
-.pcob-3-1--purple {
-  background-color: var(--pcob-purple);
-  color: white;
-}
-
-.pcob-3-1--purple .pcob-band-body,
-.pcob-3-1--purple .pcob-band-heading {
-  color: white;
-}
-
-.pcob-3-1--light-purple {
-  background-color: var(--pcob-purple-lightest);
-  color: white;
-}
-
-.pcob-3-1--light-purple .pcob-band-body,
-.pcob-3-1--light-purple .pcob-band-heading {
-  color: 642667;
-}
-
-.pcob-3-1--turquoise {
-  background-color: var(--pcob-turquoise);
-  color: #000;
-}
-
-.pcob-3-1--turquoise .pcob-band-body,
-.pcob-3-1--turquoise .pcob-band-heading {
-  color: #000;
-}
-
-.pcob-3-1--light-turquoise {
-  background-color: var(--pcob-turquoise-lightest);
-  color: var(--pcob-turquoise-darker);
-}
-
-.pcob-3-1--light-turquoise .pcob-band-body,
-.pcob-3-1--light-turquoise .pcob-band-heading {
-  color: var(--pcob-turquoise-darker);
-}
-
-.pcob-3-1--light-yellow {
-  background-color: var(--pcob-yellow-lightest);
-  color: var(--pcob-yellow-darker);
-}
-
-.pcob-3-1--light-yellow .pcob-band-body,
-.pcob-3-1--light-yellow .pcob-band-heading {
-  color: var(--pcob-yellow-darker);
-}
-
-.pcob-3-1--yellow {
-  background-color: var(--pcob-yellow);
-  color: #000;
-}
-.pcob-3-1--yellow .pcob-band-body,
-.pcob-3-1--yellow .pcob-band-heading {
-  color: #000;
-}
-
-.pcob-3-1--light-purple {
-  background-color: var(--pcob-purple-lightest);
-  color: var(--pcob-purple);
-}
-.pcob-3-1--light-purple .pcob-band-body,
-.pcob-3-1--light-purple .pcob-band-heading {
-  color: var(--pcob-purple);
-}
-
-.pcob-3-1--light-pink {
-  background-color: var(--pcob-pink-lightest);
-  color: var(--pcob-pink);
-}
-.pcob-3-1--light-pink .pcob-band-body,
-.pcob-3-1--light-pink .pcob-band-heading {
-  color: var(--pcob-pink);
-}
-
-.pcob-3-1--pink {
-  background-color: var(--pcob-pink);
-  color: white;
-}
-.pcob-3-1--pink .pcob-band-body,
-.pcob-3-1--pink .pcob-band-heading {
-  color: white;
-}
 
 
 
