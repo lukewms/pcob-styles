@@ -465,8 +465,6 @@
 .pcob-3-1-image-band {
   display: flex;
   flex-wrap: nowrap;
-  background-color: inherit;
-  color: inherit;
   padding: 0;
   min-height: 400px;
   box-sizing: border-box;
