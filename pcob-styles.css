@@ -522,7 +522,6 @@
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   .pcob-3-1-image-band {
-    flex-direction: column-reverse;
     padding: 2rem 1.5rem;
   }
 
