@@ -86,6 +86,8 @@
   --pcob-smoke-darker: var(--pcob-smoke--5);
   --pcob-smoke-darkest: var(--pcob-smoke--9);
 
+  --white: #FFFFFF;
+  --black: #000;
 
   /* =========    SECONDARY (SCALED) BRAND COLORS    ========= */
 
@@ -304,19 +306,20 @@
 --pcob-smoke--2: #501E52;
 --pcob-smoke--1: #CECBCF;
 --pcob-smoke-0:  #E5E1E6; /* VT Skipper Smoke (PMS 663C) */
-}
 
-  /* =========    END COLORS    ========= */
+/* =========    END COLORS    ========= */
+
+}
 
 /* TESTED */
 
 .pcob-warning-stripes {
   background: repeating-linear-gradient(
     45deg,
-    #F7EA48,       /* Triumphant Yellow */
-    #F7EA48 20px,
-    #000 20px,
-    #000 40px
+var(--pcob-yellow-0),       
+var(--pcob-yellow-0) 20px,
+var(--black) 20px,
+var(--black) 40px
   );
   height: 40px;
   width: 100%;
