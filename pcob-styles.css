@@ -5,7 +5,9 @@
   --pcob-maroon-dark: var(--pcob-maroon--2);
   --pcob-maroon-darker: var(--pcob-maroon--5);
   --pcob-maroon-darkest: var(--pcob-maroon--9);
-  --pcob-maroon-light: #F3E8EC;
+  --pcob-maroon-light: var(--pcob-maroon-2);
+  --pcob-maroon-lighter: var(--pcob-maroon-5);
+  --pcob-maroon-lightest: var(--pcob-maroon-9);
 
   --pcob-orange: var(--pcob-orange-0);
   --pcob-orange-dark: var(--pcob-orange--2);
@@ -19,6 +21,9 @@
   --pcob-burnt-dark: var(--pcob-burnt--2);
   --pcob-burnt-darker: var(--pcob-burnt--5);
   --pcob-burnt-darkest: var(--pcob-burnt--9);
+  --pcob-burnt-light: var(--pcob-burnt-2);
+  --pcob-burnt-lighter: var(--pcob-burnt-5);
+  --pcob-burnt-lightest: var(--pcob-burnt-9);
 
   --pcob-purple: var(--pcob-purple-0);
   --pcob-purple-dark: var(--pcob-purple--2);
@@ -102,6 +107,15 @@
 --pcob-maroon--2: #6B1934;
 --pcob-maroon--1: #791C3B;
 --pcob-maroon-0:  #861F41; /* VT Chicago Maroon (PMS 208) */
+--pcob-maroon-1:  #923554;
+--pcob-maroon-2:  #9E4C67;
+--pcob-maroon-3:  #AA627A;
+--pcob-maroon-4:  #B6788D;
+--pcob-maroon-5:  #C38FA0;
+--pcob-maroon-6:  #CFA5B3;
+--pcob-maroon-7:  #DBBBC6;
+--pcob-maroon-8:  #E7D2D9;
+--pcob-maroon-9:  #F3E8EC; /* lightest */
 
 /* === Burnt Orange Scale === */
 --pcob-burnt--9: #170C04; /* darkest */
@@ -114,6 +128,15 @@
 --pcob-burnt--2: #B65E1E;
 --pcob-burnt--1: #CD6921;
 --pcob-burnt-0:  #E5751F; /* VT Burnt Orange (PMS 158) */
+--pcob-burnt-1:  #E78234;
+--pcob-burnt-2:  #EA8F49;
+--pcob-burnt-3:  #EC9C5E;
+--pcob-burnt-4:  #EFA974;
+--pcob-burnt-5:  #F1B689;
+--pcob-burnt-6:  #F4C39E;
+--pcob-burnt-7:  #F6D0B3;
+--pcob-burnt-8:  #F9DDC8;
+--pcob-burnt-9:  #FBEADD; /* lightest */
 
 /* === Impact Orange Scale === */
   --pcob-orange--9: #140800; /* darkest */
@@ -343,9 +366,27 @@
 }
 
 .pcob-light-maroon {
-  background-color: var(--pcob-maroon-light);
+  background-color: var(--pcob-maroon-lightest);
   color: var(--pcob-maroon-dark);
   border-color: var(--pcob-maroon-darker);
+}
+
+.pcob-burnt {
+  background-color: var(--pcob-burnt);
+  color: var(--white);
+  border-color: var(--pcob-burnt-darker);
+}
+
+.pcob-dark-burnt {
+  background-color: var(--pcob-burnt-darker);
+  color: var(--white);
+  border-color: var(--pcob-burnt-darker);
+}
+
+.pcob-light-burnt {
+  background-color: var(--pcob-burnt-lightest);
+  color: var(--pcob-burnt-dark);
+  border-color: var(--pcob-burnt-dark);
 }
 
 .pcob-orange {
@@ -694,7 +735,7 @@
 }
 
 .pcob-button--light-maroon {
-  background-color: var(--pcob-maroon-light);
+  background-color: var(--pcob-maroon-lightest);
   color: var(--pcob-maroon) !important;
 }
 
