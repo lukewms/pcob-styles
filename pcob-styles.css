@@ -615,9 +615,13 @@
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-  .pcob-band-text {
+  .pcob-band-text,
+  .pcob-text-band-left .pcob-band-text,
+  .pcob-text-band-center .pcob-band-text,
+  .pcob-text-band-right .pcob-band-text {
     padding: 2rem;
     text-align: center;
+    align-items: center;
   }
 
   .pcob-band-text > div {
