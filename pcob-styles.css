@@ -347,7 +347,7 @@
 /* Grey */
 
 .pcob-dark-grey {
-  background-color: var(--pcob-grey-darker);
+  background-color: var(--pcob-grey-darkest);
   color: var(--white);
   border-color: var(--black);
 }
@@ -373,7 +373,7 @@
 }
 
 .pcob-stone {
-  background-color: var(--pcob-stone);
+  background-color: var(--pcob-stone-dark);
   color: var(--white);
   border-color: var(--black);
 }
@@ -433,14 +433,14 @@
 }
 
 .pcob-burnt {
-  background-color: var(--pcob-burnt);
+  background-color: var(--pcob-burnt-dark);
   color: var(--white);
   border-color: var(--pcob-burnt-darker);
 }
 
 .pcob-light-burnt {
   background-color: var(--pcob-burnt-lightest);
-  color: var(--pcob-burnt-dark);
+  color: var(--pcob-burnt-darkest);
   border-color: var(--pcob-burnt-dark);
 }
 
@@ -547,30 +547,6 @@
 /* #endregion =========    END BRAND COLOR CLASSES    ========= */
 
 /* #region =========    IN PROGRESS    ========= */
-
-  .pcob-test-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    font-family: "Gineso", "Gineso LT", sans-serif;
-  }
-
-  .pcob-test-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .pcob-test-box {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    border: 4px solid;
-    border-radius: 6px;
-    min-width: 120px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  }
 
 /* #region ====== Pamplin Buttons ====== */
 
@@ -1130,11 +1106,37 @@
 
 /* #endregion ====== End Pamplin Buttons ====== */
 
-
-
 /* #endregion =========    END IN PROGRESS    ========= */
 
 /* #region =========    TESTED    ========= */
+
+/* #region === CSS Test Box === */
+
+  .pcob-test-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    font-family: "Gineso", "Gineso LT", sans-serif;
+  }
+
+  .pcob-test-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .pcob-test-box {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: 4px solid;
+    border-radius: 6px;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  /* #endregion === End CSS Test Box === */
 
 /* #region === Warning Stripes === */
 
