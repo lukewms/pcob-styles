@@ -1808,3 +1808,14 @@ var(--black) 40px
     .vt-dots button.active {
       background: #CA4F00;
     }
+
+
+/* === KEEP THIS AS THE LAST LINK-COLOUR BLOCK =================== */
+.pcob-button,
+.pcob-button:link,
+.pcob-button:visited,
+.pcob-button:hover,
+.pcob-button:active,
+.pcob-button:focus-visible {
+  color: var(--btn-fg);
+}
