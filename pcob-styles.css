@@ -386,7 +386,7 @@
   --btn-bg: var(--pcob-grey);
   --btn-fg: var(--black);
   --btn-bg-hover: var(--pcob-grey--2);
-  --btn-shadow: 0 4px 10px var(--pcob-grey);
+  --btn-shadow: 0 4px 10px var(--pcob-grey--2);
   --btn-outline: var(--pcob-grey);
 }
 
@@ -409,7 +409,7 @@
   border-color: var(--black);
   --btn-bg: var(--pcob-stone-darker);
   --btn-fg: var(--white);
-  --btn-bg-hover: var(--pcob-stone-darkest);
+  --btn-bg-hover: var(--pcob-stone-darker);
   --btn-shadow: 0 4px 10px var(--pcob-stone);
   --btn-outline: var(--pcob-stone-darker);
 }
@@ -444,7 +444,7 @@
   --btn-bg: var(--pcob-maroon-darker);
   --btn-fg: var(--white);
   --btn-bg-hover: var(--pcob-maroon-darkest);
-  --btn-shadow: 0 4px 10px var(--pcob-maroon);
+  --btn-shadow: 0 4px 10px var(--pcob-maroon-darkest);
   --btn-outline: var(--pcob-maroon-darker);
 }
 
@@ -455,7 +455,7 @@
   --btn-bg: var(--pcob-maroon);
   --btn-fg: var(--white);
   --btn-bg-hover: var(--pcob-maroon-darker);
-  --btn-shadow: 0 4px 10px var(--pcob-maroon);
+  --btn-shadow: 0 4px 10px var(--pcob-maroon-darker);
   --btn-outline: var(--pcob-maroon);
 }
 
@@ -465,7 +465,7 @@
   border-color: var(--pcob-maroon-darker);
   --btn-bg: var(--pcob-maroon-lightest);
   --btn-fg: var(--pcob-maroon-dark);
-  --btn-bg-hover: var(--pcob-maroon-light);
+  --btn-bg-hover: var(--pcob-maroon-lighter);
   --btn-shadow: 0 4px 10px var(--pcob-maroon-lighter);
   --btn-outline: var(--pcob-maroon-lightest);
 }
