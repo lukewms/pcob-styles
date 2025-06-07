@@ -536,12 +536,28 @@
 
 /* Default Fallback Class */
 
-.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-orange):not(.pcob-yellow):not(.pcob-pink):not(.pcob-purple):not(.pcob-teal):not(.pcob-turquoise):not(.pcob-gray):not(.pcob-black):not(.pcob-light-maroon):not(.pcob-light-orange):not(.pcob-light-yellow):not(.pcob-light-pink):not(.pcob-light-purple):not(.pcob-light-teal):not(.pcob-light-turquoise) {
+.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
+              :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
+              :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
+              :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
+              :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
+              :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
+              :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
+              :not(.pcob-gray):not(.pcob-light-gray):not(.pcob-dark-gray)
+              :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black) {
   background-color: var(--black);
   color: var(--white);
 }
 
-.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-orange):not(.pcob-yellow):not(.pcob-pink):not(.pcob-purple):not(.pcob-teal):not(.pcob-turquoise):not(.pcob-gray):not(.pcob-black):not(.pcob-light-maroon):not(.pcob-light-orange):not(.pcob-light-yellow):not(.pcob-light-pink):not(.pcob-light-purple):not(.pcob-light-teal):not(.pcob-light-turquoise):hover {
+.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
+              :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
+              :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
+              :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
+              :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
+              :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
+              :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
+              :not(.pcob-gray):not(.pcob-light-gray):not(.pcob-dark-gray)
+              :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black):hover {
   background-color: #333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
@@ -683,45 +699,53 @@
 /* === Focus Outline Overrides === */
 
 .pcob-button.pcob-maroon:focus-visible,
-.pcob-button.pcob-light-maroon:focus-visible {
+.pcob-button.pcob-light-maroon:focus-visible,
+.pcob-button.pcob-dark-maroon:focus-visible {
   outline: 3px solid var(--pcob-maroon);
 }
 
 .pcob-button.pcob-orange:focus-visible,
-.pcob-button.pcob-light-orange:focus-visible {
+.pcob-button.pcob-light-orange:focus-visible,
+.pcob-button.pcob-dark-orange:focus-visible {
   outline: 3px solid var(--pcob-orange);
 }
 
 .pcob-button.pcob-yellow:focus-visible,
-.pcob-button.pcob-light-yellow:focus-visible {
+.pcob-button.pcob-light-yellow:focus-visible,
+.pcob-button.pcob-dark-yellow:focus-visible {
   outline: 3px solid var(--pcob-yellow);
 }
 
 .pcob-button.pcob-pink:focus-visible,
-.pcob-button.pcob-light-pink:focus-visible {
+.pcob-button.pcob-light-pink:focus-visible,
+.pcob-button.pcob-dark-pink:focus-visible {
   outline: 3px solid var(--pcob-pink);
 }
 
 .pcob-button.pcob-purple:focus-visible,
-.pcob-button.pcob-light-purple:focus-visible {
+.pcob-button.pcob-light-purple:focus-visible,
+.pcob-button.pcob-dark-purple:focus-visible {
   outline: 3px solid var(--pcob-purple);
 }
 
 .pcob-button.pcob-teal:focus-visible,
-.pcob-button.pcob-light-teal:focus-visible {
+.pcob-button.pcob-light-teal:focus-visible,
+.pcob-button.pcob-dark-teal:focus-visible {
   outline: 3px solid var(--pcob-teal-dark);
 }
 
 .pcob-button.pcob-turquoise:focus-visible,
-.pcob-button.pcob-light-turquoise:focus-visible {
+.pcob-button.pcob-light-turquoise:focus-visible,
+.pcob-button.pcob-dark-turquoise:focus-visible {
   outline: 3px solid var(--pcob-turquoise);
 }
 
 .pcob-button.pcob-gray:focus-visible,
+.pcob-button.pcob-light-gray:focus-visible,
+.pcob-button.pcob-dark-gray:focus-visible,
 .pcob-button.pcob-black:focus-visible {
   outline: 3px solid var(--black);
 }
-
 
 
 /* OLD PREVIOUS Color Variants */
