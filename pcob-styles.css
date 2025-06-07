@@ -420,7 +420,7 @@
 
 .pcob-light-orange {
   background-color: var(--pcob-orange-lightest);
-  color: var(--pcob-orange-darker);
+  color: var(--pcob-orange-dark);
   border-color: var(--pcob-orange-dark);
 }
 
@@ -678,7 +678,7 @@
   box-shadow: 0 4px 10px var(--pcob-turquoise-1);
 }
 
-/* Light variants — retain text color flip */
+/* Light variants — retain text color flip 
 .pcob-button.pcob-light-maroon {
   color: var(--pcob-maroon);
 }
@@ -729,6 +729,8 @@
 .pcob-button.pcob-light-turquoise:hover {
   background-color: #BFF2ED;
 }
+
+*/
 
 /* Grey & Black */
 .pcob-button.pcob-grey {
