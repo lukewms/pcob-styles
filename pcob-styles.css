@@ -548,8 +548,25 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
-/* #region ====== Pamplin Buttons ====== */
+/* =============================================================
+   PCOB BUTTON SYSTEM • Refactor 2025‑06‑07
+   -------------------------------------------------------------
+   • One base component + tiny utility classes
+   • Colour, hover, outline & shadow are handled with CSS vars
+   • No monster :not() selector or duplicate rules
+   ============================================================= */
 
+/* 0. TOKEN FALLBACKS ------------------------------------------------ */
+:root {
+  /* Provide safe fallbacks so buttons still work if a utility is missing */
+  --btn-bg: var(--black);
+  --btn-fg: var(--white);
+  --btn-bg-hover: color-mix(in srgb, var(--btn-bg) 85%, black);
+  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  --btn-outline: var(--black);
+}
+
+/* 1. BASE COMPONENT ------------------------------------------------- */
 .pcob-button {
   display: inline-block;
   font-family: "Gineso", "Gineso LT", sans-serif;
@@ -563,550 +580,107 @@
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem 0;
   min-width: 44px;
   min-height: 44px;
+
+  /* use the vars */
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
 }
 
-.pcob-button:visited,
 .pcob-button:hover,
 .pcob-button:active {
-  color: var(--white);
-  text-decoration: none;
+  background-color: var(--btn-bg-hover);
+  box-shadow: var(--btn-shadow);
+  color: var(--btn-fg);
+}
+
+.pcob-button:visited {
+  color: var(--btn-fg);
 }
 
 .pcob-button:focus-visible {
-  outline: 3px solid var(--black);
+  outline: 3px solid var(--btn-outline);
   outline-offset: 3px;
 }
 
-/* Default Fallback Class */
+/* 2. SIZE MODIFIERS ------------------------------------------------- */
+.pcob-button--sm { font-size: 1.05rem; padding: 0.6rem 1.2rem; }
+.pcob-button--md { font-size: 1.2rem;  padding: 0.9rem 1.8rem; }
+.pcob-button--lg { font-size: 1.5rem;  padding: 1rem 2rem; min-width: 200px; }
 
-.pcob-button:not(.pcob-default):not(.pcob-button--sm):not(.pcob-button--md):not(.pcob-button--lg)
-             :not(.pcob-button--hero):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
-             :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
-             :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
-             :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
-             :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
-             :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
-             :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
-             :not(.pcob-grey):not(.pcob-light-grey):not(.pcob-dark-grey)
-             :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black) {
-  background-color: var(--black);
-  color: var(--white);
-}
+/* 3. COLOUR UTILITIES ------------------------------------------------
+   Each utility sets *only* the variables it needs.                 */
 
-.pcob-button:not(.pcob-default):not(.pcob-button--sm):not(.pcob-button--md)
-              :not(.pcob-button--lg):not(.pcob-button--hero):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
-              :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
-              :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
-              :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
-              :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
-              :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
-              :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
-              :not(.pcob-grey):not(.pcob-light-grey):not(.pcob-dark-grey)
-              :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black):hover {
-  background-color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
+/* === Greyscale & Default ----------------------------------------- */
+.pcob-default,
+.pcob-black             { --btn-bg:#000; --btn-fg:#fff; --btn-bg-hover:#333; }
+.pcob-gray,
+.pcob-grey              { --btn-bg:var(--pcob-grey);        --btn-fg:#000; --btn-bg-hover:#D7D2CB; }
+.pcob-dark-gray,
+.pcob-dark-grey         { --btn-bg:var(--pcob-grey-darker); --btn-bg-hover:#2B2B2B; }
+.pcob-light-gray,
+.pcob-light-grey        { --btn-bg:var(--pcob-grey-lightest); --btn-fg:#000; --btn-bg-hover:#E8E6E2; }
 
-.pcob-button.pcob-default {
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.pcob-button.pcob-default:hover {
-  background-color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.pcob-button.pcob-default:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 3px;
-}
-
-/* NEW Interactive Color Behaviors (hover + shadow) */
-
+/* === Brand Palette ------------------------------------------------ */
 /* Maroon */
-.pcob-button.pcob-maroon:hover {
-  background-color: var(--pcob-maroon--3);
-  box-shadow: 0 4px 10px var(--pcob-maroon-1)
-}
+.pcob-maroon            { --btn-bg:var(--pcob-maroon);            --btn-bg-hover:var(--pcob-maroon--3);            --btn-outline:var(--pcob-maroon); }
+.pcob-dark-maroon       { --btn-bg:var(--pcob-maroon-dark);       --btn-bg-hover:var(--pcob-maroon-darker);        --btn-outline:var(--pcob-maroon); }
+.pcob-light-maroon      { --btn-bg:var(--pcob-maroon-lightest);   --btn-fg:var(--pcob-maroon); --btn-bg-hover:#E7D2D9; --btn-outline:var(--pcob-maroon); }
 
 /* Orange */
-.pcob-button.pcob-orange:hover {
-  background-color: var(--pcob-orange--3);
-  box-shadow: 0 4px 10px var(--pcob-orange-1)
-}
+.pcob-orange            { --btn-bg:var(--pcob-orange);            --btn-bg-hover:var(--pcob-orange--3);            --btn-outline:var(--pcob-orange); }
+.pcob-dark-orange       { --btn-bg:var(--pcob-orange-dark);       --btn-bg-hover:var(--pcob-orange-darker);        --btn-outline:var(--pcob-orange); }
+.pcob-light-orange      { --btn-bg:#FDF1E9;                        --btn-fg:var(--pcob-orange--1); --btn-bg-hover:#FAE4D3; --btn-outline:var(--pcob-orange); }
 
 /* Yellow */
-.pcob-button.pcob-yellow {
-  color: var(--black);
-}
-
-.pcob-button.pcob-yellow:hover {
-  background-color: var(--pcob-yellow--3);
-  box-shadow: 0 4px 10px var(--pcob-yellow-1);
-}
+.pcob-yellow            { --btn-bg:var(--pcob-yellow);            --btn-fg:#000; --btn-bg-hover:var(--pcob-yellow--3); --btn-outline:var(--pcob-yellow); }
+.pcob-dark-yellow       { --btn-bg:var(--pcob-yellow-dark);       --btn-fg:#000; --btn-bg-hover:var(--pcob-yellow-darker); --btn-outline:var(--pcob-yellow); }
+.pcob-light-yellow      { --btn-bg:var(--pcob-yellow-lightest);   --btn-fg:var(--pcob-yellow-darker); --btn-bg-hover:#FBF4A3; --btn-outline:var(--pcob-yellow); }
 
 /* Pink */
-.pcob-button.pcob-pink:hover {
-  background-color: var(--pcob-pink--3);
-  box-shadow: 0 4px 10px var(--pcob-pink-1);
-}
+.pcob-pink              { --btn-bg:var(--pcob-pink);              --btn-bg-hover:var(--pcob-pink--3);              --btn-outline:var(--pcob-pink); }
+.pcob-dark-pink         { --btn-bg:var(--pcob-pink-dark);         --btn-bg-hover:var(--pcob-pink-darker);          --btn-outline:var(--pcob-pink); }
+.pcob-light-pink        { --btn-bg:var(--pcob-pink-lightest);     --btn-fg:var(--pcob-pink);     --btn-bg-hover:#F5CCDE; --btn-outline:var(--pcob-pink); }
 
 /* Purple */
-.pcob-button.pcob-purple:hover {
-  background-color: var(--pcob-purple--3);
-  box-shadow: 0 4px 10px var(--pcob-purple-1);
-}
+.pcob-purple            { --btn-bg:var(--pcob-purple);            --btn-bg-hover:var(--pcob-purple--3);            --btn-outline:var(--pcob-purple); }
+.pcob-dark-purple       { --btn-bg:var(--pcob-purple-dark);       --btn-bg-hover:var(--pcob-purple-darker);        --btn-outline:var(--pcob-purple); }
+.pcob-light-purple      { --btn-bg:var(--pcob-purple-lightest);   --btn-fg:var(--pcob-purple);   --btn-bg-hover:#D0BDD1; --btn-outline:var(--pcob-purple); }
 
 /* Teal */
-.pcob-button.pcob-teal:hover {
-  background-color: var(--pcob-teal--3);
-  box-shadow: 0 4px 10px var(--pcob-teal-1);
-}
+.pcob-teal              { --btn-bg:var(--pcob-teal-dark);         --btn-bg-hover:var(--pcob-teal-darker);          --btn-outline:var(--pcob-teal-dark); }
+.pcob-dark-teal         { --btn-bg:var(--pcob-teal-darker);       --btn-bg-hover:var(--pcob-teal--9);              --btn-outline:var(--pcob-teal-dark); }
+.pcob-light-teal        { --btn-bg:var(--pcob-teal-lighter);      --btn-fg:var(--pcob-teal-darker); --btn-bg-hover:#B9CED3; --btn-outline:var(--pcob-teal-dark); }
 
 /* Turquoise */
-.pcob-button.pcob-turquoise {
-  color: var(--black);
-}
-
-.pcob-button.pcob-turquoise:hover {
-  background-color: var(--pcob-turquoise--3);
-  box-shadow: 0 4px 10px var(--pcob-turquoise-1);
-}
-
-/* Light variants — retain text color flip 
-.pcob-button.pcob-light-maroon {
-  color: var(--pcob-maroon);
-}
-
-.pcob-button.pcob-light-maroon:hover {
-  background-color: #E7D2D9;
-}
-
-.pcob-button.pcob-light-orange {
-  color: var(--pcob-orange--1);
-}
-
-.pcob-button.pcob-light-orange:hover {
-  background-color: #FAE4D3;
-}
-
-.pcob-button.pcob-light-yellow {
-  color: var(--pcob-yellow-darker);
-}
-.pcob-button.pcob-light-yellow:hover {
-  background-color: #FBF4A3;
-}
-
-.pcob-button.pcob-light-pink {
-  color: var(--pcob-pink);
-}
-.pcob-button.pcob-light-pink:hover {
-  background-color: #F5CCDE;
-}
-
-.pcob-button.pcob-light-purple {
-  color: var(--pcob-purple);
-}
-.pcob-button.pcob-light-purple:hover {
-  background-color: #D0BDD1;
-}
-
-.pcob-button.pcob-light-teal {
-  color: var(--pcob-teal-darker);
-}
-.pcob-button.pcob-light-teal:hover {
-  background-color: #B9CED3;
-}
-
-.pcob-button.pcob-light-turquoise {
-  color: var(--pcob-turquoise-darker);
-}
-.pcob-button.pcob-light-turquoise:hover {
-  background-color: #BFF2ED;
-}
-
-*/
-
-/* Grey & Black */
-.pcob-button.pcob-grey {
-  color: #000;
-}
-.pcob-button.pcob-grey:hover {
-  background-color: #D7D2CB;
-}
-
-.pcob-button.pcob-black {
-  color: #fff;
-}
-.pcob-button.pcob-black:hover {
-  background-color: #333;
-}
-
-/* === Focus Outline Overrides === */
-
-.pcob-button.pcob-maroon:focus-visible,
-.pcob-button.pcob-light-maroon:focus-visible,
-.pcob-button.pcob-dark-maroon:focus-visible {
-  outline: 3px solid var(--pcob-maroon);
-}
-
-.pcob-button.pcob-orange:focus-visible,
-.pcob-button.pcob-light-orange:focus-visible,
-.pcob-button.pcob-dark-orange:focus-visible {
-  outline: 3px solid var(--pcob-orange);
-}
-
-.pcob-button.pcob-yellow:focus-visible,
-.pcob-button.pcob-light-yellow:focus-visible,
-.pcob-button.pcob-dark-yellow:focus-visible {
-  outline: 3px solid var(--pcob-yellow);
-}
-
-.pcob-button.pcob-pink:focus-visible,
-.pcob-button.pcob-light-pink:focus-visible,
-.pcob-button.pcob-dark-pink:focus-visible {
-  outline: 3px solid var(--pcob-pink);
-}
-
-.pcob-button.pcob-purple:focus-visible,
-.pcob-button.pcob-light-purple:focus-visible,
-.pcob-button.pcob-dark-purple:focus-visible {
-  outline: 3px solid var(--pcob-purple);
-}
-
-.pcob-button.pcob-teal:focus-visible,
-.pcob-button.pcob-light-teal:focus-visible,
-.pcob-button.pcob-dark-teal:focus-visible {
-  outline: 3px solid var(--pcob-teal-dark);
-}
-
-.pcob-button.pcob-turquoise:focus-visible,
-.pcob-button.pcob-light-turquoise:focus-visible,
-.pcob-button.pcob-dark-turquoise:focus-visible {
-  outline: 3px solid var(--pcob-turquoise);
-}
-
-.pcob-button.pcob-grey:focus-visible,
-.pcob-button.pcob-light-grey:focus-visible,
-.pcob-button.pcob-dark-grey:focus-visible,
-.pcob-button.pcob-black:focus-visible {
-  outline: 3px solid var(--black);
-}
-
-
-/* OLD PREVIOUS Color Variants */
-
-.pcob-button--maroon {
-  background-color: var(--pcob-maroon);
-}
-
-.pcob-button--maroon:hover {
-  background-color: var(--pcob-maroon--3);
-}
-
-.pcob-button--light-maroon {
-  background-color: var(--pcob-maroon-lightest);
-  color: var(--pcob-maroon) !important;
-}
-
-.pcob-button--light-maroon:hover {
-  background-color: #E7D2D9;
-  color: var(--pcob-maroon);
-}
-
-.pcob-button--orange {
-  background-color: var(--pcob-orange);
-}
-
-.pcob-button--orange:hover {
-  background-color: var(--pcob-orange--2)
-}
-
-.pcob-button--light-orange {
-  background-color: #FDF1E9;
-  color: var(--pcob-orange--1) !important;
-}
-
-.pcob-button--light-orange:hover {
-  background-color: #FAE4D3;
-  color: var(--pcob-orange--1);
-}
-
-.pcob-button--yellow {
-  background-color: var(--pcob-yellow);
-  color: var(--pcob-yellow-darker) !important;
-}
-
-.pcob-button--yellow:hover {
-  background-color: var(--pcob-yellow--1);
-  color: #000;
-}
-
-.pcob-button--light-yellow {
-  background-color: var(--pcob-yellow-lightest);
-  color: var(--pcob-yellow-darker) !important;
-}
-
-.pcob-button--light-yellow:hover {
-  background-color: #FBF4A3;
-  color: var(--pcob-yellow-darker);
-}
-
-.pcob-button--pink {
-  background-color: var(--pcob-pink);
-}
-
-.pcob-button--pink:hover {
-  background-color: var(--pcob-pink-dark);
-}
-
-.pcob-button--light-pink {
-  background-color: var(--pcob-pink-lightest);
-  color: var(--pcob-pink) !important;
-}
-
-.pcob-button--light-pink:hover {
-  background-color: #F5CCDE;
-  color: var(--pcob-pink);
-}
-
-.pcob-button--purple {
-  background-color: var(--pcob-purple);
-}
-
-.pcob-button--purple:hover {
-  background-color: var(--pcob-purple-dark);
-}
-
-.pcob-button--light-purple {
-  background-color: var(--pcob-purple-lightest);
-  color: var(--pcob-purple) !important;
-}
-
-.pcob-button--light-purple:hover {
-  background-color: #D0BDD1;
-  color: var(--pcob-purple);
-}
-
-.pcob-button--teal {
-  background-color: var(--pcob-teal-dark);
-}
-
-.pcob-button--teal:hover {
-  background-color: var(--pcob-teal-darker);
-}
-
-.pcob-button--light-teal {
-  background-color: var(--pcob-teal-lighter);
-  color: var(--pcob-teal-darker) !important;
-}
-
-.pcob-button--light-teal:hover {
-  background-color: #B9CED3;
-  color: var(--pcob-teal-darker);
-}
-
-.pcob-button--turquoise {
-  background-color: var(--pcob-turquoise);
-  color: #000 !important;
-}
-
-.pcob-button--turquoise:hover {
-  background-color: var(--pcob-turquoise--3);
-  color: #000;
-}
-
-.pcob-button--light-turquoise {
-  background-color: var(--pcob-turquoise-lightest);
-  color: var(--pcob-turquoise-darker) !important;
-}
-
-.pcob-button--light-turquoise:hover {
-  background-color: #BFF2ED;
-  color: var(--pcob-turquoise-darker);
-}
-
-.pcob-button--grey {
-  background-color: var(--pcob-smoke);
-  color: #000 !important;
-}
-.pcob-button--grey:hover {
-  background-color: #D7D2CB;
-  color: #000;
-}
-
-.pcob-button--black {
-  background-color: #000;
-  color: #fff;
-}
-.pcob-button--black:hover {
-  background-color: #333;
-  color: #fff;
-}
-
-/* Color Outlines for Keyboard Focus */
-
-/* Use black outline on black and grey buttons */
-.pcob-button--black:focus-visible,
-.pcob-button--grey:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 3px;
-}
-
-/* Use maroon outline on maroon and light maroon buttons */
-.pcob-button--maroon:focus-visible,
-.pcob-button--light-maroon:focus-visible {
-  outline: 3px solid var(--pcob-maroon);
-  outline-offset: 3px;
-}
-
-/* Use orange outline on orange and light orange buttons */
-.pcob-button--orange:focus-visible,
-.pcob-button--light-orange:focus-visible {
-  outline: 3px solid var(--pcob-orange);
-  outline-offset: 3px;
-}
-
-/* Use yellow outline on yellow and light yellow buttons */
-.pcob-button--yellow:focus-visible,
-.pcob-button--light-yellow:focus-visible {
-  outline: 3px solid var(--pcob-yellow);
-  outline-offset: 3px;
-}
-
-/* Use pink outline on pink and light pink buttons */
-.pcob-button--pink:focus-visible,
-.pcob-button--light-pink:focus-visible {
-  outline: 3px solid var(--pcob-pink);
-  outline-offset: 3px;
-}
-
-/* Use purple outline on purple and light purple buttons */
-.pcob-button--purple:focus-visible,
-.pcob-button--light-purple:focus-visible {
-  outline: 3px solid var(--pcob-purple);
-  outline-offset: 3px;
-}
-
-/* Use teal outline on teal and light teal buttons */
-.pcob-button--teal:focus-visible,
-.pcob-button--light-teal:focus-visible {
-  outline: 3px solid var(--pcob-teal-dark);
-  outline-offset: 3px;
-}
-
-/* Use turquoise outline on turquoise and light turquoise buttons */
-.pcob-button--turquoise:focus-visible,
-.pcob-button--light-turquoise:focus-visible {
-  outline: 3px solid var(--pcob-turquoise);
-  outline-offset: 3px;
-}
-
-/* Size Variants */
-.pcob-button--sm {
-  font-size: 1.05rem; /* Increased by ~20% */
-  padding: 0.6rem 1.2rem;
-}
-
-.pcob-button--md {
-  font-size: 1.2rem; /* Increased by ~20% */
-  padding: 0.9rem 1.8rem;
-}
-
-.pcob-button--lg {
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
-  min-width: 200px;
-}
-
-/* Remove margin from the last button in a row when needed */
-.pcob-button:last-child {
-  margin-right: 0;
-}
-
-/* Hero Variant */
-.pcob-hero-button-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  margin: 2rem auto 0 auto;
-  padding: 0 1rem;
-  max-width: 100%;
-  box-sizing: border-box;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-
+.pcob-turquoise         { --btn-bg:var(--pcob-turquoise);         --btn-fg:#000; --btn-bg-hover:var(--pcob-turquoise--3); --btn-outline:var(--pcob-turquoise); }
+.pcob-dark-turquoise    { --btn-bg:var(--pcob-turquoise-dark);    --btn-fg:#000; --btn-bg-hover:var(--pcob-turquoise-darker); --btn-outline:var(--pcob-turquoise); }
+.pcob-light-turquoise   { --btn-bg:var(--pcob-turquoise-lightest); --btn-fg:var(--pcob-turquoise-darker); --btn-bg-hover:#BFF2ED; --btn-outline:var(--pcob-turquoise); }
+
+/* Burnt */
+.pcob-burnt             { --btn-bg:var(--pcob-burnt);             --btn-bg-hover:var(--pcob-burnt--3);             --btn-outline:var(--pcob-burnt); }
+.pcob-dark-burnt        { --btn-bg:var(--pcob-burnt-dark);        --btn-bg-hover:var(--pcob-burnt-darker);         --btn-outline:var(--pcob-burnt); }
+.pcob-light-burnt       { --btn-bg:var(--pcob-burnt-lightest);    --btn-fg:var(--pcob-burnt);     --btn-bg-hover:#F6E4DF; --btn-outline:var(--pcob-burnt); }
+
+/* 4. HERO VARIANT --------------------------------------------------- */
 .pcob-button--hero {
-  background-color: #CA4F00;
-  color: white;
-  font-family: "Gineso", "Gineso LT", sans-serif;
-  font-style: italic;
-  font-weight: 700;
-  text-transform: uppercase;
+  --btn-bg: #CA4F00; /* directly override for hero */
+  --btn-fg: #fff;
+  --btn-bg-hover: #861F41;
   font-size: clamp(1.2rem, 3vw, 8rem);
   padding: 20px 48px;
-  min-width: 200px;
-  text-align: center;
-  border: none;
   border-radius: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
-  display: inline-block;
-  flex: 0 0 auto;
 }
 
-.pcob-button--hero:hover {
-  background-color: #861F41;
-  color: white;
-  text-decoration: none;
+@media (min-width:1020px) {
+  .pcob-button--hero { min-width:260px; padding:20px 120px; font-size:2.25rem; }
+}
+@media (max-width:545px) {
+  .pcob-button--hero { width:100%; text-align:center; padding:0.7em 1.25em; font-size:1.25em; }
 }
 
-@media screen and (min-width: 1020px) {
-  .pcob-hero-button-group {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    justify-content: center;
-  }
-
-  .pcob-button--hero {
-    min-width: 260px;
-    padding: 20px 120px;
-    font-size: 2.25rem;
-  }
-}
-
-@media screen and (max-width: 545px) {
-  .pcob-hero-button-group {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-    width: 75%;
-    margin: 0 auto;
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
-
-  .pcob-button--hero {
-    width: 100%;
-    text-align: center;
-    padding: 0.7em 1.25em;
-    font-size: 1.25em;
-    box-sizing: border-box;
-  }
-}
-
-
-/* #endregion ====== End Pamplin Buttons ====== */
 
 /* #endregion =========    END IN PROGRESS    ========= */
 
