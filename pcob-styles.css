@@ -350,7 +350,7 @@
   --btn-bg: var(--black);
   --btn-fg: var(--white);
   --btn-bg-hover: #333;
-  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  --btn-shadow: 0 4px 10px var(--black);
   --btn-outline: var(--black);
 }
 
@@ -361,7 +361,7 @@
   --btn-bg: var(--black);
   --btn-fg: var(--white);
   --btn-bg-hover: #333;
-  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  --btn-shadow: 0 4px 10px var(--black);
   --btn-outline: var(--black);
 }
 
@@ -373,8 +373,8 @@
   border-color: var(--black);
   --btn-bg: var(--pcob-grey-darkest);
   --btn-fg: var(--white);
-  --btn-bg-hover: #2B2B2B;
-  --btn-shadow: 0 4px 10px rgba(51, 51, 51, 0.35);
+  --btn-bg-hover: var(--pcob-grey-darker);
+  --btn-shadow: 0 4px 10px var(--pcob-grey-darkest);
   --btn-outline: var(--pcob-grey-darkest);
 }
 
@@ -385,20 +385,20 @@
   border-color: var(--pcob-grey-darker);
   --btn-bg: var(--pcob-grey);
   --btn-fg: var(--black);
-  --btn-bg-hover: #D7D2CB;
-  --btn-shadow: 0 4px 10px rgba(186, 178, 164, 0.35);
+  --btn-bg-hover: var(--pcob-grey-dark);
+  --btn-shadow: 0 4px 10px var(--pcob-grey-darker);
   --btn-outline: var(--pcob-grey);
 }
 
 .pcob-light-grey,
 .pcob-light-gray {
-  background-color: var(--pcob-grey-lightest);
+  background-color: var(--pcob-grey-lighter);
   color: var(--black);
   border-color: var(--pcob-grey-light);
-  --btn-bg: var(--pcob-grey-lightest);
+  --btn-bg: var(--pcob-grey-lighter);
   --btn-fg: var(--black);
-  --btn-bg-hover: #E8E5DF;
-  --btn-shadow: 0 4px 10px rgba(223, 219, 213, 0.35);
+  --btn-bg-hover: var(--pcob-grey-light);
+  --btn-shadow: 0 4px 10px var(--pcob-grey-light);
   --btn-outline: var(--pcob-grey-lightest);
 }
 
