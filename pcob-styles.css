@@ -527,9 +527,9 @@
 /* Yellow */
 
 .pcob-dark-yellow {
-  background-color: var(--pcob-yellow-dark);
+  background-color: var(--pcob-yellow-darker);
   color: var(--white);
-  border-color: var(--pcob-yellow-dark);
+  border-color: var(--pcob-yellow-darkest);
 }
 
 .pcob-yellow {
