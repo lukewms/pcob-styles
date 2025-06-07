@@ -672,6 +672,25 @@
 .pcob-dark-burnt        { --btn-bg:var(--pcob-burnt-dark);        --btn-bg-hover:var(--pcob-burnt-darker);         --btn-outline:var(--pcob-burnt); }
 .pcob-light-burnt       { --btn-bg:var(--pcob-burnt-lightest);    --btn-fg:var(--pcob-burnt);     --btn-bg-hover:#F6E4DF; --btn-outline:var(--pcob-burnt); }
 
+.pcob-dark-gray,
+.pcob-dark-grey,
+.pcob-maroon,
+.pcob-dark-maroon,
+.pcob-orange,
+.pcob-dark-orange,
+.pcob-pink,
+.pcob-dark-pink,
+.pcob-purple,
+.pcob-dark-purple,
+.pcob-teal,
+.pcob-dark-teal,
+.pcob-turquoise,
+.pcob-dark-turquoise,
+.pcob-burnt,
+.pcob-dark-burnt {
+  --btn-fg:#fff;          /* high-contrast white text */
+}
+
 /* 4. HERO VARIANT --------------------------------------------------- */
 .pcob-button--hero {
   --btn-bg: #CA4F00; /* directly override for hero */
