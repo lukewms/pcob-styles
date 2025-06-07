@@ -350,7 +350,7 @@
   --btn-bg: var(--black);
   --btn-fg: var(--white);
   --btn-bg-hover: #333;
-  --btn-shadow: 0 4px 10px var(--black);
+  --btn-shadow: 0 4px 10px #333;
   --btn-outline: var(--black);
 }
 
@@ -361,7 +361,7 @@
   --btn-bg: var(--black);
   --btn-fg: var(--white);
   --btn-bg-hover: #333;
-  --btn-shadow: 0 4px 10px var(--black);
+  --btn-shadow: 0 4px 10px #333;
   --btn-outline: var(--black);
 }
 
@@ -374,7 +374,7 @@
   --btn-bg: var(--pcob-grey-darkest);
   --btn-fg: var(--white);
   --btn-bg-hover: var(--pcob-grey-darker);
-  --btn-shadow: 0 4px 10px var(--pcob-grey-darkest);
+  --btn-shadow: 0 4px 10px var(--pcob-grey);
   --btn-outline: var(--pcob-grey-darkest);
 }
 
@@ -385,8 +385,8 @@
   border-color: var(--pcob-grey-darker);
   --btn-bg: var(--pcob-grey);
   --btn-fg: var(--black);
-  --btn-bg-hover: var(--pcob-grey-dark);
-  --btn-shadow: 0 4px 10px var(--pcob-grey-darker);
+  --btn-bg-hover: var(--pcob-grey--2);
+  --btn-shadow: 0 4px 10px var(--pcob-grey);
   --btn-outline: var(--pcob-grey);
 }
 
