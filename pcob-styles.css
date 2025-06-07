@@ -517,7 +517,144 @@
   box-shadow: 0 4px 10px rgba(247, 234, 72, 0.35);
 }
 
-/* Color Variants */
+/* Pink */
+.pcob-button.pcob-pink:hover {
+  background-color: var(--pcob-pink--2);
+  box-shadow: 0 4px 10px rgba(206, 0, 88, 0.35);
+}
+
+/* Purple */
+.pcob-button.pcob-purple:hover {
+  background-color: var(--pcob-purple--2);
+  box-shadow: 0 4px 10px rgba(100, 38, 103, 0.35);
+}
+
+/* Teal */
+.pcob-button.pcob-teal:hover {
+  background-color: var(--pcob-teal--2);
+  box-shadow: 0 4px 10px rgba(80, 133, 144, 0.35);
+}
+
+/* Turquoise */
+.pcob-button.pcob-turquoise {
+  color: var(--black);
+}
+.pcob-button.pcob-turquoise:hover {
+  background-color: var(--pcob-turquoise--2);
+  box-shadow: 0 4px 10px rgba(44, 213, 196, 0.35);
+}
+
+/* Light variants — retain text color flip */
+.pcob-button.pcob-light-maroon {
+  color: var(--pcob-maroon);
+}
+.pcob-button.pcob-light-maroon:hover {
+  background-color: #E7D2D9;
+}
+
+.pcob-button.pcob-light-orange {
+  color: var(--pcob-orange--1);
+}
+.pcob-button.pcob-light-orange:hover {
+  background-color: #FAE4D3;
+}
+
+.pcob-button.pcob-light-yellow {
+  color: var(--pcob-yellow-darker);
+}
+.pcob-button.pcob-light-yellow:hover {
+  background-color: #FBF4A3;
+}
+
+.pcob-button.pcob-light-pink {
+  color: var(--pcob-pink);
+}
+.pcob-button.pcob-light-pink:hover {
+  background-color: #F5CCDE;
+}
+
+.pcob-button.pcob-light-purple {
+  color: var(--pcob-purple);
+}
+.pcob-button.pcob-light-purple:hover {
+  background-color: #D0BDD1;
+}
+
+.pcob-button.pcob-light-teal {
+  color: var(--pcob-teal-darker);
+}
+.pcob-button.pcob-light-teal:hover {
+  background-color: #B9CED3;
+}
+
+.pcob-button.pcob-light-turquoise {
+  color: var(--pcob-turquoise-darker);
+}
+.pcob-button.pcob-light-turquoise:hover {
+  background-color: #BFF2ED;
+}
+
+/* Gray & Black */
+.pcob-button.pcob-gray {
+  color: #000;
+}
+.pcob-button.pcob-gray:hover {
+  background-color: #D7D2CB;
+}
+
+.pcob-button.pcob-black {
+  color: #fff;
+}
+.pcob-button.pcob-black:hover {
+  background-color: #333;
+}
+
+/* === Focus Outline Overrides === */
+
+.pcob-button.pcob-maroon:focus-visible,
+.pcob-button.pcob-light-maroon:focus-visible {
+  outline: 3px solid var(--pcob-maroon);
+}
+
+.pcob-button.pcob-orange:focus-visible,
+.pcob-button.pcob-light-orange:focus-visible {
+  outline: 3px solid var(--pcob-orange);
+}
+
+.pcob-button.pcob-yellow:focus-visible,
+.pcob-button.pcob-light-yellow:focus-visible {
+  outline: 3px solid var(--pcob-yellow);
+}
+
+.pcob-button.pcob-pink:focus-visible,
+.pcob-button.pcob-light-pink:focus-visible {
+  outline: 3px solid var(--pcob-pink);
+}
+
+.pcob-button.pcob-purple:focus-visible,
+.pcob-button.pcob-light-purple:focus-visible {
+  outline: 3px solid var(--pcob-purple);
+}
+
+.pcob-button.pcob-teal:focus-visible,
+.pcob-button.pcob-light-teal:focus-visible {
+  outline: 3px solid var(--pcob-teal-dark);
+}
+
+.pcob-button.pcob-turquoise:focus-visible,
+.pcob-button.pcob-light-turquoise:focus-visible {
+  outline: 3px solid var(--pcob-turquoise);
+}
+
+.pcob-button.pcob-gray:focus-visible,
+.pcob-button.pcob-black:focus-visible {
+  outline: 3px solid var(--black);
+}
+
+
+
+/* OLD PREVIOUS Color Variants */
+
 .pcob-button--maroon {
   background-color: var(--pcob-maroon);
 }
