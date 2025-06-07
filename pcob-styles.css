@@ -447,9 +447,9 @@
 /* Teal */
 
 .pcob-dark-teal {
-  background-color: var(--pcob-teal-dark);
+  background-color: var(--pcob-teal-darker);
   color: var(--white);
-  border-color: var(--pcob-teal-darker);
+  border-color: var(--pcob-teal-darkest);
 }
 
 .pcob-teal {
@@ -526,16 +526,16 @@
 
 /* Yellow */
 
+.pcob-dark-yellow {
+  background-color: var(--pcob-yellow-dark);
+  color: var(--white);
+  border-color: var(--pcob-yellow-dark);
+}
+
 .pcob-yellow {
   background-color: var(--pcob-yellow);
   color: var(--black);
   border-color: var(--pcob-yellow-darker);
-}
-
-.pcob-dark-yellow {
-  background-color: var(--pcob-yellow-dark);
-  color: var(--black);
-  border-color: var(--pcob-yellow-dark);
 }
 
 .pcob-light-yellow {
