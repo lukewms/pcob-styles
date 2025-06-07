@@ -504,7 +504,6 @@
 .pcob-text-band-center,
 .pcob-text-band-right {
   display: flex;
-  padding: 4rem;
   box-sizing: border-box;
   width: 100%;
 }
