@@ -626,6 +626,10 @@
 .pcob-dark-grey         { --btn-bg:var(--pcob-grey-darker); --btn-bg-hover:#2B2B2B; }
 .pcob-light-gray,
 .pcob-light-grey        { --btn-bg:var(--pcob-grey-lightest); --btn-fg:#000; --btn-bg-hover:#E8E6E2; }
+.pcob-stone             { --btn-bg:var(--pcob-stone);        --btn-fg:#000; }
+.pcob-dark-stone        { --btn-bg:var(--pcob-stone-dark);   --btn-fg:#fff; }
+.pcob-light-stone       { --btn-bg:var(--pcob-stone-light);  --btn-fg:#000; }
+
 
 /* === Brand Palette ------------------------------------------------ */
 /* Maroon */
@@ -640,7 +644,7 @@
 
 /* Yellow */
 .pcob-yellow            { --btn-bg:var(--pcob-yellow);            --btn-fg:#000; --btn-bg-hover:var(--pcob-yellow--3); --btn-outline:var(--pcob-yellow); }
-.pcob-dark-yellow       { --btn-bg:var(--pcob-yellow-dark);       --btn-fg:#000; --btn-bg-hover:var(--pcob-yellow-darker); --btn-outline:var(--pcob-yellow); }
+.pcob-dark-yellow       { --btn-bg:var(--pcob-yellow-darker);       --btn-fg:#fff; --btn-bg-hover:var(--pcob-yellow-darkest); --btn-outline:var(--pcob-yellow); }
 .pcob-light-yellow      { --btn-bg:var(--pcob-yellow-lightest);   --btn-fg:var(--pcob-yellow-darker); --btn-bg-hover:#FBF4A3; --btn-outline:var(--pcob-yellow); }
 
 /* Pink */
@@ -660,7 +664,7 @@
 
 /* Turquoise */
 .pcob-turquoise         { --btn-bg:var(--pcob-turquoise);         --btn-fg:#000; --btn-bg-hover:var(--pcob-turquoise--3); --btn-outline:var(--pcob-turquoise); }
-.pcob-dark-turquoise    { --btn-bg:var(--pcob-turquoise-dark);    --btn-fg:#000; --btn-bg-hover:var(--pcob-turquoise-darker); --btn-outline:var(--pcob-turquoise); }
+.pcob-dark-turquoise    { --btn-bg:var(--pcob-turquoise-dark);    --btn-fg:#fff; --btn-bg-hover:var(--pcob-turquoise-darker); --btn-outline:var(--pcob-turquoise); }
 .pcob-light-turquoise   { --btn-bg:var(--pcob-turquoise-lightest); --btn-fg:var(--pcob-turquoise-darker); --btn-bg-hover:#BFF2ED; --btn-outline:var(--pcob-turquoise); }
 
 /* Burnt */
