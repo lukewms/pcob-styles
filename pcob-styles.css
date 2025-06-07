@@ -460,501 +460,8 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
-/* #region ======= Pamplin Band Styles ======= */
 
-.pcob-3-1-image-band,
-.pcob-1-3-image-band,
-.pcob-2-1-image-band,
-.pcob-1-2-image-band,
-.pcob-3-1-image-band-stacking,
-.pcob-1-3-image-band-stacking,
-.pcob-2-1-image-band-stacking,
-.pcob-1-2-image-band-stacking,
-.pcob-3-1-image-band-hiding,
-.pcob-1-3-image-band-hiding,
-.pcob-2-1-image-band-hiding,
-.pcob-1-2-image-band-hiding {
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0;
-  min-height: 400px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.pcob-3-1-image-band,
-.pcob-2-1-image-band,
-.pcob-3-1-image-band-stacking,
-.pcob-2-1-image-band-stacking,
-.pcob-3-1-image-band-hiding,
-.pcob-2-1-image-band-hiding {
-  flex-direction: row;
-}
-
-.pcob-1-3-image-band,
-.pcob-1-2-image-band,
-.pcob-1-3-image-band-stacking,
-.pcob-1-2-image-band-stacking,
-.pcob-1-3-image-band-hiding,
-.pcob-1-2-image-band-hiding {
-  flex-direction: row-reverse;
-}
-
-.pcob-text-band-left,
-.pcob-text-band-center,
-.pcob-text-band-right {
-  display: flex;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.pcob-text-band-left .pcob-band-text,
-.pcob-text-band-center .pcob-band-text,
-.pcob-text-band-right .pcob-band-text {
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.pcob-text-band-left {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.pcob-text-band-left .pcob-band-text {
-  align-items: flex-start;
-  text-align: left;
-}
-
-.pcob-text-band-center {
-  justify-content: center;
-  text-align: center;
-}
-
-.pcob-text-band-center .pcob-band-text {
-  align-items: center;
-  text-align: center;
-}
-
-.pcob-text-band-right {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-.pcob-text-band-right .pcob-band-text {
-  align-items: flex-end;
-  text-align: right;
-}
-
-.pcob-band-text {
-  flex: 3;
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 100%;
-}
-
-.pcob-band-text > div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: flex-start;
-}
-
-.pcob-band-text a.pcob-button {
-  margin: 0;
-}
-
-.pcob-band-image-bg {
-  flex: 1.5;
-  min-width: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: auto;
-}
-
-.pcob-2-1-image-band .pcob-band-text,
-.pcob-1-2-image-band .pcob-band-text,
-.pcob-2-1-image-band-stacking .pcob-band-text,
-.pcob-1-2-image-band-stacking .pcob-band-text,
-.pcob-2-1-image-band-hiding .pcob-band-text,
-.pcob-1-2-image-band-hiding .pcob-band-text {
-  flex: 2;
-}
-
-.pcob-2-1-image-band .pcob-band-image-bg,
-.pcob-1-2-image-band .pcob-band-image-bg,
-.pcob-2-1-image-band-stacking .pcob-band-image-bg,
-.pcob-1-2-image-band-stacking .pcob-band-image-bg,
-.pcob-2-1-image-band-hiding .pcob-band-image-bg,
-.pcob-1-2-image-band-hiding .pcob-band-image-bg {
-  flex: 2;
-}
-
-.pcob-band-heading {
-  font-family: "Gineso", "Gineso LT", sans-serif;
-  font-style: italic;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: clamp(2.5rem, 4vw, 3rem);
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
-  color: inherit;
-}
-
-.pcob-band-body {
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  color: inherit;
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-  .pcob-band-text,
-  .pcob-text-band-left .pcob-band-text,
-  .pcob-text-band-center .pcob-band-text,
-  .pcob-text-band-right .pcob-band-text {
-    padding: 2rem;
-    text-align: center;
-    align-items: center;
-  }
-
-  .pcob-band-text > div {
-    justify-content: center;
-  }
-
-  .pcob-3-1-image-band-hiding,
-  .pcob-1-3-image-band-hiding,
-  .pcob-2-1-image-band-hiding,
-  .pcob-1-2-image-band-hiding {
-    flex-direction: column;
-  }
-
-  .pcob-3-1-image-band-hiding .pcob-band-image-bg,
-  .pcob-1-3-image-band-hiding .pcob-band-image-bg,
-  .pcob-2-1-image-band-hiding .pcob-band-image-bg,
-  .pcob-1-2-image-band-hiding .pcob-band-image-bg {
-    display: none;
-  }
-
-  .pcob-3-1-image-band-stacking,
-  .pcob-1-3-image-band-stacking,
-  .pcob-2-1-image-band-stacking,
-  .pcob-1-2-image-band-stacking {
-    flex-direction: column;
-  }
-
-  .pcob-3-1-image-band-stacking .pcob-band-image-bg,
-  .pcob-1-3-image-band-stacking .pcob-band-image-bg,
-  .pcob-2-1-image-band-stacking .pcob-band-image-bg,
-  .pcob-1-2-image-band-stacking .pcob-band-image-bg {
-    display: block;
-    order: -1;
-    width: 100%;
-    height: 300px;
-    flex: none;
-  }
-
-  .pcob-band-text a.pcob-button {
-    width: auto;
-    display: inline-block;
-  }
-}
-
-/* #endregion ======= End Pamplin Band Styles ======= */
-
-/* #endregion =========    END IN PROGRESS    ========= */
-
-/* #region =========    TESTED    ========= */
-
-/* #region === Warning Stripes === */
-
-.pcob-warning-stripes {
-  background: repeating-linear-gradient(
-    45deg,
-var(--pcob-yellow-0),       
-var(--pcob-yellow-0) 20px,
-var(--black) 20px,
-var(--black) 40px
-  );
-  height: 40px;
-  width: 100%;
-}
-
-/* #endregion === End Warning Strips === */
-
-/* #region === Feature Bar === */
-.pcob-feature-bar {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  padding: 3rem 1rem;
-  text-align: center;
-  flex-wrap: wrap;
-  font-family: "Crimson Text", Georgia, serif;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  box-sizing: border-box;
-}
-
-.pcob-feature {
-  max-width: 300px;
-  padding: 0 1rem;
-  position: relative;
-}
-
-.pcob-feature-divider {
-  width: 1px;
-  background-color: currentColor;
-  opacity: 0.4;
-  align-self: stretch;
-}
-
-/* Titles and Subtitles */
-.pcob-feature-title {
-  font-size: 1.7rem;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.4;
-  margin-bottom: 0.6rem;
-}
-
-.pcob-feature-subtitle {
-  font-family: "Gineso", "Gineso LT", sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
-}
-
-/* === Responsive Tweaks === */
-@media screen and (min-width: 768px) {
-  .pcob-feature-title {
-    font-size: 2rem;
-  }
-
-  .pcob-feature-subtitle {
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .pcob-feature-bar {
-    gap: 7rem;
-    padding: 5rem 2rem;
-  }
-
-  .pcob-feature-title {
-    font-size: 2.6rem;
-  }
-
-  .pcob-feature-subtitle {
-    font-size: 1.3rem;
-  }
-}
-
-@media screen and (max-width: 999px) {
-  .pcob-feature-bar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pcob-feature {
-    max-width: 100%;
-    width: 100%;
-    padding: 1.5rem 0;
-  }
-
-  .pcob-feature-divider {
-    width: 220px;      /* horizontal now */
-    height: 1px;
-    align-self: center;
-  }
-}
-
-/* #endregion === End Feature Bar === */
-
-/* #endregion =========    END TESTED    ========= */
-
-
-
-
-
-/* ======================== PCOB Image Arrow Button ======================== */
-
-.pcob-button-img-arrow-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.pcob-button-img-arrow {
-  display: block;
-  max-width: 400px;
-  width: 100%;
-  text-decoration: none;
-}
-
-.pcob-button-img-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  max-height: 300px;
-  overflow: hidden;
-}
-
-.pcob-button-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.pcob-button-img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-}
-
-.pcob-button-img-arrow:hover .pcob-button-img-overlay {
-  background: rgba(134, 31, 65, 0.65);
-}
-
-.pcob-button-img-text {
-  position: relative;
-  color: white;
-  font-family: "Gineso", "Gineso LT", sans-serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  line-height: 1.1;
-  display: inline-block;
-  text-align: center;
-  padding: 0 1rem;
-  max-width: 100%;
-  z-index: 1;
-}
-
-.pcob-button-img-text::before,
-.pcob-button-img-text::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform-origin: right center;
-  opacity: 0;
-  transition: transform 0.4s ease, right 0.4s ease, opacity 0.4s ease;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.pcob-button-img-text::before {
-  right: 0;
-  width: 2.8rem;
-  height: 6px;
-  background-color: #CA4F00;
-  transform: rotate(-45deg) translate(1rem, -50%);
-}
-
-.pcob-button-img-text::after {
-  right: 0;
-  width: 2.8rem;
-  height: 6px;
-  background-color: #CA4F00;
-  transform: rotate(45deg) translate(1rem, 50%);
-}
-
-.pcob-button-img-arrow:hover .pcob-button-img-text::before,
-.pcob-button-img-arrow:hover .pcob-button-img-text::after {
-  opacity: 1;
-  right: -0.25rem;
-}
-
-.pcob-button-img-arrow:hover .pcob-button-img-text::before {
-  transform: rotate(-45deg) translate(0, -50%);
-}
-
-.pcob-button-img-arrow:hover .pcob-button-img-text::after {
-  transform: rotate(45deg) translate(0, 50%);
-}
-
-@media screen and (max-width: 767px) {
-  .pcob-button-img-arrow-wrapper {
-    justify-content: center;
-  }
-
-  .pcob-button-img-arrow {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .pcob-button-img-container {
-    aspect-ratio: 4 / 3;
-    max-height: 160px;
-  }
-
-  .pcob-button-img-text {
-    font-size: clamp(1.2rem, 5vw, 2rem);
-    padding: 0 1rem;
-  }
-
-  .pcob-button-img-text::before,
-  .pcob-button-img-text::after {
-    width: 1.4rem;
-    height: 5px;
-    right: 0;
-  }
-
-  .pcob-button-img-text::before {
-    transform: rotate(-45deg) translate(0.75rem, -50%);
-  }
-
-  .pcob-button-img-text::after {
-    transform: rotate(45deg) translate(0.75rem, 50%);
-  }
-
-  .pcob-button-img-arrow:hover .pcob-button-img-text::before,
-  .pcob-button-img-arrow:hover .pcob-button-img-text::after {
-    right: -0.25rem;
-  }
-
-  .pcob-button-img-arrow:hover .pcob-button-img-text::before {
-    transform: rotate(-45deg) translate(0, -50%);
-  }
-
-  .pcob-button-img-arrow:hover .pcob-button-img-text::after {
-    transform: rotate(45deg) translate(0, 50%);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============================== OLD CODE ======================= */
-
-/* ====== Pamplin Buttons ====== */
+/* #region ====== Pamplin Buttons ====== */
 
 .pcob-button {
   display: inline-block;
@@ -1301,8 +808,503 @@ var(--black) 40px
 }
 
 
+/* #endregion ====== End Pamplin Buttons ====== */
 
 
+
+/* #endregion =========    END IN PROGRESS    ========= */
+
+/* #region =========    TESTED    ========= */
+
+/* #region === Warning Stripes === */
+
+.pcob-warning-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+var(--pcob-yellow-0),       
+var(--pcob-yellow-0) 20px,
+var(--black) 20px,
+var(--black) 40px
+  );
+  height: 40px;
+  width: 100%;
+}
+
+/* #endregion === End Warning Strips === */
+
+/* #region === Feature Bar === */
+.pcob-feature-bar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  flex-wrap: wrap;
+  font-family: "Crimson Text", Georgia, serif;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+}
+
+.pcob-feature {
+  max-width: 300px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.pcob-feature-divider {
+  width: 1px;
+  background-color: currentColor;
+  opacity: 0.4;
+  align-self: stretch;
+}
+
+/* Titles and Subtitles */
+.pcob-feature-title {
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+.pcob-feature-subtitle {
+  font-family: "Gineso", "Gineso LT", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* === Responsive Tweaks === */
+@media screen and (min-width: 768px) {
+  .pcob-feature-title {
+    font-size: 2rem;
+  }
+
+  .pcob-feature-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pcob-feature-bar {
+    gap: 7rem;
+    padding: 5rem 2rem;
+  }
+
+  .pcob-feature-title {
+    font-size: 2.6rem;
+  }
+
+  .pcob-feature-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .pcob-feature-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pcob-feature {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .pcob-feature-divider {
+    width: 220px;      /* horizontal now */
+    height: 1px;
+    align-self: center;
+  }
+}
+
+/* #endregion === End Feature Bar === */
+
+/* #region ======= Pamplin Band Styles ======= */
+
+.pcob-3-1-image-band,
+.pcob-1-3-image-band,
+.pcob-2-1-image-band,
+.pcob-1-2-image-band,
+.pcob-3-1-image-band-stacking,
+.pcob-1-3-image-band-stacking,
+.pcob-2-1-image-band-stacking,
+.pcob-1-2-image-band-stacking,
+.pcob-3-1-image-band-hiding,
+.pcob-1-3-image-band-hiding,
+.pcob-2-1-image-band-hiding,
+.pcob-1-2-image-band-hiding {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  min-height: 400px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pcob-3-1-image-band,
+.pcob-2-1-image-band,
+.pcob-3-1-image-band-stacking,
+.pcob-2-1-image-band-stacking,
+.pcob-3-1-image-band-hiding,
+.pcob-2-1-image-band-hiding {
+  flex-direction: row;
+}
+
+.pcob-1-3-image-band,
+.pcob-1-2-image-band,
+.pcob-1-3-image-band-stacking,
+.pcob-1-2-image-band-stacking,
+.pcob-1-3-image-band-hiding,
+.pcob-1-2-image-band-hiding {
+  flex-direction: row-reverse;
+}
+
+.pcob-text-band-left,
+.pcob-text-band-center,
+.pcob-text-band-right {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pcob-text-band-left .pcob-band-text,
+.pcob-text-band-center .pcob-band-text,
+.pcob-text-band-right .pcob-band-text {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pcob-text-band-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.pcob-text-band-left .pcob-band-text {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.pcob-text-band-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.pcob-text-band-center .pcob-band-text {
+  align-items: center;
+  text-align: center;
+}
+
+.pcob-text-band-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.pcob-text-band-right .pcob-band-text {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.pcob-band-text {
+  flex: 3;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.pcob-band-text > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.pcob-band-text a.pcob-button {
+  margin: 0;
+}
+
+.pcob-band-image-bg {
+  flex: 1.5;
+  min-width: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+}
+
+.pcob-2-1-image-band .pcob-band-text,
+.pcob-1-2-image-band .pcob-band-text,
+.pcob-2-1-image-band-stacking .pcob-band-text,
+.pcob-1-2-image-band-stacking .pcob-band-text,
+.pcob-2-1-image-band-hiding .pcob-band-text,
+.pcob-1-2-image-band-hiding .pcob-band-text {
+  flex: 2;
+}
+
+.pcob-2-1-image-band .pcob-band-image-bg,
+.pcob-1-2-image-band .pcob-band-image-bg,
+.pcob-2-1-image-band-stacking .pcob-band-image-bg,
+.pcob-1-2-image-band-stacking .pcob-band-image-bg,
+.pcob-2-1-image-band-hiding .pcob-band-image-bg,
+.pcob-1-2-image-band-hiding .pcob-band-image-bg {
+  flex: 2;
+}
+
+.pcob-band-heading {
+  font-family: "Gineso", "Gineso LT", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: inherit;
+}
+
+.pcob-band-body {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: inherit;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .pcob-band-text,
+  .pcob-text-band-left .pcob-band-text,
+  .pcob-text-band-center .pcob-band-text,
+  .pcob-text-band-right .pcob-band-text {
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .pcob-band-text > div {
+    justify-content: center;
+  }
+
+  .pcob-3-1-image-band-hiding,
+  .pcob-1-3-image-band-hiding,
+  .pcob-2-1-image-band-hiding,
+  .pcob-1-2-image-band-hiding {
+    flex-direction: column;
+  }
+
+  .pcob-3-1-image-band-hiding .pcob-band-image-bg,
+  .pcob-1-3-image-band-hiding .pcob-band-image-bg,
+  .pcob-2-1-image-band-hiding .pcob-band-image-bg,
+  .pcob-1-2-image-band-hiding .pcob-band-image-bg {
+    display: none;
+  }
+
+  .pcob-3-1-image-band-stacking,
+  .pcob-1-3-image-band-stacking,
+  .pcob-2-1-image-band-stacking,
+  .pcob-1-2-image-band-stacking {
+    flex-direction: column;
+  }
+
+  .pcob-3-1-image-band-stacking .pcob-band-image-bg,
+  .pcob-1-3-image-band-stacking .pcob-band-image-bg,
+  .pcob-2-1-image-band-stacking .pcob-band-image-bg,
+  .pcob-1-2-image-band-stacking .pcob-band-image-bg {
+    display: block;
+    order: -1;
+    width: 100%;
+    height: 300px;
+    flex: none;
+  }
+
+  .pcob-band-text a.pcob-button {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+/* #endregion ======= End Pamplin Band Styles ======= */
+
+/* #endregion =========    END TESTED    ========= */
+
+
+
+
+
+/* ======================== PCOB Image Arrow Button ======================== */
+
+.pcob-button-img-arrow-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.pcob-button-img-arrow {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.pcob-button-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.pcob-button-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pcob-button-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.pcob-button-img-arrow:hover .pcob-button-img-overlay {
+  background: rgba(134, 31, 65, 0.65);
+}
+
+.pcob-button-img-text {
+  position: relative;
+  color: white;
+  font-family: "Gineso", "Gineso LT", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.1;
+  display: inline-block;
+  text-align: center;
+  padding: 0 1rem;
+  max-width: 100%;
+  z-index: 1;
+}
+
+.pcob-button-img-text::before,
+.pcob-button-img-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform-origin: right center;
+  opacity: 0;
+  transition: transform 0.4s ease, right 0.4s ease, opacity 0.4s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.pcob-button-img-text::before {
+  right: 0;
+  width: 2.8rem;
+  height: 6px;
+  background-color: #CA4F00;
+  transform: rotate(-45deg) translate(1rem, -50%);
+}
+
+.pcob-button-img-text::after {
+  right: 0;
+  width: 2.8rem;
+  height: 6px;
+  background-color: #CA4F00;
+  transform: rotate(45deg) translate(1rem, 50%);
+}
+
+.pcob-button-img-arrow:hover .pcob-button-img-text::before,
+.pcob-button-img-arrow:hover .pcob-button-img-text::after {
+  opacity: 1;
+  right: -0.25rem;
+}
+
+.pcob-button-img-arrow:hover .pcob-button-img-text::before {
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.pcob-button-img-arrow:hover .pcob-button-img-text::after {
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+@media screen and (max-width: 767px) {
+  .pcob-button-img-arrow-wrapper {
+    justify-content: center;
+  }
+
+  .pcob-button-img-arrow {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .pcob-button-img-container {
+    aspect-ratio: 4 / 3;
+    max-height: 160px;
+  }
+
+  .pcob-button-img-text {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    padding: 0 1rem;
+  }
+
+  .pcob-button-img-text::before,
+  .pcob-button-img-text::after {
+    width: 1.4rem;
+    height: 5px;
+    right: 0;
+  }
+
+  .pcob-button-img-text::before {
+    transform: rotate(-45deg) translate(0.75rem, -50%);
+  }
+
+  .pcob-button-img-text::after {
+    transform: rotate(45deg) translate(0.75rem, 50%);
+  }
+
+  .pcob-button-img-arrow:hover .pcob-button-img-text::before,
+  .pcob-button-img-arrow:hover .pcob-button-img-text::after {
+    right: -0.25rem;
+  }
+
+  .pcob-button-img-arrow:hover .pcob-button-img-text::before {
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+
+  .pcob-button-img-arrow:hover .pcob-button-img-text::after {
+    transform: rotate(45deg) translate(0, 50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================== OLD CODE ======================= */
 
 
 
