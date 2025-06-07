@@ -552,7 +552,7 @@
   font-style: italic;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   line-height: 1.2;
   margin-bottom: 1.2rem;
   color: inherit;
@@ -603,8 +603,10 @@
   .pcob-2-1-image-band-stacking .pcob-band-image-bg,
   .pcob-1-2-image-band-stacking .pcob-band-image-bg {
     display: block;
+    order: -1;
     width: 100%;
     height: 300px;
+    flex: none;
   }
 
   .pcob-band-text a.pcob-button {
