@@ -475,8 +475,6 @@
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  color: var(--white);
-  background-color: var(--black);
   margin-right: 1rem;
   margin-bottom: 1rem;
   min-width: 44px;
@@ -491,6 +489,23 @@
 }
 
 .pcob-button:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 3px;
+}
+
+/* Default Fallback Class */
+
+.pcob-button.pcob-default {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.pcob-button.pcob-default:hover {
+  background-color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.pcob-button.pcob-default:focus-visible {
   outline: 3px solid var(--black);
   outline-offset: 3px;
 }
