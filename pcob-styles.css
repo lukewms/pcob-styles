@@ -349,8 +349,8 @@
   border-color: var(--black);
   --btn-bg: var(--black);
   --btn-fg: var(--white);
-  --btn-bg-hover: #333;
-  --btn-shadow: 0 4px 10px #333;
+  --btn-bg-hover: var(--pcob-white--9);
+  --btn-shadow: 0 4px 10px var(--pcob-white--9);
   --btn-outline: var(--black);
 }
 
@@ -360,8 +360,8 @@
   border-color: var(--black);
   --btn-bg: var(--black);
   --btn-fg: var(--white);
-  --btn-bg-hover: #333;
-  --btn-shadow: 0 4px 10px #333;
+  --btn-bg-hover: var(--pcob-white--9);
+  --btn-shadow: 0 4px 10px var(--pcob-white--9);
   --btn-outline: var(--black);
 }
 
