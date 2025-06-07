@@ -536,7 +536,8 @@
 
 /* Default Fallback Class */
 
-.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
+.pcob-button:not(.pcob-default):not(.pcob-button--sm):not(.pcob-button--md):not(.pcob-button--lg)
+             :not(.pcob-button--hero):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
              :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
              :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
              :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
@@ -549,7 +550,8 @@
   color: var(--white);
 }
 
-.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
+.pcob-button:not(.pcob-default):not(.pcob-button--sm):not(.pcob-button--md)
+              :not(.pcob-button--lg):not(.pcob-button--hero):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
               :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
               :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
               :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
