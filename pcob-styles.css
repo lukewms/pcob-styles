@@ -334,6 +334,9 @@
 }
 
 /* #region =========    BRAND COLOR CLASSES    ========= */
+/* Color Order: Black, Grey, Stone, Maroon, Orange, Burnt, Teal, Turquoise, Purple, Pink, Yellow */
+
+/* Black */
 
 .pcob-black {
   background-color: var(--black);
@@ -341,26 +344,56 @@
   border-color: var(--black);
 }
 
-.pcob-gray {
-  background-color: var(--pcob-smoke);
-  color: var(--black);
+/* Grey */
+
+.pcob-dark-grey {
+  background-color: var(--pcob-grey-darker);
+  color: var(--white);
   border-color: var(--black);
 }
 
-.pcob-light-gray {
-  background-color: var(--pcob-smoke);
+.pcob-grey {
+  background-color: var(--pcob-grey);
   color: var(--black);
+  border-color: var(--pcob-grey-darker);
+}
+
+.pcob-light-grey {
+  background-color: var(--pcob-grey-lightest);
+  color: var(--black);
+  border-color: var(--pcob-grey-light);
+}
+
+/* Stone */
+
+.pcob-dark-stone {
+  background-color: var(--pcob-stone-darker);
+  color: var(--white);
   border-color: var(--black);
 }
 
-.pcob-maroon {
-  background-color: var(--pcob-maroon);
+.pcob-stone {
+  background-color: var(--pcob-stone);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.pcob-light-stone {
+  background-color: var(--pcob-stone-lighter);
+  color: var(--black);
+  border-color: var(--pcob-stone);
+}
+
+/* Maroon */
+
+.pcob-dark-maroon {
+  background-color: var(--pcob-maroon-darker);
   color: var(--white);
   border-color: var(--pcob-maroon-darker);
 }
 
-.pcob-dark-maroon {
-  background-color: var(--pcob-maroon-darker);
+.pcob-maroon {
+  background-color: var(--pcob-maroon);
   color: var(--white);
   border-color: var(--pcob-maroon-darker);
 }
@@ -371,32 +404,16 @@
   border-color: var(--pcob-maroon-darker);
 }
 
-.pcob-burnt {
-  background-color: var(--pcob-burnt);
-  color: var(--white);
-  border-color: var(--pcob-burnt-darker);
-}
+/* Orange */
 
-.pcob-dark-burnt {
-  background-color: var(--pcob-burnt-darker);
-  color: var(--white);
-  border-color: var(--pcob-burnt-darker);
-}
-
-.pcob-light-burnt {
-  background-color: var(--pcob-burnt-lightest);
-  color: var(--pcob-burnt-dark);
-  border-color: var(--pcob-burnt-dark);
-}
-
-.pcob-orange {
-  background-color: var(--pcob-orange);
+.pcob-dark-orange {
+  background-color: var(--pcob-orange-darker);
   color: var(--white);
   border-color: var(--pcob-orange-darker);
 }
 
-.pcob-dark-orange {
-  background-color: var(--pcob-orange-darker);
+.pcob-orange {
+  background-color: var(--pcob-orange);
   color: var(--white);
   border-color: var(--pcob-orange-darker);
 }
@@ -407,16 +424,38 @@
   border-color: var(--pcob-orange-dark);
 }
 
-.pcob-teal {
-  background-color: var(--pcob-teal-dark);
+/* Burnt */
+
+.pcob-dark-burnt {
+  background-color: var(--pcob-burnt-darker);
   color: var(--white);
-  border-color: var(--pcob-teal-darkest);
+  border-color: var(--pcob-burnt-darker);
 }
+
+.pcob-burnt {
+  background-color: var(--pcob-burnt);
+  color: var(--white);
+  border-color: var(--pcob-burnt-darker);
+}
+
+.pcob-light-burnt {
+  background-color: var(--pcob-burnt-lightest);
+  color: var(--pcob-burnt-dark);
+  border-color: var(--pcob-burnt-dark);
+}
+
+/* Teal */
 
 .pcob-dark-teal {
   background-color: var(--pcob-teal-dark);
   color: var(--white);
   border-color: var(--pcob-teal-darker);
+}
+
+.pcob-teal {
+  background-color: var(--pcob-teal-dark);
+  color: var(--white);
+  border-color: var(--pcob-teal-darkest);
 }
 
 .pcob-light-teal {
@@ -425,40 +464,12 @@
   border-color: var(--pcob-teal-darkest);
 }
 
-.pcob-purple {
-  background-color: var(--pcob-purple);
+/* Turquoise */
+
+.pcob-dark-turquoise {
+  background-color: var(--pcob-turquoise-darker);
   color: var(--white);
-  border-color: var(--pcob-purple-darker);
-}
-
-.pcob-dark-purple {
-  background-color: var(--pcob-purple-darker);
-  color: var(--white);
-  border-color: var(--pcob-purple-darkest);
-}
-
-.pcob-light-purple {
-  background-color: var(--pcob-purple-lightest);
-  color: var(--pcob-purple-darker);
-  border-color: var(--pcob-purple-darker);
-}
-
-.pcob-pink {
-  background-color: var(--pcob-pink);
-  color: var(--white);
-  border-color: var(--pcob-pink-darker);
-}
-
-.pcob-dark-pink {
-  background-color: var(--pcob-pink-darker);
-  color: var(--white);
-  border-color: var(--pcob-pink-darkest);
-}
-
-.pcob-light-pink {
-  background-color: var(--pcob-pink-lightest);
-  color: var(--pcob-pink-darker);
-  border-color: var(--pcob-pink-darker);
+  border-color: var(--pcob-turquoise-darkest);
 }
 
 .pcob-turquoise {
@@ -467,17 +478,53 @@
   border-color: var(--pcob-turquoise-darker);
 }
 
-.pcob-dark-turquoise {
-  background-color: var(--pcob-turquoise-darker);
-  color: var(--white);
-  border-color: var(--pcob-turquoise-darkest);
-}
-
 .pcob-light-turquoise {
   background-color: var(--pcob-turquoise-lightest);
   color: var(--pcob-turquoise-darkest);
   border-color: var(--pcob-turquoise-darkest);
 }
+
+/* Purple */
+
+.pcob-dark-purple {
+  background-color: var(--pcob-purple-darker);
+  color: var(--white);
+  border-color: var(--pcob-purple-darkest);
+}
+
+.pcob-purple {
+  background-color: var(--pcob-purple);
+  color: var(--white);
+  border-color: var(--pcob-purple-darker);
+}
+
+.pcob-light-purple {
+  background-color: var(--pcob-purple-lightest);
+  color: var(--pcob-purple-darker);
+  border-color: var(--pcob-purple-darker);
+}
+
+/* Pink */
+
+.pcob-dark-pink {
+  background-color: var(--pcob-pink-darker);
+  color: var(--white);
+  border-color: var(--pcob-pink-darkest);
+}
+
+.pcob-pink {
+  background-color: var(--pcob-pink);
+  color: var(--white);
+  border-color: var(--pcob-pink-darker);
+}
+
+.pcob-light-pink {
+  background-color: var(--pcob-pink-lightest);
+  color: var(--pcob-pink-darker);
+  border-color: var(--pcob-pink-darker);
+}
+
+/* Yellow */
 
 .pcob-yellow {
   background-color: var(--pcob-yellow);
@@ -544,7 +591,7 @@
              :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
              :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
              :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
-             :not(.pcob-gray):not(.pcob-light-gray):not(.pcob-dark-gray)
+             :not(.pcob-grey):not(.pcob-light-grey):not(.pcob-dark-grey)
              :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black) {
   background-color: var(--black);
   color: var(--white);
@@ -558,7 +605,7 @@
               :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
               :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
               :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
-              :not(.pcob-gray):not(.pcob-light-gray):not(.pcob-dark-gray)
+              :not(.pcob-grey):not(.pcob-light-grey):not(.pcob-dark-grey)
               :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black):hover {
   background-color: #333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
@@ -683,11 +730,11 @@
   background-color: #BFF2ED;
 }
 
-/* Gray & Black */
-.pcob-button.pcob-gray {
+/* Grey & Black */
+.pcob-button.pcob-grey {
   color: #000;
 }
-.pcob-button.pcob-gray:hover {
+.pcob-button.pcob-grey:hover {
   background-color: #D7D2CB;
 }
 
@@ -742,9 +789,9 @@
   outline: 3px solid var(--pcob-turquoise);
 }
 
-.pcob-button.pcob-gray:focus-visible,
-.pcob-button.pcob-light-gray:focus-visible,
-.pcob-button.pcob-dark-gray:focus-visible,
+.pcob-button.pcob-grey:focus-visible,
+.pcob-button.pcob-light-grey:focus-visible,
+.pcob-button.pcob-dark-grey:focus-visible,
 .pcob-button.pcob-black:focus-visible {
   outline: 3px solid var(--black);
 }
@@ -882,11 +929,11 @@
   color: var(--pcob-turquoise-darker);
 }
 
-.pcob-button--gray {
+.pcob-button--grey {
   background-color: var(--pcob-smoke);
   color: #000 !important;
 }
-.pcob-button--gray:hover {
+.pcob-button--grey:hover {
   background-color: #D7D2CB;
   color: #000;
 }
@@ -902,9 +949,9 @@
 
 /* Color Outlines for Keyboard Focus */
 
-/* Use black outline on black and gray buttons */
+/* Use black outline on black and grey buttons */
 .pcob-button--black:focus-visible,
-.pcob-button--gray:focus-visible {
+.pcob-button--grey:focus-visible {
   outline: 3px solid var(--black);
   outline-offset: 3px;
 }
