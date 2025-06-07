@@ -495,7 +495,7 @@
 
 /* Default Fallback Class */
 
-.pcob-button:not([class*="pcob-"]:not(.pcob-button)) {
+.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-orange):not(.pcob-yellow):not(.pcob-pink):not(.pcob-purple):not(.pcob-teal):not(.pcob-turquoise):not(.pcob-gray):not(.pcob-black):not(.pcob-light-maroon):not(.pcob-light-orange):not(.pcob-light-yellow):not(.pcob-light-pink):not(.pcob-light-purple):not(.pcob-light-teal):not(.pcob-light-turquoise) {
   background-color: var(--black);
   color: var(--white);
 }
