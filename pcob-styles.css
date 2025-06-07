@@ -537,14 +537,14 @@
 /* Default Fallback Class */
 
 .pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-light-maroon):not(.pcob-dark-maroon)
-              :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
-              :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
-              :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
-              :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
-              :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
-              :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
-              :not(.pcob-gray):not(.pcob-light-gray):not(.pcob-dark-gray)
-              :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black) {
+             :not(.pcob-orange):not(.pcob-light-orange):not(.pcob-dark-orange)
+             :not(.pcob-yellow):not(.pcob-light-yellow):not(.pcob-dark-yellow)
+             :not(.pcob-pink):not(.pcob-light-pink):not(.pcob-dark-pink)
+             :not(.pcob-purple):not(.pcob-light-purple):not(.pcob-dark-purple)
+             :not(.pcob-teal):not(.pcob-light-teal):not(.pcob-dark-teal)
+             :not(.pcob-turquoise):not(.pcob-light-turquoise):not(.pcob-dark-turquoise)
+             :not(.pcob-gray):not(.pcob-light-gray):not(.pcob-dark-gray)
+             :not(.pcob-black):not(.pcob-light-black):not(.pcob-dark-black) {
   background-color: var(--black);
   color: var(--white);
 }
