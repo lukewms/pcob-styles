@@ -525,13 +525,13 @@
 /* Maroon */
 .pcob-button.pcob-maroon:hover {
   background-color: var(--pcob-maroon--3);
-  box-shadow: 0 4px 10px var(--pcob-maroon)
+  box-shadow: 0 4px 10px var(--pcob-maroon-1)
 }
 
 /* Orange */
 .pcob-button.pcob-orange:hover {
   background-color: var(--pcob-orange--3);
-  box-shadow: 0 4px 10px var(--pcob-orange)
+  box-shadow: 0 4px 10px var(--pcob-orange-1)
 }
 
 /* Yellow */
@@ -541,40 +541,42 @@
 
 .pcob-button.pcob-yellow:hover {
   background-color: var(--pcob-yellow--3);
-  box-shadow: 0 4px 10px var(--pcob-yellow);
+  box-shadow: 0 4px 10px var(--pcob-yellow-1);
 }
 
 /* Pink */
 .pcob-button.pcob-pink:hover {
-  background-color: var(--pcob-pink--2);
-  box-shadow: 0 4px 10px var(--pcob-pink--2);
+  background-color: var(--pcob-pink--3);
+  box-shadow: 0 4px 10px var(--pcob-pink-1);
 }
 
 /* Purple */
 .pcob-button.pcob-purple:hover {
-  background-color: var(--pcob-purple--2);
-  box-shadow: 0 4px 10px var(--pcob-purple--2);
+  background-color: var(--pcob-purple--3);
+  box-shadow: 0 4px 10px var(--pcob-purple-1);
 }
 
 /* Teal */
 .pcob-button.pcob-teal:hover {
-  background-color: var(--pcob-teal--2);
-  box-shadow: 0 4px 10px var(--pcob-teal--2);
+  background-color: var(--pcob-teal--3);
+  box-shadow: 0 4px 10px var(--pcob-teal-1);
 }
 
 /* Turquoise */
 .pcob-button.pcob-turquoise {
   color: var(--black);
 }
+
 .pcob-button.pcob-turquoise:hover {
-  background-color: var(--pcob-turquoise--2);
-  box-shadow: 0 4px 10px rgba(44, 213, 196, 0.35);
+  background-color: var(--pcob-turquoise--3);
+  box-shadow: 0 4px 10px var(--pcob-turquoise-1);
 }
 
 /* Light variants — retain text color flip */
 .pcob-button.pcob-light-maroon {
   color: var(--pcob-maroon);
 }
+
 .pcob-button.pcob-light-maroon:hover {
   background-color: #E7D2D9;
 }
@@ -582,6 +584,7 @@
 .pcob-button.pcob-light-orange {
   color: var(--pcob-orange--1);
 }
+
 .pcob-button.pcob-light-orange:hover {
   background-color: #FAE4D3;
 }
