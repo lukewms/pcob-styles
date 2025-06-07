@@ -500,6 +500,11 @@
   color: var(--white);
 }
 
+.pcob-button:not(.pcob-default):not(.pcob-maroon):not(.pcob-orange):not(.pcob-yellow):not(.pcob-pink):not(.pcob-purple):not(.pcob-teal):not(.pcob-turquoise):not(.pcob-gray):not(.pcob-black):not(.pcob-light-maroon):not(.pcob-light-orange):not(.pcob-light-yellow):not(.pcob-light-pink):not(.pcob-light-purple):not(.pcob-light-teal):not(.pcob-light-turquoise):hover {
+  background-color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
 .pcob-button.pcob-default {
   background-color: var(--black);
   color: var(--white);
@@ -520,13 +525,13 @@
 /* Maroon */
 .pcob-button.pcob-maroon:hover {
   background-color: var(--pcob-maroon--3);
-  box-shadow: 0 5px 12px var(--pcob-maroon--6)
+  box-shadow: 0 4px 10px var(--pcob-maroon)
 }
 
 /* Orange */
 .pcob-button.pcob-orange:hover {
   background-color: var(--pcob-orange--2);
-  box-shadow: 0 4px 10px var(--pcob-orange--5)
+  box-shadow: 0 4px 10px var(--pcob-orange)
 }
 
 /* Yellow */
