@@ -469,7 +469,11 @@
 .pcob-3-1-image-band-stacking,
 .pcob-1-3-image-band-stacking,
 .pcob-2-1-image-band-stacking,
-.pcob-1-2-image-band-stacking {
+.pcob-1-2-image-band-stacking,
+.pcob-3-1-image-band-hiding,
+.pcob-1-3-image-band-hiding,
+.pcob-2-1-image-band-hiding,
+.pcob-1-2-image-band-hiding {
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
@@ -479,22 +483,20 @@
 }
 
 .pcob-3-1-image-band,
-.pcob-2-1-image-band {
+.pcob-2-1-image-band,
+.pcob-3-1-image-band-stacking,
+.pcob-2-1-image-band-stacking,
+.pcob-3-1-image-band-hiding,
+.pcob-2-1-image-band-hiding {
   flex-direction: row;
 }
 
 .pcob-1-3-image-band,
-.pcob-1-2-image-band {
-  flex-direction: row-reverse;
-}
-
-.pcob-3-1-image-band-stacking,
-.pcob-2-1-image-band-stacking {
-  flex-direction: row;
-}
-
+.pcob-1-2-image-band,
 .pcob-1-3-image-band-stacking,
-.pcob-1-2-image-band-stacking {
+.pcob-1-2-image-band-stacking,
+.pcob-1-3-image-band-hiding,
+.pcob-1-2-image-band-hiding {
   flex-direction: row-reverse;
 }
 
@@ -530,14 +532,18 @@
 .pcob-2-1-image-band .pcob-band-text,
 .pcob-1-2-image-band .pcob-band-text,
 .pcob-2-1-image-band-stacking .pcob-band-text,
-.pcob-1-2-image-band-stacking .pcob-band-text {
+.pcob-1-2-image-band-stacking .pcob-band-text,
+.pcob-2-1-image-band-hiding .pcob-band-text,
+.pcob-1-2-image-band-hiding .pcob-band-text {
   flex: 2;
 }
 
 .pcob-2-1-image-band .pcob-band-image-bg,
 .pcob-1-2-image-band .pcob-band-image-bg,
 .pcob-2-1-image-band-stacking .pcob-band-image-bg,
-.pcob-1-2-image-band-stacking .pcob-band-image-bg {
+.pcob-1-2-image-band-stacking .pcob-band-image-bg,
+.pcob-2-1-image-band-hiding .pcob-band-image-bg,
+.pcob-1-2-image-band-hiding .pcob-band-image-bg {
   flex: 2;
 }
 
