@@ -476,7 +476,7 @@
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease;
-  color: #ffffff; /* Ensure consistent text color */
+  color: var(--white);
   margin-right: 1rem;
   margin-bottom: 1rem;
   min-width: 44px;
@@ -486,33 +486,33 @@
 .pcob-button:visited,
 .pcob-button:hover,
 .pcob-button:active {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
 }
 
 .pcob-button:focus-visible {
-  outline: 3px solid black; /* fallback */
+  outline: 3px solid var(--black);
   outline-offset: 3px;
 }
 
 /* Use black outline on black and gray buttons */
 .pcob-button--black:focus-visible,
 .pcob-button--gray:focus-visible {
-  outline: 3px solid #000;
+  outline: 3px solid var(--black);
   outline-offset: 3px;
 }
 
 /* Use maroon outline on maroon and light maroon buttons */
 .pcob-button--maroon:focus-visible,
 .pcob-button--light-maroon:focus-visible {
-  outline: 3px solid #861F41;
+  outline: 3px solid var(--pcob-maroon);
   outline-offset: 3px;
 }
 
 /* Use orange outline on orange and light orange buttons */
 .pcob-button--orange:focus-visible,
 .pcob-button--light-orange:focus-visible {
-  outline: 3px solid #CA4F00;
+  outline: 3px solid var(--pcob-orange);
   outline-offset: 3px;
 }
 
@@ -551,33 +551,31 @@
   outline-offset: 3px;
 }
 
-
-
 /* Color Variants */
 .pcob-button--maroon {
-  background-color: #861F41;
+  background-color: var(--pcob-maroon);
 }
 
 .pcob-button--maroon:hover {
-  background-color: #5E162E;
+  background-color: var(--pcob-maroon--3);
 }
 
 .pcob-button--light-maroon {
-  background-color: #F3E8EC;
-  color: #861F41 !important;
+  background-color: var(--pcob-maroon-light);
+  color: var(--pcob-maroon) !important;
 }
 
 .pcob-button--light-maroon:hover {
   background-color: #E7D2D9;
-  color: #861F41;
+  color: var(--pcob-maroon);
 }
 
 .pcob-button--orange {
-  background-color: #CA4F00;
+  background-color: var(--pcob-orange);
 }
 
 .pcob-button--orange:hover {
-  background-color: #A23F00; /* darker VT-compliant orange */
+  background-color: var(--pcob-orange--2)
 }
 
 .pcob-button--light-orange {
@@ -596,7 +594,7 @@
 }
 
 .pcob-button--yellow:hover {
-  background-color: #DED341;
+  background-color: var(--pcob-yellow--1);
   color: #000;
 }
 
@@ -701,12 +699,6 @@
   background-color: #333;
   color: #fff;
 }
-
-
-
-
-
-
 
 /* Size Variants */
 .pcob-button--sm {
