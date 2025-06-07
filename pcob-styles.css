@@ -613,6 +613,9 @@
   border-color: var(--pcob-purple-darkest);
   --btn-bg: var(--pcob-purple-darker);
   --btn-fg: var(--white);
+  --btn-bg-hover: var(--pcob-purple--7);
+  --btn-shadow: 0 4px 10px var(--pcob-purple--7);
+  --btn-outline: var(--pcob-purple--7);
 }
 
 .pcob-purple {
@@ -621,6 +624,9 @@
   border-color: var(--pcob-purple-darker);
   --btn-bg: var(--pcob-purple);
   --btn-fg: var(--white);
+  --btn-bg-hover: var(--pcob-purple--2);
+  --btn-shadow: 0 4px 10px var(--pcob-purple--2);
+  --btn-outline: var(--pcob-purple--2);
 }
 
 .pcob-light-purple {
@@ -629,6 +635,9 @@
   border-color: var(--pcob-purple-darker);
   --btn-bg: var(--pcob-purple-lightest);
   --btn-fg: var(--pcob-purple-darker);
+  --btn-bg-hover: var(--pcob-purple-7);
+  --btn-shadow: 0 4px 10px var(--pcob-purple-7);
+  --btn-outline: var(--pcob-purple);
 }
 
 /* === Pink ======================================================== */
@@ -638,6 +647,9 @@
   border-color: var(--pcob-pink-darkest);
   --btn-bg: var(--pcob-pink-darker);
   --btn-fg: var(--white);
+  --btn-bg-hover: var(--pcob-pink--7);
+  --btn-shadow: 0 4px 10px var(--pcob-pink--7);
+  --btn-outline: var(--pcob-pink--7);
 }
 
 .pcob-pink {
@@ -646,6 +658,9 @@
   border-color: var(--pcob-pink-darker);
   --btn-bg: var(--pcob-pink);
   --btn-fg: var(--white);
+  --btn-bg-hover: var(--pcob-pink--2);
+  --btn-shadow: 0 4px 10px var(--pcob-pink--2);
+  --btn-outline: var(--pcob-pink-2);
 }
 
 .pcob-light-pink {
@@ -654,6 +669,9 @@
   border-color: var(--pcob-pink-darker);
   --btn-bg: var(--pcob-pink-lightest);
   --btn-fg: var(--pcob-pink-darker);
+  --btn-bg-hover: var(--pcob-pink-7);
+  --btn-shadow: 0 4px 10px var(--pcob-pink-7);
+  --btn-outline: var(--pcob-pink);
 }
 
 /* === Yellow ====================================================== */
@@ -663,6 +681,9 @@
   border-color: var(--pcob-yellow-darkest);
   --btn-bg: var(--pcob-yellow-darker);
   --btn-fg: var(--white);
+  --btn-bg-hover: var(--pcob-yellow--7);
+  --btn-shadow: 0 4px 10px var(--pcob-yellow--7);
+  --btn-outline: var(--pcob-yellow--7);
 }
 
 .pcob-yellow {
@@ -671,6 +692,9 @@
   border-color: var(--pcob-yellow-darker);
   --btn-bg: var(--pcob-yellow);
   --btn-fg: var(--black);
+  --btn-bg-hover: var(--pcob-yellow--2);
+  --btn-shadow: 0 4px 10px var(--pcob-yellow--2);
+  --btn-outline: var(--pcob-yellow-2);
 }
 
 .pcob-light-yellow {
@@ -679,6 +703,9 @@
   border-color: var(--pcob-yellow-darkest);
   --btn-bg: var(--pcob-yellow-lightest);
   --btn-fg: var(--pcob-yellow-darkest);
+  --btn-bg-hover: var(--pcob-yellow-7);
+  --btn-shadow: 0 4px 10px var(--pcob-yellow-7);
+  --btn-outline: var(--pcob-yellow);
 }
 
 /* #endregion =========    END BRAND COLOR CLASSES    ========= */
