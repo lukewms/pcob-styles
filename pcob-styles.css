@@ -772,6 +772,20 @@
 .pcob-button--md { font-size: 1.2rem;  padding: 0.9rem 1.8rem; }
 .pcob-button--lg { font-size: 1.5rem;  padding: 1rem 2rem; min-width: 200px; }
 
+/* 3. FLIP HOVER MODIFIER -------------------------------------------- */
+.pcob-button-flip:hover,
+.pcob-button-flip:active {
+  background-color: var(--btn-fg);
+  color: var(--btn-bg);
+  box-shadow: none;
+}
+
+/* Optional: Ensure focus-visible outline still uses original outline color */
+.pcob-button-flip:focus-visible {
+  outline: 3px solid var(--btn-outline);
+  outline-offset: 3px;
+}
+
 /* 4. HERO VARIANT --------------------------------------------------- */
 .pcob-button--hero {
   --btn-bg: #CA4F00; /* directly override for hero */
