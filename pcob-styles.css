@@ -420,7 +420,7 @@
 
 .pcob-light-orange {
   background-color: var(--pcob-orange-lightest);
-  color: var(--pcob-orange-dark);
+  color: var(--pcob-orange-darker);
   border-color: var(--pcob-orange-dark);
 }
 
@@ -440,7 +440,7 @@
 
 .pcob-light-burnt {
   background-color: var(--pcob-burnt-lightest);
-  color: var(--pcob-burnt-darkest);
+  color: var(--pcob-burnt-dark);
   border-color: var(--pcob-burnt-dark);
 }
 
@@ -460,8 +460,8 @@
 
 .pcob-light-teal {
   background-color: var(--pcob-teal-lightest);
-  color: var(--pcob-teal-darkest);
-  border-color: var(--pcob-teal-darkest);
+  color: var(--pcob-teal-darker);
+  border-color: var(--pcob-teal-darker);
 }
 
 /* Turquoise */
