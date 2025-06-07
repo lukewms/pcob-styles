@@ -1,5 +1,11 @@
 :root {
 /* ========= #region   PRIMARY BRAND COLOR VARIABLES    ========= */
+  /* Provide safe fallbacks so buttons still work if a utility is missing */
+  --btn-bg: var(--black);
+  --btn-fg: var(--white);
+  --btn-bg-hover: color-mix(in srgb, var(--btn-bg) 85%, black);
+  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  --btn-outline: var(--black);
 
   --pcob-maroon: var(--pcob-maroon-0);
   --pcob-maroon-dark: var(--pcob-maroon--2);
@@ -555,16 +561,6 @@
    • Colour, hover, outline & shadow are handled with CSS vars
    • No monster :not() selector or duplicate rules
    ============================================================= */
-
-/* 0. TOKEN FALLBACKS ------------------------------------------------ */
-:root {
-  /* Provide safe fallbacks so buttons still work if a utility is missing */
-  --btn-bg: var(--black);
-  --btn-fg: var(--white);
-  --btn-bg-hover: color-mix(in srgb, var(--btn-bg) 85%, black);
-  --btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-  --btn-outline: var(--black);
-}
 
 /* 1. BASE COMPONENT ------------------------------------------------- */
 .pcob-button {
