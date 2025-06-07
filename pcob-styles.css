@@ -525,43 +525,41 @@
 /* Maroon */
 .pcob-button.pcob-maroon:hover {
   background-color: var(--pcob-maroon--3);
-  box-shadow: 0 4px 10px var(--pcob-maroon-light)
+  box-shadow: 0 4px 10px var(--pcob-maroon--3)
 }
 
 /* Orange */
 .pcob-button.pcob-orange:hover {
   background-color: var(--pcob-orange--2);
-  box-shadow: 0 4px 10px var(--pcob-orange-light)
+  box-shadow: 0 4px 10px var(--pcob-orange--2)
 }
 
 /* Yellow */
-/*
 .pcob-button.pcob-yellow {
   color: var(--black);
 }
-*/
 
 .pcob-button.pcob-yellow:hover {
   background-color: var(--pcob-yellow--2);
-  box-shadow: 0 4px 10px rgba(247, 234, 72, 0.35);
+  box-shadow: 0 4px 10px var(--pcob-yellow--2);
 }
 
 /* Pink */
 .pcob-button.pcob-pink:hover {
   background-color: var(--pcob-pink--2);
-  box-shadow: 0 4px 10px rgba(206, 0, 88, 0.35);
+  box-shadow: 0 4px 10px var(--pcob-pink--2);
 }
 
 /* Purple */
 .pcob-button.pcob-purple:hover {
   background-color: var(--pcob-purple--2);
-  box-shadow: 0 4px 10px rgba(100, 38, 103, 0.35);
+  box-shadow: 0 4px 10px var(--pcob-purple--2);
 }
 
 /* Teal */
 .pcob-button.pcob-teal:hover {
   background-color: var(--pcob-teal--2);
-  box-shadow: 0 4px 10px rgba(80, 133, 144, 0.35);
+  box-shadow: 0 4px 10px var(--pcob-teal--2);
 }
 
 /* Turquoise */
