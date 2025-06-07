@@ -460,10 +460,12 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
-/* #region ======= Pamplin Band Base Styles ======= */
+/* #region ======= Pamplin Band Styles ======= */
 
 .pcob-3-1-image-band,
-.pcob-1-3-image-band {
+.pcob-1-3-image-band,
+.pcob-2-1-image-band,
+.pcob-1-2-image-band {
   display: flex;
   flex-wrap: nowrap;
   padding: 0;
@@ -472,11 +474,13 @@
   width: 100%;
 }
 
-.pcob-3-1-image-band {
+.pcob-3-1-image-band,
+.pcob-2-1-image-band {
   flex-direction: row;
 }
 
-.pcob-1-3-image-band {
+.pcob-1-3-image-band,
+.pcob-1-2-image-band {
   flex-direction: row-reverse;
 }
 
@@ -509,6 +513,16 @@
   height: auto;
 }
 
+.pcob-2-1-image-band .pcob-band-text,
+.pcob-1-2-image-band .pcob-band-text {
+  flex: 2;
+}
+
+.pcob-2-1-image-band .pcob-band-image-bg,
+.pcob-1-2-image-band .pcob-band-image-bg {
+  flex: 2;
+}
+
 .pcob-band-heading {
   font-family: "Gineso", "Gineso LT", sans-serif;
   font-style: italic;
@@ -530,10 +544,6 @@
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
-  .pcob-band-base {
-    padding: 2rem 1.5rem;
-  }
-
   .pcob-band-text {
     padding: 2rem;
     text-align: center;
@@ -553,7 +563,7 @@
   }
 }
 
-/* #endregion ======= End Pamplin Band Base Styles ======= */
+/* #endregion ======= End Pamplin Band Styles ======= */
 
 /* #endregion =========    END IN PROGRESS    ========= */
 
