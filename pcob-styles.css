@@ -525,19 +525,21 @@
 /* Maroon */
 .pcob-button.pcob-maroon:hover {
   background-color: var(--pcob-maroon--3);
-  box-shadow: 0 4px 10px var(--pcob-maroon)
+  box-shadow: 0 4px 10px var(--pcob-maroon-light)
 }
 
 /* Orange */
 .pcob-button.pcob-orange:hover {
   background-color: var(--pcob-orange--2);
-  box-shadow: 0 4px 10px var(--pcob-orange)
+  box-shadow: 0 4px 10px var(--pcob-orange-light)
 }
 
 /* Yellow */
+/*
 .pcob-button.pcob-yellow {
   color: var(--black);
 }
+*/
 
 .pcob-button.pcob-yellow:hover {
   background-color: var(--pcob-yellow--2);
