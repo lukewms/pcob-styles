@@ -443,8 +443,8 @@
   border-color: var(--pcob-maroon-darker);
   --btn-bg: var(--pcob-maroon-darker);
   --btn-fg: var(--white);
-  --btn-bg-hover: var(--pcob-maroon-darkest);
-  --btn-shadow: 0 4px 10px var(--pcob-maroon-darkest);
+  --btn-bg-hover: var(--pcob-maroon--7);
+  --btn-shadow: 0 4px 10px var(--pcob-maroon-darker);
   --btn-outline: var(--pcob-maroon-darker);
 }
 
@@ -454,7 +454,7 @@
   border-color: var(--pcob-maroon-darker);
   --btn-bg: var(--pcob-maroon);
   --btn-fg: var(--white);
-  --btn-bg-hover: var(--pcob-maroon-darker);
+  --btn-bg-hover: var(--pcob-maroon-dark);
   --btn-shadow: 0 4px 10px var(--pcob-maroon-darker);
   --btn-outline: var(--pcob-maroon);
 }
@@ -477,8 +477,8 @@
   border-color: var(--pcob-orange-darker);
   --btn-bg: var(--pcob-orange-darker);
   --btn-fg: var(--white);
-  --btn-bg-hover: var(--pcob-orange-darkest);
-  --btn-shadow: 0 4px 10px var(--pcob-orange-dark);
+  --btn-bg-hover: var(--pcob-orange--7);
+  --btn-shadow: 0 4px 10px var(--pcob-orange-darker);
   --btn-outline: var(--pcob-orange-darker);
 }
 
@@ -488,9 +488,9 @@
   border-color: var(--pcob-orange-darker);
   --btn-bg: var(--pcob-orange);
   --btn-fg: var(--white);
-  --btn-bg-hover: var(--pcob-orange-darker);
+  --btn-bg-hover: var(--pcob-orange-dark);
   --btn-shadow: 0 4px 10px var(--pcob-orange);
-  --btn-outline: var(--pcob-orange);
+  --btn-outline: var(--pcob-orange-dark);
 }
 
 .pcob-light-orange {
