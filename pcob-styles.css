@@ -601,6 +601,14 @@
   outline-offset: 3px;
 }
 
+.pcob-button,
+.pcob-button:visited,
+.pcob-button:hover,
+.pcob-button:active,
+.pcob-button:focus-visible {
+  text-decoration: none;
+}
+
 /* 2. SIZE MODIFIERS ------------------------------------------------- */
 .pcob-button--sm { font-size: 1.05rem; padding: 0.6rem 1.2rem; }
 .pcob-button--md { font-size: 1.2rem;  padding: 0.9rem 1.8rem; }
