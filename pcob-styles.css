@@ -460,7 +460,6 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
-
 /* #region ====== Pamplin Buttons ====== */
 
 .pcob-button {
@@ -495,60 +494,27 @@
   outline-offset: 3px;
 }
 
-/* Use black outline on black and gray buttons */
-.pcob-button--black:focus-visible,
-.pcob-button--gray:focus-visible {
-  outline: 3px solid var(--black);
-  outline-offset: 3px;
+/* NEW Interactive Color Behaviors (hover + shadow) */
+
+/* Maroon */
+.pcob-button.pcob-maroon:hover {
+  background-color: var(--pcob-maroon--3);
+  box-shadow: 0 4px 10px rgba(134, 31, 65, 0.35);
 }
 
-/* Use maroon outline on maroon and light maroon buttons */
-.pcob-button--maroon:focus-visible,
-.pcob-button--light-maroon:focus-visible {
-  outline: 3px solid var(--pcob-maroon);
-  outline-offset: 3px;
+/* Orange */
+.pcob-button.pcob-orange:hover {
+  background-color: var(--pcob-orange--2);
+  box-shadow: 0 4px 10px rgba(202, 79, 0, 0.35);
 }
 
-/* Use orange outline on orange and light orange buttons */
-.pcob-button--orange:focus-visible,
-.pcob-button--light-orange:focus-visible {
-  outline: 3px solid var(--pcob-orange);
-  outline-offset: 3px;
+/* Yellow */
+.pcob-button.pcob-yellow {
+  color: var(--black);
 }
-
-/* Use yellow outline on yellow and light yellow buttons */
-.pcob-button--yellow:focus-visible,
-.pcob-button--light-yellow:focus-visible {
-  outline: 3px solid var(--pcob-yellow);
-  outline-offset: 3px;
-}
-
-/* Use pink outline on pink and light pink buttons */
-.pcob-button--pink:focus-visible,
-.pcob-button--light-pink:focus-visible {
-  outline: 3px solid var(--pcob-pink);
-  outline-offset: 3px;
-}
-
-/* Use purple outline on purple and light purple buttons */
-.pcob-button--purple:focus-visible,
-.pcob-button--light-purple:focus-visible {
-  outline: 3px solid var(--pcob-purple);
-  outline-offset: 3px;
-}
-
-/* Use teal outline on teal and light teal buttons */
-.pcob-button--teal:focus-visible,
-.pcob-button--light-teal:focus-visible {
-  outline: 3px solid var(--pcob-teal-dark);
-  outline-offset: 3px;
-}
-
-/* Use turquoise outline on turquoise and light turquoise buttons */
-.pcob-button--turquoise:focus-visible,
-.pcob-button--light-turquoise:focus-visible {
-  outline: 3px solid var(--pcob-turquoise);
-  outline-offset: 3px;
+.pcob-button.pcob-yellow:hover {
+  background-color: var(--pcob-yellow--2);
+  box-shadow: 0 4px 10px rgba(247, 234, 72, 0.35);
 }
 
 /* Color Variants */
@@ -700,6 +666,64 @@
   color: #fff;
 }
 
+/* Color Outlines for Keyboard Focus */
+
+/* Use black outline on black and gray buttons */
+.pcob-button--black:focus-visible,
+.pcob-button--gray:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 3px;
+}
+
+/* Use maroon outline on maroon and light maroon buttons */
+.pcob-button--maroon:focus-visible,
+.pcob-button--light-maroon:focus-visible {
+  outline: 3px solid var(--pcob-maroon);
+  outline-offset: 3px;
+}
+
+/* Use orange outline on orange and light orange buttons */
+.pcob-button--orange:focus-visible,
+.pcob-button--light-orange:focus-visible {
+  outline: 3px solid var(--pcob-orange);
+  outline-offset: 3px;
+}
+
+/* Use yellow outline on yellow and light yellow buttons */
+.pcob-button--yellow:focus-visible,
+.pcob-button--light-yellow:focus-visible {
+  outline: 3px solid var(--pcob-yellow);
+  outline-offset: 3px;
+}
+
+/* Use pink outline on pink and light pink buttons */
+.pcob-button--pink:focus-visible,
+.pcob-button--light-pink:focus-visible {
+  outline: 3px solid var(--pcob-pink);
+  outline-offset: 3px;
+}
+
+/* Use purple outline on purple and light purple buttons */
+.pcob-button--purple:focus-visible,
+.pcob-button--light-purple:focus-visible {
+  outline: 3px solid var(--pcob-purple);
+  outline-offset: 3px;
+}
+
+/* Use teal outline on teal and light teal buttons */
+.pcob-button--teal:focus-visible,
+.pcob-button--light-teal:focus-visible {
+  outline: 3px solid var(--pcob-teal-dark);
+  outline-offset: 3px;
+}
+
+/* Use turquoise outline on turquoise and light turquoise buttons */
+.pcob-button--turquoise:focus-visible,
+.pcob-button--light-turquoise:focus-visible {
+  outline: 3px solid var(--pcob-turquoise);
+  outline-offset: 3px;
+}
+
 /* Size Variants */
 .pcob-button--sm {
   font-size: 1.05rem; /* Increased by ~20% */
@@ -721,7 +745,6 @@
 .pcob-button:last-child {
   margin-right: 0;
 }
-
 
 /* Hero Variant */
 .pcob-hero-button-group {
