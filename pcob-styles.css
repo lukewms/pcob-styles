@@ -516,7 +516,7 @@
   --btn-shadow: 0 4px 10px var(--pcob-orange--2);
   --btn-outline: var(--pcob-orange--2);
   --btn-bg-flip: var(--pcob-orange-8);
-  --btn-fg-flip: var(--pcob-orange-2);
+  --btn-fg-flip: var(var(--pcob-orange--2));
 }
 
 .pcob-light-orange {
@@ -529,7 +529,7 @@
   --btn-shadow: 0 4px 10px var(--pcob-orange-7);
   --btn-outline: var(--pcob-orange--2);
   --btn-bg-flip: var(--pcob-orange-1);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-fg-flip: var(--pcob-orange-9);
 }
 
 /* === Burnt ======================================================= */
@@ -542,7 +542,7 @@
   --btn-bg-hover: var(--pcob-burnt--7);
   --btn-shadow: 0 4px 10px var(--pcob-burnt--7);
   --btn-outline: var(--pcob-burnt--6);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-burnt-9);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -555,8 +555,8 @@
   --btn-bg-hover: var(--pcob-burnt--4);
   --btn-shadow: 0 4px 10px var(--pcob-burnt--4);
   --btn-outline: var(--pcob-burnt--4);
-  --btn-bg-flip: var(--btn-fg);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-bg-flip: var(--pcob-burnt-9);
+  --btn-fg-flip: var(--pcob-burnt--3);
 }
 
 .pcob-light-burnt {
