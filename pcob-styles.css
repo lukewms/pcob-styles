@@ -365,7 +365,7 @@
   --btn-bg-hover: var(--pcob-white--9);
   --btn-shadow: 0 4px 10px var(--pcob-white--9);
   --btn-outline: var(--black);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-stone-8);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -380,7 +380,7 @@
   --btn-bg-hover: var(--pcob-grey--9);
   --btn-shadow: 0 4px 10px var(--pcob-grey--7);
   --btn-outline: var(--pcob-grey--9);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-grey-6);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -395,7 +395,7 @@
   --btn-shadow: 0 4px 10px var(--pcob-grey--3);
   --btn-outline: var(--pcob-grey--5);
   --btn-bg-flip: var(--btn-fg);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-fg-flip: var(--pcob-grey-9);
 }
 
 .pcob-light-grey,
@@ -409,7 +409,7 @@
   --btn-shadow: 0 4px 10px var(--pcob-grey-2);
   --btn-outline: var(--pcob-grey--5);
   --btn-bg-flip: var(--btn-fg);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-fg-flip: var(--pcob-grey-9);
 }
 
 /* === Stone ======================================================= */
