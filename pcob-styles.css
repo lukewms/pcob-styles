@@ -776,6 +776,62 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
+/* #region Image Card Animated Testing */
+
+.pcob-image-card-animated {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 400px;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  border-radius: 2px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.pcob-image-card-animated__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.6s ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.pcob-image-card-animated:hover .pcob-image-card-animated__bg {
+  transform: scale(1.05);
+}
+
+.pcob-image-card-animated__content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+  max-width: 50%;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.pcob-image-card-animated__heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.pcob-image-card-animated__body {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* #endregion Image Card Animated Testing */
+
 /* =============================================================
    PCOB BUTTON SYSTEM • Refactor 2025‑06‑07
    -------------------------------------------------------------
