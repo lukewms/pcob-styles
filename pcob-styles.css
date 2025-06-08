@@ -861,6 +861,38 @@
   .pcob-button--hero { width:100%; text-align:center; padding:0.7em 1.25em; font-size:1.25em; }
 }
 
+/* 5. SWIPE HOVER MODIFIER -------------------------------------------- */
+.pcob-button.pcob-button-swipe {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* ensures mix-blend works cleanly if used */
+  z-index: 0;
+}
+
+.pcob-button.pcob-button-swipe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--btn-bg-flip);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.pcob-button.pcob-button-swipe:hover::before,
+.pcob-button.pcob-button-swipe:active::before {
+  transform: translateX(100%);
+}
+
+.pcob-button.pcob-button-swipe:hover,
+.pcob-button.pcob-button-swipe:active {
+  color: var(--btn-fg-flip);
+  box-shadow: none;
+}
+
+
 
 /* #endregion =========    END IN PROGRESS    ========= */
 
