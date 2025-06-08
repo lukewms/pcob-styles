@@ -352,7 +352,7 @@
   --btn-bg-hover: var(--pcob-white--9);
   --btn-shadow: 0 4px 10px var(--pcob-white--9);
   --btn-outline: var(--black);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-stone-8);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -564,10 +564,10 @@
   color: var(--pcob-burnt-dark);
   border-color: var(--pcob-burnt-dark);
   --btn-bg: var(--pcob-burnt-lightest);
-  --btn-fg: var(--pcob-burnt-dark);
+  --btn-fg: var(--pcob-burnt--3);
   --btn-bg-hover: var(--pcob-burnt-7);
   --btn-shadow: 0 4px 10px var(--pcob-burnt-7);
-  --btn-outline: var(--pcob-burnt--2);
+  --btn-outline: var(--pcob-burnt--3);
   --btn-bg-flip: var(--btn-fg);
   --btn-fg-flip: var(--btn-bg);
 }
