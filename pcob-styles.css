@@ -422,7 +422,7 @@
   --btn-bg-hover: var(--pcob-stone--7);
   --btn-shadow: 0 4px 10px var(--pcob-stone--7);
   --btn-outline: var(--pcob-stone--7);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-stone-9);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -435,8 +435,8 @@
   --btn-bg-hover: var(--pcob-stone-darker);
   --btn-shadow: 0 4px 10px var(--pcob-stone);
   --btn-outline: var(--pcob-stone-dark);
-  --btn-bg-flip: var(--btn-fg);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-bg-flip: var(--pcob-stone-9);
+  --btn-fg-flip: var(--pcob-stone--5);
 }
 
 .pcob-light-stone {
@@ -449,7 +449,7 @@
   --btn-shadow: 0 4px 10px var(--pcob-stone-4);
   --btn-outline: var(--pcob-stone);
   --btn-bg-flip: var(--btn-fg);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-fg-flip: var(--pcob-stone-8);
 }
 
 /* === Maroon ====================================================== */
@@ -462,7 +462,7 @@
   --btn-bg-hover: var(--pcob-maroon--7);
   --btn-shadow: 0 4px 10px var(--pcob-maroon--7);
   --btn-outline: var(--pcob-maroon--7);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-maroon-9);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -475,7 +475,7 @@
   --btn-bg-hover: var(--pcob-maroon--2);
   --btn-shadow: 0 4px 10px var(--pcob-maroon--2);
   --btn-outline: var(--pcob-maroon-2);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-maroon-9);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -502,7 +502,7 @@
   --btn-bg-hover: var(--pcob-orange--7);
   --btn-shadow: 0 4px 10px var(--pcob-orange--7);
   --btn-outline: var(--pcob-orange--5);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-orange-8);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -515,8 +515,8 @@
   --btn-bg-hover: var(--pcob-orange--2);
   --btn-shadow: 0 4px 10px var(--pcob-orange--2);
   --btn-outline: var(--pcob-orange--2);
-  --btn-bg-flip: var(--btn-fg);
-  --btn-fg-flip: var(--btn-bg);
+  --btn-bg-flip: var(--pcob-orange-8);
+  --btn-fg-flip: var(--pcob-orange-2);
 }
 
 .pcob-light-orange {
@@ -528,7 +528,7 @@
   --btn-bg-hover: var(--pcob-orange-7);
   --btn-shadow: 0 4px 10px var(--pcob-orange-7);
   --btn-outline: var(--pcob-orange--2);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-orange-1);
   --btn-fg-flip: var(--btn-bg);
 }
 
@@ -568,7 +568,7 @@
   --btn-bg-hover: var(--pcob-burnt-7);
   --btn-shadow: 0 4px 10px var(--pcob-burnt-7);
   --btn-outline: var(--pcob-burnt--3);
-  --btn-bg-flip: var(--btn-fg);
+  --btn-bg-flip: var(--pcob-burnt--5);
   --btn-fg-flip: var(--btn-bg);
 }
 
