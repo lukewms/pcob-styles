@@ -118,25 +118,25 @@
     const opts = (f.options || allColorClasses)
       .map(o => `<option value="${o}" ${o===val?'selected':''}>${pretty(o)}</option>`)
       .join('');
-    return `<div><label><strong>${f.label}</strong></label><br/>
+    return `<div><label><strong>${f.label}</strong></label>
       <select data-field="${f.id}">${opts}</select></div>`;
   }
 
   /* multiline text */
   if (f.type === 'textarea'){
-    return `<div><label><strong>${f.label}</strong></label><br/>
+    return `<div><label><strong>${f.label}</strong></label>
       <textarea data-field="${f.id}" rows="3">${val}</textarea></div>`;
   }
 
   /* single-line inputs (heading, URLs, button labels, etc.)  */
   /* --- corrected: value now goes in the attribute, not inside the tag  */
-  return `<div><label><strong>${f.label}</strong></label><br/>
+  return `<div><label><strong>${f.label}</strong></label>
     <input type="text" data-field="${f.id}" value="${val}" /></div>`;
   }
 
 
     function tag(el,f,val,extra=''){
-      return `<div><label><strong>${f.label}</strong></label><br/>
+      return `<div><label><strong>${f.label}</strong></label>
         <${el} data-field="${f.id}"${extra||''}>${val}</${el === 'input' ? '' : el}></div>`;
     }
     function pretty(cls){
