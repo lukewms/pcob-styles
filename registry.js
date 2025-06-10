@@ -39,11 +39,11 @@ window.COMPONENTS = {
        selector:".pcob-image-band" },
 
       { id:"layout",   label:"Band Layout",  type:"select",
-      options:["pcob-layout-3-1","pcob-layout-1-3","pcob-layout-2-1"],
+      options:["pcob-band-layout-3-1","pcob-band-layout-1-3","pcob-band-layout-2-1","pcob-band-layout-1-2"],
       selector:".pcob-image-band" },
 
       { id:"behavior", label:"Image Behavior", type:"select",
-      options:["pcob-behavior-stacking","pcob-behavior-hiding"],
+      options:["pcob-band-behavior-stacking","pcob-band-behavior-hiding"],
       selector:".pcob-image-band" },
 
       { id:"buttonStyle", label:"Button Style", type:"select",
@@ -83,8 +83,8 @@ window.COMPONENTS = {
 
     /* Default values that appear on first load */
     defaults: {
-      layout:   "pcob-layout-3-1",
-      behavior: "pcob-behavior-stacking",
+      layout:   "pcob-band-layout-3-1",
+      behavior: "pcob-band-behavior-stacking",
       background:  "pcob-black",
       buttonStyle: "pcob-button-flip",
 

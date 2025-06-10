@@ -46,6 +46,16 @@
   ];
   const buttonModifierClasses = ['pcob-button-flip','pcob-button-swipe'];
 
+  /* ↓ NEW: class buckets for the two dropdowns  */
+  const layoutClasses = [
+    'pcob-band-layout-3-1','pcob-band-layout-1-3',
+    'pcob-band-layout-2-1','pcob-band-layout-1-2'
+  ];
+  
+  const behaviorClasses = [
+    'pcob-band-behavior-stacking','pcob-band-behavior-hiding'
+  ];
+
   /* ── 4.  UI scaffolding  ──────────────────────────────────────── */
   const pickerEl    = dom('select',  { id:'component-picker' });
   const controlsDiv = dom('div',     { id:'builder-controls' });
