@@ -20,28 +20,47 @@
 
   const buttonModifierClasses = ['pcob-button-flip','pcob-button-swipe'];
 
+  /* ---------- Root shell ---------- */
   const shell = document.getElementById('builder-shell');
   if (!shell) return console.error('Builder shell not found.');
 
-  /* ---------- Helper: prettify class names for <option> text ---------- */
-  const niceName = cls => cls.replace(/^pcob-/,'').replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+  /* ---------- TOP component picker (big maroon dropdown) ---------- */
+  const pickerEl = document.createElement('select');
+  pickerEl.id = 'component-picker';
+  shell.appendChild(pickerEl);
 
-  /* ---------- Build the component selector ---------- */
-  const picker = document.createElement('select');
+  /* ---------- Controls grid ---------- */
+  const controlsPane = document.createElement('div');
+  controlsPane.id = 'builder-controls';
+  shell.appendChild(controlsPane);
+
+  /* ---------- Live preview ---------- */
+  const previewPane = document.createElement('div');
+  previewPane.id = 'builder-preview';
+  shell.appendChild(previewPane);
+
+  /* ---------- Copy-HTML area ---------- */
+  const codePane = document.createElement('div');
+  codePane.id = 'builder-code';
+  shell.appendChild(codePane);
+
+  /* ---------- Helper: prettify class names for <option> text ---------- */
+  const niceName = cls =>
+    cls.replace(/^pcob-/,'')
+       .replace(/-/g,' ')
+       .replace(/\b\w/g,c=>c.toUpperCase());
+
+  /* ---------- Populate the component picker ---------- */
   Object.entries(window.COMPONENTS).forEach(([key,obj]) => {
     const opt = document.createElement('option');
     opt.value = key;
     opt.textContent = obj.label || key;
-    picker.appendChild(opt);
+    pickerEl.appendChild(opt);
   });
-  shell.appendChild(picker);
 
-  /* ---------- Container that holds the dynamic form & preview ---------- */
-  const pane = document.createElement('div');
-  shell.appendChild(pane);
-
-  picker.addEventListener('change', () => renderUI(picker.value));
-  renderUI(picker.value);           // initial render (first component)
+  /* ---------- Render UI when picker changes ---------- */
+  pickerEl.addEventListener('change', () => renderUI(pickerEl.value));
+  renderUI(pickerEl.value);          // initial render
 
   /* === Render selected component ===================================== */
   function renderUI(key){
