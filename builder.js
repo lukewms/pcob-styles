@@ -1,34 +1,32 @@
 /* builder.js
  * Generic UI + live-preview + copy-HTML logic.
- * Assumes registry.js loaded first.
+ * Requires registry.js to define window.COMPONENTS
+ * and an element <div id="builder-shell"></div> in the page.
+ *
+ * This version:
+ *   • defers until both prerequisites exist,
+ *   • guarantees the Builder runs exactly once,
+ *   • removes any stale duplicate children left by a half-run.
  */
 
-(function initBuilder() {
-  // Prevent an actual second initialisation once we succeed.
-  if (window._pcobBuilderBooted) return;
+(function initBuilder () {
 
-  // Make sure both prerequisites are present.
+  /* ── 1. Singleton / defer guard ───────────────────────────────── */
+  if (window._pcobBuilderBooted) return;              // already built once
+
   const shell      = document.getElementById('builder-shell');
   const components = window.COMPONENTS;
 
-  if (!shell || !components) {
-    /* Either:
-       - registry.js hasn’t executed yet  OR
-       - the HTML that contains #builder-shell hasn’t rendered yet
-       We’ll try again on the next DOMContentLoaded (or in microtasks
-       on publish where DOMContentLoaded already fired).             */
-    document.addEventListener(
-      'DOMContentLoaded',
-      initBuilder,                 // try again
-      { once: true }               // but only once
-    );
-    return;
+  if (!shell || !components) {                        // not ready yet
+    document.addEventListener('DOMContentLoaded', initBuilder, { once: true });
+    return;                                           // try again later
   }
 
-  /* === ORIGINAL builder.js CODE STARTS HERE === */
-  window._pcobBuilderBooted = true;   // final lock
+  window._pcobBuilderBooted = true;
+  console.log('[PCOB Builder] initialised');
 
-(() => {
+  /* ── 2. Original Builder code (runs exactly once) ─────────────── */
+
   /* ---------- Constants ---------- */
   const allColorClasses = [
     'pcob-default','pcob-black','pcob-white',
@@ -47,10 +45,14 @@
   const buttonModifierClasses = ['pcob-button-flip','pcob-button-swipe'];
 
   /* ---------- Root shell ---------- */
-  const shell = document.getElementById('builder-shell');
-  if (!shell) return console.error('Builder shell not found.');
+  /* Clean up any stale duplicate children from an interrupted run */
+  ['#component-picker','#builder-controls','#builder-preview','#builder-code']
+    .forEach(sel=>{
+      const dups=shell.querySelectorAll(sel);
+      if(dups.length>1) dups.forEach((el,i)=>{ if(i<dups.length-1) el.remove(); });
+    });
 
-  /* ---------- TOP component picker (big maroon dropdown) ---------- */
+  /* ---------- Component picker ---------- */
   const pickerEl = document.createElement('select');
   pickerEl.id = 'component-picker';
   shell.appendChild(pickerEl);
@@ -70,90 +72,96 @@
   codePane.id = 'builder-code';
   shell.appendChild(codePane);
 
-  /* ---------- Helper: prettify class names for <option> text ---------- */
+  /* ---------- Helper: prettify class names ---------- */
   const niceName = cls =>
     cls.replace(/^pcob-/,'')
        .replace(/-/g,' ')
        .replace(/\b\w/g,c=>c.toUpperCase());
 
-  /* ---------- Populate the component picker ---------- */
-  Object.entries(window.COMPONENTS).forEach(([key,obj]) => {
+  /* ---------- Populate picker ---------- */
+  Object.entries(window.COMPONENTS).forEach(([key,obj])=>{
     const opt = document.createElement('option');
     opt.value = key;
     opt.textContent = obj.label || key;
     pickerEl.appendChild(opt);
   });
 
-  /* ---------- Render UI when picker changes ---------- */
-  pickerEl.addEventListener('change', () => renderUI(pickerEl.value));
-  renderUI(pickerEl.value);          // initial render
+  /* ---------- Render on change ---------- */
+  pickerEl.addEventListener('change',()=>renderUI(pickerEl.value));
+  renderUI(pickerEl.value);                     // initial render
 
-  /* === Render selected component ===================================== */
+  /* === Render selected component ================================= */
   function renderUI(key){
     const def = window.COMPONENTS[key];
-    if(!def){ pane.innerHTML = '<p>Component not found.</p>'; return; }
+    if(!def){
+      previewPane.innerHTML='<p>Component not found.</p>';
+      controlsPane.innerHTML='';
+      codePane.innerHTML='';
+      return;
+    }
 
-    /* ----- State object that mirrors form fields ----- */
+    /* ----- State mirror ----- */
     const state = structuredClone(def.defaults);
 
-    /* ----- Build form HTML from field definitions ----- */
+    /* ----- Build controls ----- */
     const form = document.createElement('div');
-    form.className = 'pcob-test-container';      // reuse your old CSS
+    form.className = 'pcob-test-container';
     form.innerHTML = def.fields.map(buildFieldHTML).join('');
 
-    /* ----- Preview element ----- */
+    /* ----- Build preview ----- */
     const preview = document.createElement('div');
-    preview.dataset.preview = '';
-    preview.innerHTML = populateTemplate(def.template, state);
+    preview.dataset.preview='';
+    preview.innerHTML = populateTemplate(def.template,state);
 
-    /* ----- Code output area ----- */
+    /* ----- Code output wrapper ----- */
     const outputWrap = document.createElement('div');
     outputWrap.className = 'pcob-code-output';
     outputWrap.innerHTML = `
       <button class="copy-html-btn">📋 Copy HTML</button><br/>
-      <textarea class="component-html" rows="10" style="width:100%;font-family:monospace;" readonly></textarea>
+      <textarea class="component-html" rows="10"
+                style="width:100%;font-family:monospace;" readonly></textarea>
     `;
 
-    controlsPane.innerHTML = '';
+    /* ----- Inject into panes ----- */
+    controlsPane.innerHTML='';
     controlsPane.append(form);
 
-    previewPane.innerHTML  = '';
+    previewPane.innerHTML='';
     previewPane.append(preview);
 
-    codePane.innerHTML = '';
+    codePane.innerHTML='';
     codePane.append(outputWrap);
 
-    updateCodeOutput();        // initial code dump
+    updateCodeOutput();                       // initial dump
 
-    /* ==== Event delegation for all inputs/selects inside the form ==== */
+    /* ========== Listeners ========== */
     form.addEventListener('input', onFieldChange);
     form.addEventListener('change', onFieldChange);
 
     /* Copy-to-clipboard */
     outputWrap.querySelector('.copy-html-btn')
-      .addEventListener('click', () => {
+      .addEventListener('click',()=>{
         navigator.clipboard.writeText(outputWrap.querySelector('textarea').value)
-          .then(() => showTempLabel('✅ Copied!'), () => showTempLabel('❌ Failed'));
-
-        function showTempLabel(txt){
-          const btn = outputWrap.querySelector('.copy-html-btn');
-          const old = btn.textContent;
-          btn.textContent = txt;
-          setTimeout(()=>btn.textContent = old, 1500);
+          .then(()=>flash('✅ Copied!'),()=>flash('❌ Failed'));
+        function flash(txt){
+          const btn=outputWrap.querySelector('.copy-html-btn');
+          const old=btn.textContent;
+          btn.textContent=txt;
+          setTimeout(()=>btn.textContent=old,1500);
         }
       });
 
-    /* ---------- Field builders ---------- */
+    /* ---------- Helpers ---------- */
     function buildFieldHTML(f){
       const val = state[f.id] ?? '';
-      if(f.type === 'color' || (f.type === 'select' && f.options)){
-        const opts = (f.options || allColorClasses)
-          .map(o => `<option value="${o}" ${o===val?'selected':''}>${niceName(o)}</option>`)
+      if(f.type==='color'||(f.type==='select'&&f.options)){
+        const opts=(f.options||allColorClasses)
+          .map(o=>`<option value="${o}" ${o===val?'selected':''}>${niceName(o)}</option>`)
           .join('');
         return `<div><label><strong>${f.label}</strong></label><br/>
           <select data-field="${f.id}">${opts}</select></div>`;
       }
-      if(f.type === 'textarea'){
+      if(f.type==='textarea'){
         return `<div><label><strong>${f.label}</strong></label>
           <textarea data-field="${f.id}" rows="3">${val}</textarea></div>`;
       }
@@ -161,7 +169,6 @@
         <input type="text" data-field="${f.id}" value="${val}" /></div>`;
     }
 
-    /* ---------- Input / select handler ---------- */
     function onFieldChange(e){
       const fieldId = e.target.dataset.field;
       if(!fieldId) return;
@@ -170,59 +177,55 @@
       updateCodeOutput();
     }
 
-    /* ---------- Apply one field’s value to the preview ---------- */
-    function applyField(f, value){
+    function applyField(f,value){
       const targets = preview.querySelectorAll(f.selector);
       if(!targets.length) return;
 
-      /* color / select = class manipulation */
-      if(f.type === 'color' || (f.type === 'select' && f.options)){
+      /* color / select */
+      if(f.type==='color'||(f.type==='select'&&f.options)){
         targets.forEach(el=>{
-          el.classList.remove(...allColorClasses, ...buttonModifierClasses);
+          el.classList.remove(...allColorClasses,...buttonModifierClasses);
           if(value) el.classList.add(value);
         });
         return;
       }
 
-      /* backgroundImage style */
-      if(f.prop === 'backgroundImage'){
-        targets.forEach(el => el.style.backgroundImage = `url('${value}')`);
+      if(f.prop==='backgroundImage'){
+        targets.forEach(el=>el.style.backgroundImage=`url('${value}')`);
         return;
       }
 
-      /* attribute change */
       if(f.attr){
-        targets.forEach(el => el.setAttribute(f.attr, value));
+        targets.forEach(el=>el.setAttribute(f.attr,value));
         return;
       }
 
-      /* otherwise textContent */
-      targets.forEach(el => el.textContent = value);
+      targets.forEach(el=>el.textContent=value);
     }
 
-    /* ---------- Dump pretty HTML for copy-paste ---------- */
     function updateCodeOutput(){
       const ta = outputWrap.querySelector('textarea');
       const clone = preview.cloneNode(true);
-      clone.querySelectorAll('[data-preview]').forEach(el=>el.removeAttribute('data-preview'));
+      clone.querySelectorAll('[data-preview]')
+           .forEach(el=>el.removeAttribute('data-preview'));
       ta.value = formatHTML(clone.innerHTML.trim());
     }
 
     function formatHTML(html){
-      const indent = (pad, str) => str.split('\n').map(l=>pad+l).join('\n');
-      const lines = html.replace(/></g,'>\n<').split('\n');
-      let depth = 0, pretty = '';
+      const pad  = n=>'  '.repeat(n);
+      const lines=html.replace(/></g,'>\n<').split('\n');
+      let depth=0,out='';
       lines.forEach(line=>{
         if(line.match(/^<\/\w/)) depth--;
-        pretty += indent('  '.repeat(depth), line) + '\n';
+        out+=pad(depth)+line+'\n';
         if(line.match(/^<[^/!].*[^/]>$/)) depth++;
       });
-      return pretty.trim();
+      return out.trim();
     }
 
-    /* ---------- Replace {{tokens}} helper ---------- */
-    function populateTemplate(tpl, obj){
-      return tpl.replace(/{{(.*?)}}/g, (_,k)=>obj[k] ?? '');
+    function populateTemplate(tpl,obj){
+      return tpl.replace(/{{(.*?)}}/g,(_,k)=>obj[k]??'');
     }
   }
-})();
+
+})();   /* ← runs immediately, but only after prerequisites exist */
