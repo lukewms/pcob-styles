@@ -4,9 +4,9 @@
  */
 
 window.COMPONENTS = {
-  /* ===== 3-1 Image Band ====================================== */
-  "3-1-image-band": {
-    label: "3-1 Image Band",
+  /* ===== Image Bands ====================================== */
+  "image-band": {
+    label: "Image Bands",
 
     /* Handlebars-style {{tokens}} get replaced at render time */
     template: /*html*/`
