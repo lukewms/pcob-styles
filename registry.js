@@ -35,8 +35,8 @@ window.COMPONENTS = {
 
     /* Form-field definitions */
     fields: [
-      {id:"background",  label:"Background Color", type:"color",
-       selector:".pcob-3-1-image-band-stacking"},
+      { id:"background", label:"Background Color", type:"color",
+       selector:".pcob-image-band" },
 
       { id:"layout",   label:"Band Layout",  type:"select",
       options:["pcob-layout-3-1","pcob-layout-1-3","pcob-layout-2-1"],
@@ -46,9 +46,9 @@ window.COMPONENTS = {
       options:["pcob-behavior-stacking","pcob-behavior-hiding"],
       selector:".pcob-image-band" },
 
-      {id:"buttonStyle", label:"Button Style",     type:"select",
-       options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
-       selector:".pcob-3-1-image-band-stacking .pcob-button"},
+      { id:"buttonStyle", label:"Button Style", type:"select",
+      options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
+      selector:".pcob-image-band .pcob-button" },
 
       {id:"imageUrl",    label:"Image URL",        type:"text",
        selector:".pcob-band-image-bg", prop:"backgroundImage"},
