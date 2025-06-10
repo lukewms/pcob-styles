@@ -257,7 +257,7 @@
       clone.querySelectorAll('[data-preview]')
            .forEach(el=>el.removeAttribute('data-preview'));
       clone.querySelectorAll('.pcob-hidden').forEach(el => el.remove());
-    +  ta.value = formatHTML(clone.innerHTML.trim());d
+      ta.value = formatHTML(clone.innerHTML.trim());d
     }
 
     function formatHTML(html){
