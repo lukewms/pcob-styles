@@ -88,6 +88,59 @@ window.COMPONENTS = {
       btn1Label:"Explore Classes", btn1Url:"https://vt.edu", btn1Color:"pcob-maroon",
       btn2Label:"Alumni Network", btn2Url:"https://vt.edu", btn2Color:"pcob-maroon"
     }
+  },
+
+    /* ===== Feature Bar =========================================== */
+  "feature-bar": {
+    label: "Feature Bar",
+
+    template: /*html*/`
+      <div class="pcob-feature-bar {{background}}">
+        <div class="pcob-feature">
+          <div class="pcob-feature-title">{{title1}}</div>
+          <div class="pcob-feature-subtitle">{{subtitle1}}</div>
+        </div>
+        <div class="pcob-feature-divider"></div>
+        <div class="pcob-feature">
+          <div class="pcob-feature-title">{{title2}}</div>
+          <div class="pcob-feature-subtitle">{{subtitle2}}</div>
+        </div>
+        <div class="pcob-feature-divider"></div>
+        <div class="pcob-feature">
+          <div class="pcob-feature-title">{{title3}}</div>
+          <div class="pcob-feature-subtitle">{{subtitle3}}</div>
+        </div>
+      </div>`,
+
+    fields: [
+      { id: "background", label: "Background Color", type: "color",
+        selector: ".pcob-feature-bar" },
+
+      { id: "title1", label: "Column 1 Title", type: "text",
+        selector: ".pcob-feature:nth-of-type(1) .pcob-feature-title" },
+      { id: "subtitle1", label: "Column 1 Subtitle", type: "text",
+        selector: ".pcob-feature:nth-of-type(1) .pcob-feature-subtitle" },
+
+      { id: "title2", label: "Column 2 Title", type: "text",
+        selector: ".pcob-feature:nth-of-type(2) .pcob-feature-title" },
+      { id: "subtitle2", label: "Column 2 Subtitle", type: "text",
+        selector: ".pcob-feature:nth-of-type(2) .pcob-feature-subtitle" },
+
+      { id: "title3", label: "Column 3 Title", type: "text",
+        selector: ".pcob-feature:nth-of-type(3) .pcob-feature-title" },
+      { id: "subtitle3", label: "Column 3 Subtitle", type: "text",
+        selector: ".pcob-feature:nth-of-type(3) .pcob-feature-subtitle" }
+    ],
+
+    defaults: {
+      background: "pcob-maroon",
+      title1:     "Smart Scheduling",
+      subtitle1:  "Built for Working Pros",
+      title2:     "Real-World Impact",
+      subtitle2:  "Projects with Purpose",
+      title3:     "Hokie Network",
+      subtitle3:  "Alumni Across Industries"
+    }
   }
 
   /* ===== Add more components below using the same structure ===== */
