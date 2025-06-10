@@ -3,13 +3,30 @@
  * Assumes registry.js loaded first.
  */
 
-if (window._pcobBuilderInit) {
-  // Already initialised once in this page → skip the second run
-  console.warn('[PCOB Builder] duplicate script call ignored');
-  return;
-}
+(function initBuilder() {
+  // Prevent an actual second initialisation once we succeed.
+  if (window._pcobBuilderBooted) return;
 
-window._pcobBuilderInit = true;
+  // Make sure both prerequisites are present.
+  const shell      = document.getElementById('builder-shell');
+  const components = window.COMPONENTS;
+
+  if (!shell || !components) {
+    /* Either:
+       - registry.js hasn’t executed yet  OR
+       - the HTML that contains #builder-shell hasn’t rendered yet
+       We’ll try again on the next DOMContentLoaded (or in microtasks
+       on publish where DOMContentLoaded already fired).             */
+    document.addEventListener(
+      'DOMContentLoaded',
+      initBuilder,                 // try again
+      { once: true }               // but only once
+    );
+    return;
+  }
+
+  /* === ORIGINAL builder.js CODE STARTS HERE === */
+  window._pcobBuilderBooted = true;   // final lock
 
 (() => {
   /* ---------- Constants ---------- */
