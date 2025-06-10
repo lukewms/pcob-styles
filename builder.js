@@ -2,6 +2,15 @@
  * Generic UI + live-preview + copy-HTML logic.
  * Assumes registry.js loaded first.
  */
+
+if (window._pcobBuilderInit) {
+  // Already initialised once in this page → skip the second run
+  console.warn('[PCOB Builder] duplicate script call ignored');
+  return;
+}
+
+window._pcobBuilderInit = true;
+
 (() => {
   /* ---------- Constants ---------- */
   const allColorClasses = [
