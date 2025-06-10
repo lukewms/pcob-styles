@@ -111,18 +111,30 @@
 
     /* ===== inner helpers ===== */
     function buildFieldHTML(f){
-      const val = state[f.id] ?? '';
-      if(f.type==='color' || (f.type==='select' && f.options)){
-        const opts = (f.options||allColorClasses)
-          .map(o=>`<option value="${o}" ${o===val?'selected':''}>${pretty(o)}</option>`)
-          .join('');
-        return tag('select',f,opts);
-      }
-      if(f.type==='textarea'){
-        return tag('textarea',f,val,` rows="3"`);
-      }
-      return tag('input',f,val);
-    }
+  const val = state[f.id] ?? '';
+
+  /* colour pickers & explicit selects */
+  if (f.type === 'color' || (f.type === 'select' && f.options)){
+    const opts = (f.options || allColorClasses)
+      .map(o => `<option value="${o}" ${o===val?'selected':''}>${pretty(o)}</option>`)
+      .join('');
+    return `<div><label><strong>${f.label}</strong></label><br/>
+      <select data-field="${f.id}">${opts}</select></div>`;
+  }
+
+  /* multiline text */
+  if (f.type === 'textarea'){
+    return `<div><label><strong>${f.label}</strong></label><br/>
+      <textarea data-field="${f.id}" rows="3">${val}</textarea></div>`;
+  }
+
+  /* single-line inputs (heading, URLs, button labels, etc.)  */
+  /* --- corrected: value now goes in the attribute, not inside the tag  */
+  return `<div><label><strong>${f.label}</strong></label><br/>
+    <input type="text" data-field="${f.id}" value="${val}" /></div>`;
+  }
+
+
     function tag(el,f,val,extra=''){
       return `<div><label><strong>${f.label}</strong></label><br/>
         <${el} data-field="${f.id}"${extra||''}>${val}</${el === 'input' ? '' : el}></div>`;
