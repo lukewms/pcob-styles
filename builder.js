@@ -88,8 +88,15 @@
       <textarea class="component-html" rows="10" style="width:100%;font-family:monospace;" readonly></textarea>
     `;
 
-    pane.innerHTML = '';       // clear previous UI
-    pane.append(form, preview, outputWrap);
+    controlsPane.innerHTML = '';
+    controlsPane.append(form);
+
+    previewPane.innerHTML  = '';
+    previewPane.append(preview);
+
+    codePane.innerHTML = '';
+    codePane.append(outputWrap);
+
     updateCodeOutput();        // initial code dump
 
     /* ==== Event delegation for all inputs/selects inside the form ==== */
