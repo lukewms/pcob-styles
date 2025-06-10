@@ -165,6 +165,24 @@
         return;
       }
 
+       /* ---- LAYOUT PICKER ---- */
+      if (f.id === 'layout'){
+        targets.forEach(el=>{
+          el.classList.remove(...layoutClasses);
+          if(value) el.classList.add(value);
+        });
+        return;
+      }
+
+      /* ---- IMAGE-BEHAVIOR PICKER ---- */
+      if (f.id === 'behavior'){
+        targets.forEach(el=>{
+          el.classList.remove(...behaviorClasses);
+          if(value) el.classList.add(value);
+        });
+        return;
+      }
+
       /* ---- BUTTON-STYLE PICKER ---- */
       if(f.id==='buttonStyle'){
         targets.forEach(el=>{

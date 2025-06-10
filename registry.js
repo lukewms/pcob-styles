@@ -10,7 +10,7 @@ window.COMPONENTS = {
 
     /* Handlebars-style {{tokens}} get replaced at render time */
     template: /*html*/`
-      <div class="pcob-3-1-image-band-stacking {{background}}">
+      <div class="pcob-image-band {{layout}} {{behavior}} {{background}}">
         <div class="pcob-band-text">
           <h2 class="pcob-band-heading">{{heading}}</h2>
           <p  class="pcob-band-body">{{body}}</p>
@@ -37,6 +37,14 @@ window.COMPONENTS = {
     fields: [
       {id:"background",  label:"Background Color", type:"color",
        selector:".pcob-3-1-image-band-stacking"},
+
+      { id:"layout",   label:"Band Layout",  type:"select",
+      options:["pcob-layout-3-1","pcob-layout-1-3","pcob-layout-2-1"],
+      selector:".pcob-image-band" },
+
+      { id:"behavior", label:"Image Behavior", type:"select",
+      options:["pcob-behavior-stacking","pcob-behavior-hiding"],
+      selector:".pcob-image-band" },
 
       {id:"buttonStyle", label:"Button Style",     type:"select",
        options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
@@ -75,6 +83,8 @@ window.COMPONENTS = {
 
     /* Default values that appear on first load */
     defaults: {
+      layout:   "pcob-layout-3-1",
+      behavior: "pcob-behavior-stacking",
       background:  "pcob-black",
       buttonStyle: "pcob-button-flip",
 
