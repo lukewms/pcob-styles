@@ -51,7 +51,7 @@
     'pcob-band-layout-3-1','pcob-band-layout-1-3',
     'pcob-band-layout-2-1','pcob-band-layout-1-2'
   ];
-  
+
   const behaviorClasses = [
     'pcob-band-behavior-stacking','pcob-band-behavior-hiding'
   ];
@@ -193,6 +193,25 @@
         return;
       }
 
+            /* ---- BUTTON COUNT PICKER ---- */
+      if (f.id === 'buttonCount'){
+        /* first button = nth-of-type(1) ; second = nth-of-type(2) */
+        const btn1 = preview.querySelector('.pcob-button:nth-of-type(1)');
+        const btn2 = preview.querySelector('.pcob-button:nth-of-type(2)');
+
+        if (value === 'none'){
+          btn1?.classList.add('pcob-hidden');
+          btn2?.classList.add('pcob-hidden');
+        } else if (value === 'one'){
+          btn1?.classList.remove('pcob-hidden');
+          btn2?.classList.add('pcob-hidden');
+        } else {                         // 'two' (default)
+          btn1?.classList.remove('pcob-hidden');
+          btn2?.classList.remove('pcob-hidden');
+        }
+        return;
+      }
+
       /* ---- BUTTON-STYLE PICKER ---- */
       if(f.id==='buttonStyle'){
         targets.forEach(el=>{
@@ -237,7 +256,8 @@
       const clone = preview.cloneNode(true);
       clone.querySelectorAll('[data-preview]')
            .forEach(el=>el.removeAttribute('data-preview'));
-      ta.value = formatHTML(clone.innerHTML.trim());
+      clone.querySelectorAll('.pcob-hidden').forEach(el => el.remove());
+    +  ta.value = formatHTML(clone.innerHTML.trim());d
     }
 
     function formatHTML(html){

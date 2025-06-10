@@ -46,6 +46,11 @@ window.COMPONENTS = {
       options:["pcob-band-behavior-stacking","pcob-band-behavior-hiding"],
       selector:".pcob-image-band" },
 
+      /* ── Button count selector ───────────────────────────── */
+     { id:"buttonCount", label:"Buttons Shown", type:"select",
+       options:["two","one","none"],
+       selector:".pcob-image-band" },
+
       { id:"buttonStyle", label:"Button Style", type:"select",
       options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
       selector:".pcob-image-band .pcob-button" },
@@ -87,6 +92,7 @@ window.COMPONENTS = {
       behavior: "pcob-band-behavior-stacking",
       background:  "pcob-black",
       buttonStyle: "pcob-button-flip",
+      buttonCount:"two",
 
       imageUrl: "/content/dam/cba_pamplin_vt_edu/img/mba/" +
                 "20250505_MBA_InnovationCampus_JordiShelton_LWR69528_websize_Slate.jpg",
