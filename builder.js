@@ -227,12 +227,12 @@
 
     // ---- TEXT CASE PICKERS ----
     if (f.id === "headingCaps") {
-    targets.forEach(el => {
-      el.classList.remove(...capsClasses);   // remove both first
-      if (value) el.classList.add(value);    // then add only one
-    });
-    return;
-    }  
+  targets.forEach(el => {
+    el.classList.remove(...capsClasses);  // remove both explicitly
+    if (value && capsClasses.includes(value)) el.classList.add(value);
+  });
+  return;
+    }
 
        /* ---- BUTTON COUNT PICKER ---- */
       if (f.id === 'buttonCount'){
