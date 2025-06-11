@@ -829,6 +829,25 @@
   margin-bottom: 1rem;
 }
 
+.pcob-stat-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pcob-stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.pcob-stat-label {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  opacity: 0.85;
+}
+
 /* #region Image Card Animated Testing */
 
 .pcob-image-card-animated {

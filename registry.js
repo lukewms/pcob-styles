@@ -365,5 +365,82 @@ window.COMPONENTS = {
     btnColor: "pcob-maroon",
     buttonStyle: "pcob-button-flip"
   }
+},
+
+"stat-block": {
+  label: "Stat Block",
+
+  template: /*html*/`
+    <div class="pcob-stat-block {{background}}">
+      <div class="pcob-stat">
+        <div class="pcob-stat-number {{numberFont}} {{numberCaps}}">
+          {{stat1}}
+        </div>
+        <div class="pcob-stat-label {{labelFont}}">
+          {{label1}}
+        </div>
+      </div>
+      <div class="pcob-stat">
+        <div class="pcob-stat-number {{numberFont}} {{numberCaps}}">
+          {{stat2}}
+        </div>
+        <div class="pcob-stat-label {{labelFont}}">
+          {{label2}}
+        </div>
+      </div>
+      <div class="pcob-stat">
+        <div class="pcob-stat-number {{numberFont}} {{numberCaps}}">
+          {{stat3}}
+        </div>
+        <div class="pcob-stat-label {{labelFont}}">
+          {{label3}}
+        </div>
+      </div>
+    </div>`,
+
+  fields: [
+    { id: "background", label: "Background Color", type: "color",
+      selector: ".pcob-stat-block" },
+
+    { id: "stat1", label: "Stat 1", type: "text",
+      selector: ".pcob-stat:nth-of-type(1) .pcob-stat-number" },
+    { id: "label1", label: "Label 1", type: "text",
+      selector: ".pcob-stat:nth-of-type(1) .pcob-stat-label" },
+
+    { id: "stat2", label: "Stat 2", type: "text",
+      selector: ".pcob-stat:nth-of-type(2) .pcob-stat-number" },
+    { id: "label2", label: "Label 2", type: "text",
+      selector: ".pcob-stat:nth-of-type(2) .pcob-stat-label" },
+
+    { id: "stat3", label: "Stat 3", type: "text",
+      selector: ".pcob-stat:nth-of-type(3) .pcob-stat-number" },
+    { id: "label3", label: "Label 3", type: "text",
+      selector: ".pcob-stat:nth-of-type(3) .pcob-stat-label" },
+
+    { id: "numberFont", label: "Number Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-stat-number" },
+
+    { id: "numberCaps", label: "Number Case", type: "select",
+      options: ["pcob-text-regular-case", "pcob-text-uppercase"],
+      selector: ".pcob-stat-number" },
+
+    { id: "labelFont", label: "Label Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-stat-label" }
+  ],
+
+  defaults: {
+    background: "pcob-light-maroon",
+    stat1: "98%",
+    label1: "Job Placement",
+    stat2: "$105K",
+    label2: "Average Starting Salary",
+    stat3: "3:1",
+    label3: "Student-to-Faculty Ratio",
+    numberFont: "pcob-font-gineso",
+    numberCaps: "pcob-text-regular-case",
+    labelFont: "pcob-font-crimson"
+  }
 }
 };
