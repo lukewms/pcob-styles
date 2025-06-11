@@ -1225,14 +1225,13 @@ var(--black) 40px
 }
 
 .pcob-band-heading{
-  font-family:"Gineso","Gineso LT",sans-serif;
   font-style:italic; font-weight:600;
   font-size:clamp(2.5rem,4vw,3rem);
   line-height:1.2; margin-bottom:1.2rem; color:inherit;
 }
 
 .pcob-band-body{
-  font-size:1.1rem; line-height:1.7;
+  font-size:clamp(1rem,2vw,1.45rem); line-height:1.7;
   margin-bottom:2rem; color:inherit;
 }
 
