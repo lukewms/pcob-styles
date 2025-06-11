@@ -46,6 +46,22 @@ window.COMPONENTS = {
       options:["pcob-band-behavior-stacking","pcob-band-behavior-hiding"],
       selector:".pcob-image-band" },
 
+      { id: "headingFont", label: "Heading Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-band-heading" },
+
+    { id: "bodyFont", label: "Body Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-band-body" },
+
+    { id: "headingCaps", label: "Heading Case", type: "select",
+      options: ["", "pcob-text-uppercase"],
+      selector: ".pcob-band-heading" },
+
+    { id: "bodyCaps", label: "Body Text Case", type: "select",
+      options: ["", "pcob-text-uppercase"],
+      selector: ".pcob-band-body" },
+
       /* ── Button count selector ───────────────────────────── */
      { id:"buttonCount", label:"Buttons Shown", type:"select",
        options:["two","one","none"],
@@ -93,6 +109,10 @@ window.COMPONENTS = {
       background:  "pcob-black",
       buttonStyle: "pcob-button-flip",
       buttonCount:"two",
+      headingFont: "pcob-font-gineso",
+      bodyFont: "pcob-font-crimson",
+      headingCaps: "",
+      bodyCaps: "",
 
       imageUrl: "/content/dam/cba_pamplin_vt_edu/img/mba/" +
                 "20250505_MBA_InnovationCampus_JordiShelton_LWR69528_websize_Slate.jpg",

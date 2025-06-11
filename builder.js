@@ -60,6 +60,16 @@
   'pcob-text-band-left','pcob-text-band-center','pcob-text-band-right'
 ];
 
+  const fontClasses = [
+    "pcob-font-gineso",
+    "pcob-font-acherus",
+    "pcob-font-crimson"
+  ];
+
+  const capsClasses = [
+    "pcob-text-uppercase"
+  ];
+
   /* ── 4.  UI scaffolding  ──────────────────────────────────────── */
   const pickerEl    = dom('select',  { id:'component-picker' });
   const controlsDiv = dom('div',     { id:'builder-controls' });
@@ -205,6 +215,24 @@
         });
         return;
       }
+
+      // ---- FONT FAMILY PICKERS ----
+    if (f.id === "headingFont" || f.id === "bodyFont") {
+      targets.forEach(el => {
+        el.classList.remove(...fontClasses);
+        if (value) el.classList.add(value);
+      });
+      return;
+    }
+
+    // ---- TEXT CASE PICKERS ----
+    if (f.id === "headingCaps" || f.id === "bodyCaps") {
+      targets.forEach(el => {
+        el.classList.remove(...capsClasses);
+        if (value) el.classList.add(value);
+      });
+      return;
+    }
 
        /* ---- BUTTON COUNT PICKER ---- */
       if (f.id === 'buttonCount'){

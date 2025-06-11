@@ -776,6 +776,29 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
+/* === Font Family Utilities === */
+.pcob-font-gineso {
+  font-family: "Gineso", serif;     /* Update with actual fallback if needed */
+}
+
+.pcob-font-acherus {
+  font-family: "Acherus", sans-serif;
+}
+
+.pcob-font-crimson {
+  font-family: "Crimson Text", serif;
+}
+
+/* === Capitalization === */
+.pcob-text-uppercase {
+  text-transform: uppercase;
+}
+
+/* Optional: Add a class to reset back to normal case if needed */
+.pcob-text-regular {
+  text-transform: none;
+}
+
 /* #region Image Card Animated Testing */
 
 .pcob-image-card-animated {
@@ -832,7 +855,7 @@
 
 /* #endregion Image Card Animated Testing */
 
-/* =============================================================
+/* #region PCOB Buttons =============================================================
    PCOB BUTTON SYSTEM • Refactor 2025‑06‑07
    -------------------------------------------------------------
    • One base component + tiny utility classes
