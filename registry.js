@@ -259,7 +259,7 @@ window.COMPONENTS = {
   label: "Button",
 
   template: /*html*/`
-    <a href="{{url}}" class="pcob-button {{color}} {{style}} {{size}}">
+    <a href="{{url}}" class="pcob-button {{color}} {{buttonStyle}} {{size}}">
       {{label}}
     </a>`,
 
@@ -273,7 +273,7 @@ window.COMPONENTS = {
     { id: "color", label: "Button Color", type: "color",
       selector: ".pcob-button" },
 
-    { id: "style", label: "Button Animation", type: "select",
+    { id: "buttonStyle", label: "Button Animation", type: "select",
       options: ["pcob-button", "pcob-button-flip", "pcob-button-swipe"],
       selector: ".pcob-button" },
 
@@ -284,7 +284,7 @@ window.COMPONENTS = {
 
   defaults: {
     label: "Click Me",
-    url: "#",
+    url: "https://vt.edu",
     color: "pcob-maroon",
     style: "pcob-button-flip",
     size: "pcob-button--md"
