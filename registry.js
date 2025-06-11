@@ -442,5 +442,103 @@ window.COMPONENTS = {
     numberCaps: "pcob-text-regular-case",
     labelFont: "pcob-font-crimson"
   }
+},
+
+"alumni-stories": {
+  label: "Alumni Stories (4-Up)",
+
+  template: /*html*/`
+    <div class="pcob-alumni-stories {{background}}">
+      {{#each cards}}
+      <div class="pcob-alumni-story" style="background-image: url('{{image}}')">
+        <div class="pcob-alumni-overlay">
+          <h3 class="{{headingFont}} {{headingCaps}}">{{heading}}</h3>
+          <p class="{{bodyFont}}">{{subheading}}</p>
+          <a href="{{url}}" class="pcob-button pcob-button--sm {{buttonColor}} {{buttonStyle}}">
+            {{buttonLabel}}
+          </a>
+        </div>
+      </div>
+      {{/each}}
+    </div>`,
+
+  // We’ll flatten cards into individual fields for builder simplicity
+  fields: [
+    { id: "background", label: "Grid Background", type: "color",
+      selector: ".pcob-alumni-stories" },
+
+    { id: "headingFont", label: "Heading Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-alumni-overlay h3" },
+
+    { id: "headingCaps", label: "Heading Case", type: "select",
+      options: ["pcob-text-regular-case", "pcob-text-uppercase"],
+      selector: ".pcob-alumni-overlay h3" },
+
+    { id: "bodyFont", label: "Body Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-alumni-overlay p" },
+
+    { id: "buttonStyle", label: "Button Style", type: "select",
+      options: ["pcob-button", "pcob-button-flip", "pcob-button-swipe"],
+      selector: ".pcob-alumni-overlay .pcob-button" },
+
+    // Repeated card fields
+    ...[1, 2, 3, 4].flatMap(i => ([
+      { id: `image${i}`, label: `Image ${i}`, type: "text",
+        selector: `.pcob-alumni-story:nth-of-type(${i})`, prop: "backgroundImage" },
+
+      { id: `heading${i}`, label: `Title ${i}`, type: "text",
+        selector: `.pcob-alumni-story:nth-of-type(${i}) h3` },
+
+      { id: `subheading${i}`, label: `Subheading ${i}`, type: "text",
+        selector: `.pcob-alumni-story:nth-of-type(${i}) p` },
+
+      { id: `buttonLabel${i}`, label: `Button ${i} Label`, type: "text",
+        selector: `.pcob-alumni-story:nth-of-type(${i}) .pcob-button` },
+
+      { id: `url${i}`, label: `Button ${i} URL`, type: "text",
+        selector: `.pcob-alumni-story:nth-of-type(${i}) .pcob-button`, attr: "href" },
+
+      { id: `buttonColor${i}`, label: `Button ${i} Color`, type: "color",
+        selector: `.pcob-alumni-story:nth-of-type(${i}) .pcob-button` }
+    ]))
+  ],
+
+  defaults: {
+    background: "pcob-light-grey",
+    headingFont: "pcob-font-gineso",
+    headingCaps: "pcob-text-regular-case",
+    bodyFont: "pcob-font-crimson",
+    buttonStyle: "pcob-button",
+
+    image1: "/content/dam/cba_pamplin_vt_edu/img/alumni/alum1.jpg",
+    heading1: "Alex Johnson",
+    subheading1: "MSBA Class of 2022",
+    buttonLabel1: "Read More",
+    url1: "#",
+    buttonColor1: "pcob-maroon",
+
+    image2: "/content/dam/cba_pamplin_vt_edu/img/alumni/alum2.jpg",
+    heading2: "Priya Menon",
+    subheading2: "Deloitte, Analytics Consultant",
+    buttonLabel2: "Read More",
+    url2: "#",
+    buttonColor2: "pcob-maroon",
+
+    image3: "/content/dam/cba_pamplin_vt_edu/img/alumni/alum3.jpg",
+    heading3: "James Rivera",
+    subheading3: "Entrepreneur, Atlanta",
+    buttonLabel3: "Read More",
+    url3: "#",
+    buttonColor3: "pcob-maroon",
+
+    image4: "/content/dam/cba_pamplin_vt_edu/img/alumni/alum4.jpg",
+    heading4: "Lin Zheng",
+    subheading4: "AI Researcher, Google",
+    buttonLabel4: "Read More",
+    url4: "#",
+    buttonColor4: "pcob-maroon"
+  }
 }
 };
