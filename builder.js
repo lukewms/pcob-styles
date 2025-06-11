@@ -193,23 +193,36 @@
         return;
       }
 
-            /* ---- BUTTON COUNT PICKER ---- */
+              /* ---- BUTTON COUNT PICKER ---- */
       if (f.id === 'buttonCount'){
-        /* first button = nth-of-type(1) ; second = nth-of-type(2) */
-        const btn1 = preview.querySelector('.pcob-button:nth-of-type(1)');
-        const btn2 = preview.querySelector('.pcob-button:nth-of-type(2)');
+        const wrap = preview.querySelector('.pcob-band-text > div');
+        const btn1 = wrap.querySelector('.pcob-button:nth-of-type(1)');
+        const btn2 = wrap.querySelector('.pcob-button:nth-of-type(2)');
 
         if (value === 'none'){
-          btn1?.classList.add('pcob-hidden');
-          btn2?.classList.add('pcob-hidden');
+          btn1?.remove();
+          btn2?.remove();
+          /* if the wrapper is now empty, remove it too */
+          if (!wrap.querySelector('.pcob-button')) wrap.remove();
         } else if (value === 'one'){
-          btn1?.classList.remove('pcob-hidden');
-          btn2?.classList.add('pcob-hidden');
-        } else {                         // 'two' (default)
-          btn1?.classList.remove('pcob-hidden');
-          btn2?.classList.remove('pcob-hidden');
+          btn2?.remove();
+          if (!btn1){                          // was previously removed
+            wrap.append(btnTemplate(1));       // re-insert first button
+          }
+        } else {                               // 'two'
+          if (!btn1) wrap.append(btnTemplate(1));
+          if (!btn2) wrap.append(btnTemplate(2));
         }
         return;
+      }
+
+      /* helper to rebuild a button if the author toggles back */
+      function btnTemplate(n){
+        const a = document.createElement('a');
+        a.className = `pcob-button pcob-button--md`;
+        a.href = '#';
+        a.textContent = n === 1 ? 'Button 1' : 'Button 2';
+        return a;
       }
 
       /* ---- BUTTON-STYLE PICKER ---- */
@@ -257,7 +270,10 @@
       clone.querySelectorAll('[data-preview]')
            .forEach(el=>el.removeAttribute('data-preview'));
       clone.querySelectorAll('.pcob-hidden').forEach(el => el.remove());
-      ta.value = formatHTML(clone.innerHTML.trim());
+        const pretty = formatHTML(clone.innerHTML.trim())
+                 .replace(/\n\s*\n/g, '\n');
+
+      ta.value = pretty;
     }
 
     function formatHTML(html){
