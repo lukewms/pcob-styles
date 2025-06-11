@@ -193,35 +193,50 @@
         return;
       }
 
-              /* ---- BUTTON COUNT PICKER ---- */
+       /* ---- BUTTON COUNT PICKER ---- */
       if (f.id === 'buttonCount'){
-        const wrap = preview.querySelector('.pcob-band-text > div');
-        const btn1 = wrap.querySelector('.pcob-button:nth-of-type(1)');
-        const btn2 = wrap.querySelector('.pcob-button:nth-of-type(2)');
+        // wrapper that houses the buttons
+        let wrap = preview.querySelector('.pcob-band-text > div');
+        if (!wrap){
+          wrap = document.createElement('div');
+          preview.querySelector('.pcob-band-text').append(wrap);
+        }
 
+        // ensure both <a> elements exist (so we can hide/show them)
+        let btn1 = wrap.querySelector('.pcob-button:nth-of-type(1)');
+        let btn2 = wrap.querySelector('.pcob-button:nth-of-type(2)');
+
+        if (!btn1){
+          btn1 = makeButton('Button 1', 1);
+          wrap.append(btn1);
+        }
+        if (!btn2){
+          btn2 = makeButton('Button 2', 2);
+          wrap.append(btn2);
+        }
+
+        /* toggle visibility with .pcob-hidden */
         if (value === 'none'){
-          btn1?.remove();
-          btn2?.remove();
-          /* if the wrapper is now empty, remove it too */
-          if (!wrap.querySelector('.pcob-button')) wrap.remove();
+          btn1.classList.add('pcob-hidden');
+          btn2.classList.add('pcob-hidden');
         } else if (value === 'one'){
-          btn2?.remove();
-          if (!btn1){                          // was previously removed
-            wrap.append(btnTemplate(1));       // re-insert first button
-          }
-        } else {                               // 'two'
-          if (!btn1) wrap.append(btnTemplate(1));
-          if (!btn2) wrap.append(btnTemplate(2));
+          btn1.classList.remove('pcob-hidden');
+          btn2.classList.add('pcob-hidden');
+        } else {                // 'two'
+          btn1.classList.remove('pcob-hidden');
+          btn2.classList.remove('pcob-hidden');
         }
         return;
       }
 
-      /* helper to rebuild a button if the author toggles back */
-      function btnTemplate(n){
+      /* helper */
+      function makeButton(label, n){
         const a = document.createElement('a');
         a.className = `pcob-button pcob-button--md`;
         a.href = '#';
-        a.textContent = n === 1 ? 'Button 1' : 'Button 2';
+        a.textContent = label;
+        /* give it default color & style so existing pickers can update it */
+        a.dataset.buttonIndex = n;
         return a;
       }
 
@@ -265,16 +280,21 @@
     }
 
     function updateCode(){
-      const ta    = output.querySelector('textarea');
-      const clone = preview.cloneNode(true);
-      clone.querySelectorAll('[data-preview]')
-           .forEach(el=>el.removeAttribute('data-preview'));
-      clone.querySelectorAll('.pcob-hidden').forEach(el => el.remove());
-        const pretty = formatHTML(clone.innerHTML.trim())
-                 .replace(/\n\s*\n/g, '\n');
+  const ta    = output.querySelector('textarea');
+  const clone = preview.cloneNode(true);
 
-      ta.value = pretty;
-    }
+  /* strip author-only artefacts */
+  clone.querySelectorAll('[data-preview]')
+       .forEach(el => el.removeAttribute('data-preview'));
+  clone.querySelectorAll('.pcob-hidden').forEach(el => el.remove());
+
+  /* remove a <div> if it ended up empty after hidden buttons removed */
+  clone.querySelectorAll('.pcob-band-text > div')
+       .forEach(wrap => { if (!wrap.children.length) wrap.remove(); });
+
+  /* pretty-print */
+  ta.value = formatHTML(clone.innerHTML.trim());
+}
 
     function formatHTML(html){
       const pad = n=>'  '.repeat(n);
