@@ -131,7 +131,7 @@ window.COMPONENTS = {
   fields:[
     /* ----- band-level ----- */
     { id:"background", label:"Background Color", type:"color",
-      selector:".pcob-text-band-left" },
+   selector:".pcob-text-band-left, .pcob-text-band-center, .pcob-text-band-right" },
 
     { id:"align", label:"Text Alignment", type:"select",
       options:["pcob-text-band-left","pcob-text-band-center","pcob-text-band-right"],
@@ -139,12 +139,12 @@ window.COMPONENTS = {
 
     /* ----- button behaviour ----- */
     { id:"buttonCount", label:"Buttons Shown", type:"select",
-      options:["two","one","none"],
-      selector:".pcob-text-band-left" },
+   options:["two","one","none"],
+   selector:".pcob-text-band-left, .pcob-text-band-center, .pcob-text-band-right" },
 
     { id:"buttonStyle", label:"Button Style", type:"select",
-      options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
-      selector:".pcob-text-band-left .pcob-button" },
+   options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
+   selector:".pcob-text-band-left .pcob-button, .pcob-text-band-center .pcob-button, .pcob-text-band-right .pcob-button" },
 
     /* ----- content ----- */
     { id:"heading", label:"Heading", type:"text",
