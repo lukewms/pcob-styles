@@ -107,7 +107,7 @@ window.COMPONENTS = {
       buttonCount:"two",
       headingFont: "pcob-font-gineso",
       bodyFont: "pcob-font-crimson",
-      headingCaps: "pcob-text-uppercase",
+      headingCaps: "pcob-text-regular",
 
       imageUrl: "/content/dam/cba_pamplin_vt_edu/img/mba/" +
                 "20250505_MBA_InnovationCampus_JordiShelton_LWR69528_websize_Slate.jpg",
