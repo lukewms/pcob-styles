@@ -289,5 +289,81 @@ window.COMPONENTS = {
     style: "pcob-button-flip",
     size: "pcob-button--md"
   }
+},
+
+"card": {
+  label: "Card",
+
+  template: /*html*/`
+    <div class="pcob-card {{background}}">
+      <img class="pcob-card-image" src="{{imageUrl}}" alt="{{altText}}" />
+      <div class="pcob-card-text">
+        <h3 class="pcob-card-heading {{headingFont}} {{headingCaps}}">{{heading}}</h3>
+        <p class="pcob-card-body {{bodyFont}}">{{body}}</p>
+        <div>
+          <a href="{{btnUrl}}"
+             class="pcob-button pcob-button--md {{btnColor}} {{buttonStyle}}">
+             {{btnLabel}}
+          </a>
+        </div>
+      </div>
+    </div>`,
+
+  fields: [
+    { id: "background", label: "Card Background", type: "color",
+      selector: ".pcob-card" },
+
+    { id: "imageUrl", label: "Image URL", type: "text",
+      selector: ".pcob-card-image", attr: "src" },
+
+    { id: "altText", label: "Image Alt Text", type: "text",
+      selector: ".pcob-card-image", attr: "alt" },
+
+    { id: "heading", label: "Heading", type: "text",
+      selector: ".pcob-card-heading" },
+
+    { id: "headingFont", label: "Heading Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-card-heading" },
+
+    { id: "headingCaps", label: "Heading Case", type: "select",
+      options: ["pcob-text-regular-case", "pcob-text-uppercase"],
+      selector: ".pcob-card-heading" },
+
+    { id: "body", label: "Body Text", type: "textarea",
+      selector: ".pcob-card-body" },
+
+    { id: "bodyFont", label: "Body Font", type: "select",
+      options: ["pcob-font-gineso", "pcob-font-acherus", "pcob-font-crimson"],
+      selector: ".pcob-card-body" },
+
+    { id: "btnLabel", label: "Button Label", type: "text",
+      selector: ".pcob-button" },
+
+    { id: "btnUrl", label: "Button URL", type: "text",
+      selector: ".pcob-button", attr: "href" },
+
+    { id: "btnColor", label: "Button Color", type: "color",
+      selector: ".pcob-button" },
+
+    { id: "buttonStyle", label: "Button Style", type: "select",
+      options: ["pcob-button", "pcob-button-flip", "pcob-button-swipe"],
+      selector: ".pcob-button" }
+  ],
+
+  defaults: {
+    background: "pcob-white",
+    imageUrl: "/content/dam/cba_pamplin_vt_edu/img/20250505_student_card.jpg",
+    altText: "Student smiling at Virginia Tech campus",
+    heading: "Meet Our Students",
+    headingFont: "pcob-font-gineso",
+    headingCaps: "pcob-text-regular-case",
+    body: "Our students lead with purpose. They build data-driven solutions, connect across disciplines, and turn ideas into action.",
+    bodyFont: "pcob-font-crimson",
+    btnLabel: "Explore Programs",
+    btnUrl: "#",
+    btnColor: "pcob-maroon",
+    buttonStyle: "pcob-button-flip"
+  }
 }
 };

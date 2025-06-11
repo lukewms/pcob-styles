@@ -799,6 +799,36 @@
   text-transform: none;
 }
 
+.pcob-card {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 350px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.pcob-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pcob-card-text {
+  padding: 1rem;
+}
+
+.pcob-card-heading {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.pcob-card-body {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
 /* #region Image Card Animated Testing */
 
 .pcob-image-card-animated {
