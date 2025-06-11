@@ -251,7 +251,7 @@ window.COMPONENTS = {
     title3:     "Hokie Network",
     subtitle3:  "Alumni Across Industries"
   }
-}
+},
 
   /* ===== Buttons ===== */
 
