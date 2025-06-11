@@ -67,7 +67,7 @@
   ];
 
   const capsClasses = [
-    "pcob-text-uppercase"
+    "pcob-text-uppercase","pcob-text-uppercase"
   ];
 
   /* ── 4.  UI scaffolding  ──────────────────────────────────────── */
@@ -232,7 +232,7 @@
       if (value) el.classList.add(value);    // then add only one
     });
     return;
-}
+    }  
 
        /* ---- BUTTON COUNT PICKER ---- */
       if (f.id === 'buttonCount'){
