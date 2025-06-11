@@ -253,5 +253,41 @@ window.COMPONENTS = {
   }
 }
 
-  /* ===== Add more components below using the same structure ===== */
+  /* ===== Buttons ===== */
+
+  "button": {
+  label: "Button",
+
+  template: /*html*/`
+    <a href="{{url}}" class="pcob-button {{color}} {{style}} {{size}}">
+      {{label}}
+    </a>`,
+
+  fields: [
+    { id: "label", label: "Button Text", type: "text",
+      selector: ".pcob-button" },
+
+    { id: "url", label: "Button URL", type: "text",
+      selector: ".pcob-button", attr: "href" },
+
+    { id: "color", label: "Button Color", type: "color",
+      selector: ".pcob-button" },
+
+    { id: "style", label: "Button Animation", type: "select",
+      options: ["pcob-button", "pcob-button-flip", "pcob-button-swipe"],
+      selector: ".pcob-button" },
+
+    { id: "size", label: "Button Size", type: "select",
+      options: ["pcob-button--sm", "pcob-button--md", "pcob-button--lg"],
+      selector: ".pcob-button" }
+  ],
+
+  defaults: {
+    label: "Click Me",
+    url: "#",
+    color: "pcob-maroon",
+    style: "pcob-button-flip",
+    size: "pcob-button--md"
+  }
+}
 };

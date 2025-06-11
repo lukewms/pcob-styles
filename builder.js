@@ -46,6 +46,12 @@
   ];
   const buttonModifierClasses = ['pcob-button-flip','pcob-button-swipe'];
 
+  const sizeClasses = [
+  "pcob-button--sm",
+  "pcob-button--md",
+  "pcob-button--lg"
+  ];
+
   /* ↓ NEW: class buckets for the two dropdowns  */
   const layoutClasses = [
     'pcob-band-layout-3-1','pcob-band-layout-1-3',
@@ -188,6 +194,15 @@
         });
         return;
       }
+
+      /* ---- BUTTON SIZE PICKER ---- */
+      if (f.id === "size") {
+      targets.forEach(el => {
+        el.classList.remove(...sizeClasses);
+        if (value) el.classList.add(value);
+      });
+      return;
+    }
 
        /* ---- LAYOUT PICKER ---- */
       if (f.id === 'layout'){
