@@ -134,8 +134,8 @@ window.COMPONENTS = {
    selector:".pcob-text-band-left, .pcob-text-band-center, .pcob-text-band-right" },
 
     { id:"align", label:"Text Alignment", type:"select",
-      options:["pcob-text-band-left","pcob-text-band-center","pcob-text-band-right"],
-      selector:".pcob-text-band-left" },
+   options:["pcob-text-band-left","pcob-text-band-center","pcob-text-band-right"],
+   selector:".pcob-text-band-left, .pcob-text-band-center, .pcob-text-band-right" },
 
     /* ----- button behaviour ----- */
     { id:"buttonCount", label:"Buttons Shown", type:"select",
