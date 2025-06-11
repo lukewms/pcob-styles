@@ -56,6 +56,10 @@
     'pcob-band-behavior-stacking','pcob-band-behavior-hiding'
   ];
 
+  const alignClasses = [
+  'pcob-text-band-left','pcob-text-band-center','pcob-text-band-right'
+];
+
   /* ── 4.  UI scaffolding  ──────────────────────────────────────── */
   const pickerEl    = dom('select',  { id:'component-picker' });
   const controlsDiv = dom('div',     { id:'builder-controls' });
@@ -189,6 +193,15 @@
         targets.forEach(el=>{
           el.classList.remove(...behaviorClasses);
           if(value) el.classList.add(value);
+        });
+        return;
+      }
+
+      /* ---- TEXT-ALIGN PICKER ---- */
+      if (f.id === 'align'){
+        targets.forEach(el=>{
+          el.classList.remove(...alignClasses);
+          if (value) el.classList.add(value);
         });
         return;
       }

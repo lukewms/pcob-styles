@@ -106,6 +106,84 @@ window.COMPONENTS = {
     }
   },
 
+  /* ===== Text Band ============================================= */
+"text-band": {
+  label: "Text Band",
+
+  template: /*html*/`
+    <div class="pcob-text-band-left {{background}} {{align}}">
+      <div class="pcob-band-text">
+        <h2 class="pcob-band-heading">{{heading}}</h2>
+        <p  class="pcob-band-body">{{body}}</p>
+        <div>
+          <a href="{{btn1Url}}"
+             class="pcob-button pcob-button--md {{btn1Color}} {{buttonStyle}}">
+             {{btn1Label}}
+          </a>
+          <a href="{{btn2Url}}"
+             class="pcob-button pcob-button--md {{btn2Color}} {{buttonStyle}}">
+             {{btn2Label}}
+          </a>
+        </div>
+      </div>
+    </div>`,
+
+  fields:[
+    /* ----- band-level ----- */
+    { id:"background", label:"Background Color", type:"color",
+      selector:".pcob-text-band-left" },
+
+    { id:"align", label:"Text Alignment", type:"select",
+      options:["pcob-text-band-left","pcob-text-band-center","pcob-text-band-right"],
+      selector:".pcob-text-band-left" },
+
+    /* ----- button behaviour ----- */
+    { id:"buttonCount", label:"Buttons Shown", type:"select",
+      options:["two","one","none"],
+      selector:".pcob-text-band-left" },
+
+    { id:"buttonStyle", label:"Button Style", type:"select",
+      options:["pcob-button","pcob-button-flip","pcob-button-swipe"],
+      selector:".pcob-text-band-left .pcob-button" },
+
+    /* ----- content ----- */
+    { id:"heading", label:"Heading", type:"text",
+      selector:".pcob-band-heading" },
+
+    { id:"body", label:"Body Text", type:"textarea",
+      selector:".pcob-band-body" },
+
+    /* ----- button 1 ----- */
+    { id:"btn1Label", label:"Button 1 Label", type:"text",
+      selector:".pcob-button:nth-of-type(1)" },
+    { id:"btn1Url",   label:"Button 1 URL",   type:"text",
+      selector:".pcob-button:nth-of-type(1)", attr:"href" },
+    { id:"btn1Color", label:"Button 1 Color", type:"color",
+      selector:".pcob-button:nth-of-type(1)" },
+
+    /* ----- button 2 ----- */
+    { id:"btn2Label", label:"Button 2 Label", type:"text",
+      selector:".pcob-button:nth-of-type(2)" },
+    { id:"btn2Url",   label:"Button 2 URL",   type:"text",
+      selector:".pcob-button:nth-of-type(2)", attr:"href" },
+    { id:"btn2Color", label:"Button 2 Color", type:"color",
+      selector:".pcob-button:nth-of-type(2)" }
+  ],
+
+  defaults:{
+    background:"pcob-maroon",
+    align:"pcob-text-band-left",
+    buttonCount:"two",
+    buttonStyle:"pcob-button-flip",
+
+    heading:"TEXT BAND LEFT",
+    body:"Hokie alumni stay connected. Whether leading the charge at global companies or launching startups from scratch, they don’t forget where they came from. Tap into the power of the Hokie network—because we always return your call.",
+
+    btn1Label:"Explore Classes", btn1Url:"#", btn1Color:"pcob-light-maroon",
+    btn2Label:"Alumni Network", btn2Url:"#", btn2Color:"pcob-light-maroon"
+  }
+},
+
 /* ===== Feature Bar =========================================== */
 "feature-bar": {
   label: "Feature Bar",
