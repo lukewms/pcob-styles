@@ -55,12 +55,12 @@ window.COMPONENTS = {
       selector: ".pcob-band-body" },
 
     { id: "headingCaps", label: "Heading Case", type: "select",
-      options: ["", "pcob-text-uppercase"],
-      selector: ".pcob-band-heading" },
+    options: ["pcob-text-regular", "pcob-text-uppercase"],
+    selector: ".pcob-band-heading" },
 
-    { id: "bodyCaps", label: "Body Text Case", type: "select",
-      options: ["", "pcob-text-uppercase"],
-      selector: ".pcob-band-body" },
+  { id: "bodyCaps", label: "Body Text Case", type: "select",
+    options: ["pcob-text-regular", "pcob-text-uppercase"],
+    selector: ".pcob-band-body" },
 
       /* ── Button count selector ───────────────────────────── */
      { id:"buttonCount", label:"Buttons Shown", type:"select",
