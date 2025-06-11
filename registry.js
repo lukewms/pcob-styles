@@ -58,10 +58,6 @@ window.COMPONENTS = {
     options: ["pcob-text-regular", "pcob-text-uppercase"],
     selector: ".pcob-band-heading" },
 
-  { id: "bodyCaps", label: "Body Text Case", type: "select",
-    options: ["pcob-text-regular", "pcob-text-uppercase"],
-    selector: ".pcob-band-body" },
-
       /* ── Button count selector ───────────────────────────── */
      { id:"buttonCount", label:"Buttons Shown", type:"select",
        options:["two","one","none"],
