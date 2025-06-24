@@ -776,6 +776,71 @@
 
 /* #region =========    IN PROGRESS    ========= */
 
+/* #region Image-Card Grid */
+
+/* --- responsive 3-column grid --- */
+.pcob-image-card-grid{
+  display:grid;
+  gap:3rem;
+  grid-template-columns:repeat(3,1fr);
+}
+
+@media (max-width:1020px){
+  .pcob-image-card-grid{
+    grid-template-columns:1fr;   /* stacks vertically */
+  }
+}
+
+/* --- individual card --- */
+.pcob-image-card{
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 4px 6px rgba(0,0,0,.05);
+  border-radius:4px;
+  background:#fff;
+  overflow:hidden;               /* crop image */
+  transition:color .25s ease;
+}
+
+/* top image (always fills) */
+.pcob-image-card__img{
+  width:100%;
+  padding-top:66%;               /* 3:2 aspect placeholder */
+  background-size:cover;
+  background-position:center;
+}
+
+/* text wrapper */
+.pcob-image-card__body{
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  color:#111;                    /* default text */
+  transition:color .25s ease;
+}
+
+.pcob-image-card__title{
+  font-family:"Gineso","Gineso LT",sans-serif;
+  font-weight:700;
+  font-size:1.25rem;
+}
+
+.pcob-image-card__text{
+  font-family:"Crimson Text",Georgia,serif;
+  font-size:1rem;
+  line-height:1.6;
+}
+
+/* --- hover colour shift --- */
+.pcob-image-card:hover .pcob-image-card__body{
+  color:var(--pcob-maroon,#861F41);   /* falls back if CSS var missing */
+}
+
+/* #endregion Image-Card Grid */
+
+
+
 /* === Font Family Utilities === */
 .pcob-font-gineso {
   font-family: "Gineso", serif;     /* Update with actual fallback if needed */

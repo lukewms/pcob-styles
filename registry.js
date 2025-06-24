@@ -540,5 +540,74 @@ window.COMPONENTS = {
     url4: "#",
     buttonColor4: "pcob-maroon"
   }
+},
+
+/* ===== Image Card Grid ==================================== */
+"image-card": {
+  label: "Image Cards (3-up)",
+
+  template: /*html*/`
+    <div class="pcob-image-card-grid">
+      {{#each cards}}
+        <div class="pcob-image-card">
+          <div class="pcob-image-card__img"
+               style="background-image:url('{{imgUrl}}')"></div>
+          <div class="pcob-image-card__body">
+            <h3 class="pcob-image-card__title">{{title}}</h3>
+            <p  class="pcob-image-card__text">{{text}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>`,
+
+  /* === field set ========================================= */
+  fields:[
+    /* card 1 ------------------------------------------------- */
+    {id:"img1",  label:"Card 1 Image URL", type:"text",
+     selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__img",
+     prop:"backgroundImage"},
+
+    {id:"title1",label:"Card 1 Title",     type:"text",
+     selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__title"},
+
+    {id:"text1", label:"Card 1 Body",      type:"textarea",
+     selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__text"},
+
+    /* card 2 ------------------------------------------------- */
+    {id:"img2",  label:"Card 2 Image URL", type:"text",
+     selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__img",
+     prop:"backgroundImage"},
+
+    {id:"title2",label:"Card 2 Title",     type:"text",
+     selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__title"},
+
+    {id:"text2", label:"Card 2 Body",      type:"textarea",
+     selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__text"},
+
+    /* card 3 ------------------------------------------------- */
+    {id:"img3",  label:"Card 3 Image URL", type:"text",
+     selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__img",
+     prop:"backgroundImage"},
+
+    {id:"title3",label:"Card 3 Title",     type:"text",
+     selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__title"},
+
+    {id:"text3", label:"Card 3 Body",      type:"textarea",
+     selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__text"}
+  ],
+
+  defaults:{
+    img1:"/example/cville.jpg",
+    title1:"Unparalleled Lifestyle",
+    text1:"Opportunity abounds in the heart of Virginia …",
+
+    img2:"/example/team.jpg",
+    title2:"Top Hiring Companies",
+    text2:"Amazon, American Express, Goldman Sachs …",
+
+    img3:"/example/network.jpg",
+    title3:"Darden Is Everywhere",
+    text3:"Tapping into a global network of 19,000 alums …"
+  }
 }
 };
