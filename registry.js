@@ -295,6 +295,7 @@ window.COMPONENTS = {
   label: "Card",
 
   template: /*html*/`
+  <div class="pcob-card-wrapper">
   <a href="{{btnUrl}}" class="pcob-card-link">
     <div class="pcob-card {{background}}">
       <img class="pcob-card-image" src="{{imageUrl}}" alt="{{altText}}" />
@@ -303,7 +304,8 @@ window.COMPONENTS = {
         <p class="pcob-card-body {{bodyFont}}">{{body}}</p>
       </div>
     </div>
-  </a>`,
+  </a>
+  </div>`,
 
   fields: [
     { id: "background", label: "Card Background", type: "color",
