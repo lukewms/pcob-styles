@@ -894,6 +894,52 @@
   margin-bottom: 1rem;
 }
 
+/* --- centre the card in the viewport --- */
+.pcob-card-wrapper{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;     /* full viewport height */
+}
+
+/* --- card tweaks --- */
+.pcob-card{
+  margin:0 auto;
+  text-align:center;               /* centres text inside */
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.pcob-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 30px rgba(0,0,0,.20);
+}
+
+/* --- bigger heading --- */
+.pcob-card-heading{
+  font-size:clamp(2rem,4vw,2.75rem);   /* was 1.25 rem :contentReference[oaicite:1]{index=1} */
+}
+
+/* --- B/W → colour image swap --- */
+.pcob-card-image{
+  filter:grayscale(100%);
+  transition:filter .4s ease;
+}
+.pcob-card:hover .pcob-card-image{
+  filter:none;   /* remove grayscale on hover */
+}
+
+/* --- make whole card the link; hide old button --- */
+.pcob-card-link{                     /* new utility */
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+.pcob-card .pcob-button{display:none;}   /* button is no longer shown */
+.pcob-card-link:focus-visible .pcob-card{
+  outline:3px solid var(--pcob-maroon);
+  outline-offset:4px;
+}
+
+
 .pcob-stat-block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));

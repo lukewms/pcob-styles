@@ -295,19 +295,15 @@ window.COMPONENTS = {
   label: "Card",
 
   template: /*html*/`
+  <a href="{{btnUrl}}" class="pcob-card-link">
     <div class="pcob-card {{background}}">
       <img class="pcob-card-image" src="{{imageUrl}}" alt="{{altText}}" />
       <div class="pcob-card-text">
         <h3 class="pcob-card-heading {{headingFont}} {{headingCaps}}">{{heading}}</h3>
         <p class="pcob-card-body {{bodyFont}}">{{body}}</p>
-        <div>
-          <a href="{{btnUrl}}"
-             class="pcob-button pcob-button--md {{btnColor}} {{buttonStyle}}">
-             {{btnLabel}}
-          </a>
-        </div>
       </div>
-    </div>`,
+    </div>
+  </a>`,
 
   fields: [
     { id: "background", label: "Card Background", type: "color",
