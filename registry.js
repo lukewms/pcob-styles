@@ -548,52 +548,68 @@ window.COMPONENTS = {
 
   template: /*html*/`
     <div class="pcob-image-card-grid">
-      {{#each cards}}
-        <div class="pcob-image-card">
-          <div class="pcob-image-card__img"
-               style="background-image:url('{{imgUrl}}')"></div>
-          <div class="pcob-image-card__body">
-            <h3 class="pcob-image-card__title">{{title}}</h3>
-            <p  class="pcob-image-card__text">{{text}}</p>
-          </div>
+      <!-- Card 1 -->
+      <div class="pcob-image-card">
+        <div class="pcob-image-card__img"
+             style="background-image:url('{{img1}}')"></div>
+        <div class="pcob-image-card__body">
+          <h3 class="pcob-image-card__title">{{title1}}</h3>
+          <p  class="pcob-image-card__text">{{text1}}</p>
         </div>
-      {{/each}}
+      </div>
+
+      <!-- Card 2 -->
+      <div class="pcob-image-card">
+        <div class="pcob-image-card__img"
+             style="background-image:url('{{img2}}')"></div>
+        <div class="pcob-image-card__body">
+          <h3 class="pcob-image-card__title">{{title2}}</h3>
+          <p  class="pcob-image-card__text">{{text2}}</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="pcob-image-card">
+        <div class="pcob-image-card__img"
+             style="background-image:url('{{img3}}')"></div>
+        <div class="pcob-image-card__body">
+          <h3 class="pcob-image-card__title">{{title3}}</h3>
+          <p  class="pcob-image-card__text">{{text3}}</p>
+        </div>
+      </div>
     </div>`,
 
-  /* === field set ========================================= */
+  /* === field set (unchanged) === */
   fields:[
-    /* card 1 ------------------------------------------------- */
-    {id:"img1",  label:"Card 1 Image URL", type:"text",
-     selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__img",
-     prop:"backgroundImage"},
+    { id:"img1",  label:"Card 1 Image URL", type:"text",
+      selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__img",
+      prop:"backgroundImage" },
 
-    {id:"title1",label:"Card 1 Title",     type:"text",
-     selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__title"},
+    { id:"title1",label:"Card 1 Title",     type:"text",
+      selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__title" },
 
-    {id:"text1", label:"Card 1 Body",      type:"textarea",
-     selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__text"},
+    { id:"text1", label:"Card 1 Body",      type:"textarea",
+      selector:".pcob-image-card:nth-of-type(1) .pcob-image-card__text" },
 
-    /* card 2 ------------------------------------------------- */
-    {id:"img2",  label:"Card 2 Image URL", type:"text",
-     selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__img",
-     prop:"backgroundImage"},
+    { id:"img2",  label:"Card 2 Image URL", type:"text",
+      selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__img",
+      prop:"backgroundImage" },
 
-    {id:"title2",label:"Card 2 Title",     type:"text",
-     selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__title"},
+    { id:"title2",label:"Card 2 Title",     type:"text",
+      selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__title" },
 
-    {id:"text2", label:"Card 2 Body",      type:"textarea",
-     selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__text"},
+    { id:"text2", label:"Card 2 Body",      type:"textarea",
+      selector:".pcob-image-card:nth-of-type(2) .pcob-image-card__text" },
 
-    /* card 3 ------------------------------------------------- */
-    {id:"img3",  label:"Card 3 Image URL", type:"text",
-     selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__img",
-     prop:"backgroundImage"},
+    { id:"img3",  label:"Card 3 Image URL", type:"text",
+      selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__img",
+      prop:"backgroundImage" },
 
-    {id:"title3",label:"Card 3 Title",     type:"text",
-     selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__title"},
+    { id:"title3",label:"Card 3 Title",     type:"text",
+      selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__title" },
 
-    {id:"text3", label:"Card 3 Body",      type:"textarea",
-     selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__text"}
+    { id:"text3", label:"Card 3 Body",      type:"textarea",
+      selector:".pcob-image-card:nth-of-type(3) .pcob-image-card__text" }
   ],
 
   defaults:{
@@ -609,5 +625,6 @@ window.COMPONENTS = {
     title3:"Darden Is Everywhere",
     text3:"Tapping into a global network of 19,000 alums …"
   }
-}
+},
+
 };
