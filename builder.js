@@ -310,6 +310,7 @@
         return;
       }
 
+      
       /* ---- SELECTORS WITH COLOR OPTIONS (non-button) ---- */
       if(f.type==='select' && f.options && f.options.every(o=>allColorClasses.includes(o))){
         targets.forEach(el=>{
